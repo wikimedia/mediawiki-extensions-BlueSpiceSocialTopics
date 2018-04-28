@@ -1,0 +1,89 @@
+{
+	"name": "BlueSpiceSocialTopics",
+	"version": "3.0.0-alpha",
+	"url": "https://help.bluespice.com/index.php/BlueSpiceSocial",
+	"author": "Patric Wirth",
+	"descriptionmsg": "bs-socialtopics-desc",
+	"type": "bluespice",
+	"attributes": {
+		"BlueSpiceFoundation": {
+			"Extensions": {
+				"BlueSpiceSocialTopics": {
+					"className": "\\BlueSpice\\Social\\Topics\\Extension",
+					"extPath": "/BlueSpiceSocialTopics",
+					"status": "beta",
+					"package": "BlueSpiceSocial",
+					"configDefinitions": {
+						"BSSocialenTalkpageAutoCreate": "\\BlueSpice\\Social\\Topics\\ConfigDefinition\\BSSocialTalkpageAutoCreate::getInstance"
+					}
+				}
+			}
+		}
+	},
+	"callback": "\\BlueSpice\\Social\\Topics\\Extension::onRegistration",
+	"MessagesDirs": {
+		"BlueSpiceSocialTopics": [
+			"i18n"
+		]
+	},
+	"AutoloadNamespaces": {
+		"BlueSpice\\Social\\Topics\\": "src/"
+	},
+	"AutoloadClasses": {
+		"BSMigrateShoutbox": "maintenance/BSMigrateShoutbox.php",
+		"BSMigrateRatedComments": "maintenance/BSMigrateRatedComments.php"
+	},
+	"ResourceModules": {
+		"ext.bluespice.social.topics.styles": {
+			"styles": "bluespice.social.topics.css",
+			"targets": [ "desktop", "mobile" ]
+		},
+		"ext.bluespice.social.entity.topic": {
+			"scripts": "entities/bluespice.social.Entity.Topic.js",
+			"targets": [ "desktop", "mobile" ],
+			"dependencies": [
+				"ext.bluespice.social.entity.text",
+				"ext.bluespice.oojs"
+			]
+		},
+		"ext.bluespice.social.entity.discussion": {
+			"dependencies": [
+				"ext.bluespice.social.entity",
+				"ext.bluespice.oojs"
+			],
+			"targets": [ "desktop", "mobile" ],
+			"scripts": [
+				"entities/bluespice.social.Entity.Discussion.js",
+				"ui/EntityEditorTopic.js"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "BlueSpiceSocialTopics/resources"
+	},
+	"config_prefix": "bsg",
+	"config": {
+		"BSSocialenTalkpageAutoCreate": {
+			"value": true,
+			"descriptionmsg": "bs-socialtopics-toc-entalkpageautocreate",
+			"public": true
+		}
+	},
+	"Hooks": {
+		"BSEntityRegister": "\\BlueSpice\\Social\\Topics\\Hook\\BSEntityRegister\\RegisterEntities::callback",
+		"ContentHandlerDefaultModelFor": "\\BlueSpice\\Social\\Topics\\Extension::onContentHandlerDefaultModelFor",
+		"ArticleViewHeader": "\\BlueSpice\\Social\\Topics\\Extension::onArticleViewHeader",
+		"PageContentSaveComplete": [
+			"\\BlueSpice\\Social\\Topics\\Hook\\PageContentSaveComplete\\AutoCreateDiscussionPage::callback",
+			"\\BlueSpice\\Social\\Topics\\Hook\\PageContentSaveComplete\\AutoCreateDiscussionEntity::callback"
+		],
+		"BSSocialEntitiesRegisterValidators": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialEntitiesRegisterValidators\\RegisterValidators::callback",
+		"BSApiTasksBaseAfterExecuteTask": "\\BlueSpice\\Social\\Topics\\Hook\\BSApiTasksBaseAfterExecuteTask\\CorrectWikiPageDiscussionCounter::callback",
+		"LoadExtensionSchemaUpdates": [
+			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddShoutboxMigrationMaintenanceScript::callback",
+			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddRatedCommentsMigrationMaintenanceScript::callback"
+		]
+	},
+	"manifest_version": 2
+}

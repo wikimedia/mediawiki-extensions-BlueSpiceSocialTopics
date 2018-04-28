@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Patric Wirth <wirth@hallowelt.com>"
+		]
+	},
+	"bs-socialtopics-desc": "BSSocial",
+	"prefs-bssocialtopics": "BlueSpiceSocial Diskussionen",
+	"bs-socialtopics-toc-entalkpageautocreate": "Alle Diskussionsseiten automatisch erstellen",
+	"bs-socialtopics-autocreated-discussionpage": "Diese Diskussionsseite wurde automatisch angelegt.",
+	"bs-socialtopics-autocreated-discussionpagefile": "Diese Diskussionsseite wurde automatisch angelegt.",
+	"bs-socialdiscussion-discussiontype": "Diskussion",
+	"bs-socialdiscussion-topictype": "Diskussionsthema",
+	"bs-social-entitydiscussion-header": "[[$9]]",
+	"bs-social-entitydiscussion-header-create": "Neue Diskussion",
+	"bs-socialtopics-topictext": "$1 {{plural:$1|Thema|Themen}}",
+	"bs-social-entitytopic-header-create": "Neues Thema",
+	"bs-social-entitytopic-header": "[[$10|$9]]",
+	"bs-socialtopics-var-topictitle": "Titel",
+	"bs-socialtopics-var-discussiontitleid": "Diskussionsseite",
+	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Keine gültige Diskussionsseite",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 erstellte das Thema:"
+}

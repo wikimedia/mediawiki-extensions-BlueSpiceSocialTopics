@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Patric Wirth <wirth@hallowelt.com>"
+		]
+	},
+	"bs-socialtopics-desc": "Used in [{{canonicalurl:Special:WikiAdmin|mode=ExtensionInfo}} Special:WikiAdmin?mode=ExtensionInfo], description of BlueSpiceSocialTopics extension.",
+	"bs-socialtopics-topictext": "Topics text. Use PLURAL. $1 is the number of topics"
+}
