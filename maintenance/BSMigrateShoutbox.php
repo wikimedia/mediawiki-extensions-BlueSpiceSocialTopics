@@ -1,6 +1,6 @@
 <?php
 
-$extDir = dirname( dirname( dirname( __DIR__ ) ) );
+$extDir = dirname( dirname( __DIR__ ) );
 
 require_once( "$extDir/BlueSpiceFoundation/maintenance/BSMaintenance.php" );
 
