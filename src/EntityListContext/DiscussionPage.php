@@ -1,0 +1,63 @@
+<?php
+
+namespace BlueSpice\Social\Topics\EntityListContext;
+
+use BlueSpice\Data\Filter\Numeric;
+use BlueSpice\Social\Topics\Entity\Discussion;
+use BlueSpice\Social\Topics\Entity\Topic;
+
+class DiscussionPage extends \BlueSpice\Social\EntityListContext {
+	const CONFIG_NAME_OUTPUT_TYPE = 'EntityListDiscussionPageOutputType';
+	const CONFIG_NAME_TYPE_ALLOWED = 'EntityListDiscussionPageTypeAllowed';
+	const CONFIG_NAME_TYPE_SELECTED = 'EntityListDiscussionPageTypeSelected';
+
+	/**
+	 * Owner of the user page
+	 * @var \Discussion
+	 */
+	protected $discussion = null;
+
+	/**
+	 *
+	 * @param \IContextSource $context
+	 * @param \Config $config
+	 */
+	public function __construct( \IContextSource $context, \Config $config, \User $user = null, Discussion $discussion = null ) {
+		parent::__construct( $context, $config, $user );
+		$this->discussion = $discussion;
+		if( !$this->discussion ) {
+			throw new \MWException( 'Discussion entity missing' );
+		}
+	}
+
+	protected function getDiscussionTitleIDFilter() {
+		return (object)[
+			Numeric::KEY_PROPERTY => Topic::ATTR_DISCUSSION_TITLE_ID,
+			Numeric::KEY_VALUE => $this->discussion->getRelatedTitle()->getArticleID(),
+			Numeric::KEY_COMPARISON => Numeric::COMPARISON_EQUALS,
+			Numeric::KEY_TYPE => 'numeric'
+		];
+	}
+
+	public function getFilters() {
+		return array_merge( 
+			parent::getFilters(),
+			[ $this->getDiscussionTitleIDFilter() ]
+		);
+	}
+
+	public function getLimit() {
+		return 10;
+	}
+
+	public function getLockedFilterNames() {
+		return array_merge(
+			parent::getLockedFilterNames(),
+			[ Topic::ATTR_DISCUSSION_TITLE_ID ]
+		);
+	}
+
+	public function getSortProperty() {
+		return Topic::ATTR_TIMESTAMP_TOUCHED;
+	}
+}

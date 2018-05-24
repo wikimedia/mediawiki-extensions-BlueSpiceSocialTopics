@@ -95,4 +95,13 @@ class Topic extends Text{
 			]
 		);
 	}
+
+	protected function get_EntityListDiscussionPageTypeAllowed() {
+		return true;
+	}
+
+	protected function get_EntityListAfterContentTypeAllowed() {
+		return true;
+	}
+
 }
