@@ -10,9 +10,13 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  */
 namespace BlueSpice\Social\Topics\EntityOutput;
+
 use BlueSpice\Social\EntityOutput;
-use BlueSpice\Social\Entities;
+use BlueSpice\Services;
+use BlueSpice\Context;
+use BlueSpice\Renderer\Params;
 use BlueSpice\Social\Entity;
+use BlueSpice\Social\Topics\EntityListContext\DiscussionPage;
 
 /**
  * This view renders the a single item.
@@ -38,17 +42,20 @@ class Discussion extends EntityOutput {
 			return '';
 		}
 
-		$sOut = Entities::makeList(
-			[],
-			[
-				'type' => ['topic'],
-				'discussiontitleid' => $this->getEntity()->getRelatedTitle()->getArticleID(),
-			],
-			0,
-			[],
+		$context = new DiscussionPage(
+			new Context(
+				\RequestContext::getMain(),
+				$this->getEntity()->getConfig()
+			),
+			$this->getEntity()->getConfig(),
+			\RequestContext::getMain()->getUser(),
 			$this->getEntity()
 		);
-		return $sOut;
+		$renderer = Services::getInstance()->getBSRendererFactory()->get(
+			'entitylist',
+			new Params( [ 'context' => $context ])
+		);
+		return $renderer->render();
 	}
 
 	public function render_basetitlecontent( $mVal, $sType = 'Default' ) {
