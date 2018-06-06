@@ -1,33 +1,13 @@
 bs.social.EntityEditorTopic = function ( config, entity ) {
-	this.visualEditor = config.visualEditor || true;
-	if( !mw.config.get( 'BSSocialUseBlueSpiceVisualEditor', false ) ) {
-		this.visualEditor = false;
-	}
-	bs.social.EntityEditor.call( this, config, entity );
+	bs.social.EntityEditorText.call( this, config, entity );
 };
 OO.initClass( bs.social.EntityEditorTopic );
-OO.inheritClass( bs.social.EntityEditorTopic, bs.social.EntityEditor );
+OO.inheritClass( bs.social.EntityEditorTopic, bs.social.EntityEditorText );
 
 bs.social.EntityEditorTopic.prototype.makeFields = function() {
 	var fields = bs.social.EntityEditorTopic.super.prototype.makeFields.apply(
 		this
 	);
-	var cfg = {
-		placeholder: this.getVarLabel( 'text' ),
-		autosize: true,
-		multiline: true,
-		value: this.getEntity().data.get( 'text', '' ),
-		rows: 10
-	};
-
-	if( this.visualEditor ) {
-		cfg.classes = ['bs-social-visualeditor-text'];
-		cfg.selector = '#' + this.entity.makeUiID() + ' .bs-social-visualeditor-text textarea:first';
-		this.text = new bs.ui.widget.TextInputVisualEditor( cfg );
-	} else {
-		this.text = new OO.ui.TextInputWidget( cfg );
-	}
-	fields.text = this.text;
 
 	this.topictitle = new OO.ui.TextInputWidget( {
 		placeholder: this.getVarLabel( 'topictitle' ),
