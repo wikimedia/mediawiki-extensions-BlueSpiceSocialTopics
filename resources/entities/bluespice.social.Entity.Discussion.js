@@ -31,7 +31,7 @@ bs.social.EntityDiscussion.prototype.makeActionMenu = function() {
 		e.preventDefault();
 		window.location.href = mw.util.getUrl(
 			mw.config.get( 'wgPageName' ),
-			{'classicdiscussion': true }
+			{ 'classicdiscussion': true }
 		);
 		return false;
 	});
