@@ -29,3 +29,8 @@ a.bs-social-entityspawner-topic:before {
 a.bs-social-entityspawner-topic:before {
 	content: "\e907"
 }
+.bs-social-entity-classicdiscussion::before {
+	margin-right:5px;
+	font-family: 'entypo';
+	content: '\ea26';
+}

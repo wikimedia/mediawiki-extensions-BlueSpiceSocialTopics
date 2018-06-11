@@ -55,6 +55,9 @@
 			"scripts": [
 				"entities/bluespice.social.Entity.Discussion.js",
 				"ui/EntityEditorTopic.js"
+			],
+			"messages": [
+				"bs-socialtopics-entityaction-classicdiscussion"
 			]
 		}
 	},

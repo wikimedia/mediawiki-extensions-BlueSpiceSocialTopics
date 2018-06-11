@@ -57,12 +57,4 @@ class Discussion extends EntityOutput {
 		);
 		return $renderer->render();
 	}
-
-	public function render_basetitlecontent( $mVal, $sType = 'Default' ) {
-		if( $sType != 'Page' ) {
-			return '';
-		}
-
-		return $this->oEntity->getBaseTitleContent();
-	}
 }
