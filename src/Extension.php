@@ -106,11 +106,18 @@ class Extension extends \BlueSpice\Extension {
 	/**
 	 *
 	 * @param \Title $title
-	 * @param Content $model
+	 * @param \Content $model
 	 * @return boolean
 	 */
 	public static function onContentHandlerDefaultModelFor( \Title $title, &$model ) {
 		if( !$title->exists() || !$title->isTalkPage() ) {
+			return true;
+		}
+		$classic = \RequestContext::getMain()->getRequest()->getBool(
+			'classicdiscussion',
+			false
+		);
+		if( $classic ) {
 			return true;
 		}
 		$oEntity = Discussion::newFromDiscussionTitle(
@@ -132,6 +139,13 @@ class Extension extends \BlueSpice\Extension {
 	public static function onArticleViewHeader( &$oArticle, &$outputDone, &$useParserCache ) {
 		$oTitle = $oArticle->getTitle();
 		if( !$oTitle->exists() || !$oTitle->isTalkPage() ) {
+			return true;
+		}
+		$classic = \RequestContext::getMain()->getRequest()->getBool(
+			'classicdiscussion',
+			false
+		);
+		if( $classic ) {
 			return true;
 		}
 		$oEntity = Discussion::newFromDiscussionTitle(

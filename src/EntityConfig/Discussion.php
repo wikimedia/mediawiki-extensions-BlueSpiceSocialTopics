@@ -84,6 +84,9 @@ class Discussion extends Page {
 	protected function get_IsTagable() {
 		return false;
 	}
+	protected function get_IsEditable() {
+		return false;
+	}
 	protected function get_IsDeleteable() {
 		return false; //for now. TODO: make backgroud jobs for deleteing like
 		//in BSSocialGroups

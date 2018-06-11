@@ -77,35 +77,14 @@ class Discussion extends Page {
 		return $aEntities[0];
 	}
 
-	public function getBaseTitleContent() {
-		if( $this->sBaseTitleContent ) {
-			return $this->sBaseTitleContent;
+	public function getActions( array $actions = [], \User $user = null ) {
+		if( !$user ) {
+			$user = \RequestContext::getMain()->getUser();
 		}
-		$this->sBaseTitleContent = '';
-
-		if( !$this->getRelatedTitle()->exists() ) {
-			return $this->sBaseTitleContent;
-		}
-		$oWikiPage = \WikiPage::factory( $this->getRelatedTitle() );
-		try {
-			$oOutput = $oWikiPage->getContent()->getParserOutput(
-				$this->getRelatedTitle(),
-				null,
-				\ParserOptions::newFromContext( \RequestContext::getMain() ),
-				true,
-				true
-			);
-		} catch( \Exception $e ) {
-			//sometimes parser recursion - unfortunately this can not be solved
-			//due to the randomnes of the content model -.-
-			$oOutput = null;
-		}
-
-		if( !$oOutput ) {
-			return $this->sBaseTitleContent;
-		}
-		$this->sBaseTitleContent = $oOutput->getText();
-		return $this->sBaseTitleContent;
+		$actions = parent::getActions( $actions, $user );
+		$actions[] = 'classicdiscussion';
+		return $actions;
+		
 	}
 
 	/**
