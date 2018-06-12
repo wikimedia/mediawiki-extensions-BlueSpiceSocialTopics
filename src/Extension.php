@@ -43,6 +43,17 @@ class Extension extends \BlueSpice\Extension {
 				= "\\BlueSpice\\Social\\Topics\\Content\\DiscussionHandler";
 			$wgNamespaceContentModels[NS_TALK] = CONTENT_MODEL_BSSOCIALDISCUSSION;
 		}
+
+		$GLOBALS['bsgSocialTopicsTimelineAfterContentNamespaceBlackList'] = array_merge(
+			$GLOBALS['bsgSocialTopicsTimelineAfterContentNamespaceBlackList'],
+			[
+				NS_MEDIA,
+				NS_MEDIAWIKI,
+				NS_SPECIAL,
+				NS_USER,
+				NS_BSSOCIAL
+			]
+		);
 	}
 
 	/**

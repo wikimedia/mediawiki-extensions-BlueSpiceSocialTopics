@@ -71,6 +71,12 @@
 			"value": true,
 			"descriptionmsg": "bs-socialtopics-toc-entalkpageautocreate",
 			"public": true
+		},
+		"SocialTopicsTimelineAfterContentNamespaceBlackList": {
+			"value": []
+		},
+		"SocialTopicsTimelineAfterContentShow": {
+			"value": true
 		}
 	},
 	"Hooks": {
@@ -86,7 +92,8 @@
 		"LoadExtensionSchemaUpdates": [
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddShoutboxMigrationMaintenanceScript::callback",
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddRatedCommentsMigrationMaintenanceScript::callback"
-		]
+		],
+		"SkinTemplateOutputPageBeforeExec": "\\BlueSpice\\Social\\Topics\\Hook\\SkinTemplateOutputPageBeforeExec\\AddTimeline::callback"
 	},
 	"manifest_version": 2
 }
