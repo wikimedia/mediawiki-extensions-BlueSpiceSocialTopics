@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Social\Topics\EntityListContext;
 
+use BlueSpice\Data\Filter\ListValue;
 use BlueSpice\Data\Filter\Numeric;
 use BlueSpice\Social\Topics\Entity\Discussion;
 use BlueSpice\Social\Topics\Entity\Topic;
@@ -53,11 +54,20 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 	public function getLockedFilterNames() {
 		return array_merge(
 			parent::getLockedFilterNames(),
-			[ Topic::ATTR_DISCUSSION_TITLE_ID ]
+			[ Topic::ATTR_DISCUSSION_TITLE_ID, Topic::ATTR_TYPE ]
 		);
 	}
 
 	public function getSortProperty() {
 		return Topic::ATTR_TIMESTAMP_TOUCHED;
+	}
+
+	protected function getTypeFilter() {
+		return (object)[
+			ListValue::KEY_PROPERTY => Topic::ATTR_TYPE,
+			ListValue::KEY_VALUE => [ Topic::TYPE ],
+			ListValue::KEY_COMPARISON => ListValue::COMPARISON_CONTAINS,
+			ListValue::KEY_TYPE => \BlueSpice\Data\FieldType::LISTVALUE
+		];
 	}
 }
