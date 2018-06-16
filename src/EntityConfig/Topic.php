@@ -104,4 +104,8 @@ class Topic extends Text{
 		return true;
 	}
 
+	protected function get_IsResolvable() {
+		return true;
+	}
+
 }
