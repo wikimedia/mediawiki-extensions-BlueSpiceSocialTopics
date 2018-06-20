@@ -2,7 +2,7 @@
 	"name": "mediawiki/blue-spice-social-topics",
 	"type": "mediawiki-extension",
 	"description": "Topic and discussion entities for social",
-	"license": "GPL-3.0",
+	"license": "GPL-3.0-only",
 	"require": {
 		"composer/installers": "~1.0"
 	}
