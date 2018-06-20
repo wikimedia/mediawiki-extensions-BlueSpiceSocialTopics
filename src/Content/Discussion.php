@@ -88,7 +88,7 @@ class Discussion extends \WikitextContent {
 		$output->setTitleText(
 			strip_tags( $oEntity->getHeader()->parse() )
 		);
-		$output->setText( $oEntity->render( 'Page' ) );
+		$output->setText( $oEntity->getRenderer()->render( 'Page' ) );
 		return $output;
 	}
 }

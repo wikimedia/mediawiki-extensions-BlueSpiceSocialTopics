@@ -47,9 +47,11 @@ class Topic extends Text{
 	public function get_EntityClass() {
 		return "\\BlueSpice\\Social\\Topics\\Entity\\Topic";
 	}
-	protected function get_OutputClass() {
-		return '\\BlueSpice\\Social\\Topics\\EntityOutput\\Topic';
+
+	protected function get_Renderer() {
+		return 'socialentitytopic';
 	}
+
 	protected function get_ModuleScripts() {
 		return array_merge(
 			parent::get_ModuleScripts(),

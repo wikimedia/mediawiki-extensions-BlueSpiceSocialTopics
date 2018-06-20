@@ -47,9 +47,11 @@ class Discussion extends Page {
 	public function get_EntityClass() {
 		return "\\BlueSpice\\Social\\Topics\\Entity\\Discussion";
 	}
-	protected function get_OutputClass() {
-		return '\\BlueSpice\\Social\\Topics\\EntityOutput\\Discussion';
+
+	protected function get_Renderer() {
+		return 'socialentitydiscussion';
 	}
+
 	protected function get_EntityTemplateDefault() {
 		return 'BlueSpiceSocialTopics.Entity.Discussion.Default';
 	}

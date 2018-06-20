@@ -17,6 +17,10 @@
 						"BSSocialenTalkpageAutoCreate": "\\BlueSpice\\Social\\Topics\\ConfigDefinition\\BSSocialTalkpageAutoCreate::getInstance"
 					}
 				}
+			},
+			"RendererRegistry": {
+				"socialentitydiscussion": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Discussion",
+				"socialentitytopic": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Topic"
 			}
 		}
 	},
