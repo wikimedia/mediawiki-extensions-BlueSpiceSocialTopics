@@ -32,6 +32,7 @@ namespace BlueSpice\Social\Topics\Entity;
 use BlueSpice\Social\Entity\Text;
 use BlueSpice\Social\Parser\Input;
 use BlueSpice\Social\Topics\Entity\Discussion;
+use BlueSpice\Services;
 
 /**
  * Topic class for BSSocial extension
@@ -168,16 +169,26 @@ class Topic extends Text {
 				'bs-socialtopics-entity-fatalstatus-save-notalkpage'
 			));
 		}
+		$status = \Status::newGood();
+		try {
+			$entity = Discussion::newFromDiscussionTitle( $oTitle );
+			if( !$entity->exists() ) {
+				$status = $entity->save( $oUser );
+			}
+		} catch( \Exception $e ) {
+			return \Status::newFatal( $e->getMessage() );
+		}
+		if( !$status->isOK() ) {
+			return $status;
+		}
 		return parent::save( $oUser, $aOptions );
 	}
 
 	public function invalidateCache() {
 		parent::invalidateCache();
-		$oEntity = Discussion::newFromTitle(
-			$this->getRelatedTitle()
-		);
-		if( $oEntity && $oEntity->exists() ) {
-			$oEntity->invalidateCache();
+		$entity = Discussion::newFromDiscussionTitle( $oTitle );
+		if( $entity && $entity->exists() ) {
+			$entity->invalidateCache();
 		}
 	}
 
