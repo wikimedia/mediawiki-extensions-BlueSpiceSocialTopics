@@ -3,6 +3,7 @@
 namespace BlueSpice\Social\Topics\EntityListContext;
 
 use BlueSpice\Data\Filter\ListValue;
+use BlueSpice\Data\Filter\Numeric;
 use BlueSpice\Social\Topics\Entity\Topic;
 use BlueSpice\Services;
 
@@ -55,6 +56,15 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 		return array_merge( parent::getOutputTypes(), [ Topic::TYPE => 'Short'] );
 	}
 
+	protected function getDiscussionTitleIDFilter() {
+		return (object)[
+			Numeric::KEY_PROPERTY => Topic::ATTR_DISCUSSION_TITLE_ID,
+			Numeric::KEY_VALUE => $this->title->getTalkPage()->getArticleID(),
+			Numeric::KEY_COMPARISON => Numeric::COMPARISON_EQUALS,
+			Numeric::KEY_TYPE => 'numeric'
+		];
+	}
+
 	/**
 	 *
 	 * @return \stdClass[]
@@ -68,10 +78,43 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 		];
 	}
 
+	public function getFilters() {
+		return array_merge( 
+			parent::getFilters(),
+			[ $this->getDiscussionTitleIDFilter() ]
+		);
+	}
+
 	public function getMoreLink() {
 		return Services::getInstance()->getLinkRenderer()->makeKnownLink(
 			$this->title->getTalkPage(),
 			new \HtmlArmor( $this->getMoreLinkMessage()->text() )
 		);
+	}
+
+	public function getPreloadedEntities() {
+		$preloaded = parent::getPreloadedEntities();
+		$topic = Services::getInstance()->getBSEntityFactory()->newFromObject(
+			$this->getRawTopic()
+		);
+		if( !$topic instanceof Topic ) {
+			return $preloaded;
+		}
+
+		$status = $topic->userCan( 'create', $this->getUser() );
+		if( !$status->isOK() ) {
+			return $preloaded;
+		}
+
+		$preloaded[] = $this->getRawTopic();
+		return $preloaded;
+	}
+
+	protected function getRawTopic() {
+		return (object) [
+			Topic::ATTR_TYPE => Topic::TYPE,
+			Topic::ATTR_DISCUSSION_TITLE_ID
+				=> $this->title->getTalkPage()->getArticleID(),
+		];
 	}
 }

@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Social\Topics\EntityListContext;
 
+use BlueSpice\Services;
 use BlueSpice\Data\Filter\ListValue;
 use BlueSpice\Data\Filter\Numeric;
 use BlueSpice\Social\Topics\Entity\Discussion;
@@ -14,7 +15,7 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 
 	/**
 	 * Owner of the user page
-	 * @var \Discussion
+	 * @var Discussion
 	 */
 	protected $discussion = null;
 
@@ -68,6 +69,34 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 			ListValue::KEY_VALUE => [ Topic::TYPE ],
 			ListValue::KEY_COMPARISON => ListValue::COMPARISON_CONTAINS,
 			ListValue::KEY_TYPE => \BlueSpice\Data\FieldType::LISTVALUE
+		];
+	}
+
+	public function getPreloadedEntities() {
+		$preloaded = parent::getPreloadedEntities();
+		$topic = Services::getInstance()->getBSEntityFactory()->newFromObject(
+			$this->getRawTopic()
+		);
+		if( !$topic instanceof Topic ) {
+			return $preloaded;
+		}
+
+		$status = $topic->userCan( 'create', $this->getUser() );
+		if( !$status->isOK() ) {
+			return $preloaded;
+		}
+
+		$preloaded[] = $this->getRawTopic();
+		return $preloaded;
+	}
+
+	protected function getRawTopic() {
+		return (object) [
+			Topic::ATTR_TYPE => Topic::TYPE,
+			Topic::ATTR_DISCUSSION_TITLE_ID => $this->discussion->get(
+				Topic::ATTR_DISCUSSION_TITLE_ID,
+				0
+			),
 		];
 	}
 }
