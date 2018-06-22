@@ -186,7 +186,13 @@ class Topic extends Text {
 
 	public function invalidateCache() {
 		parent::invalidateCache();
-		$entity = Discussion::newFromDiscussionTitle( $oTitle );
+		$title = \Title::newFromID(
+			$this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 )
+		);
+		if( !$title|| !$title->exists() ) {
+			return;
+		}
+		$entity = Discussion::newFromDiscussionTitle( $title );
 		if( $entity && $entity->exists() ) {
 			$entity->invalidateCache();
 		}
