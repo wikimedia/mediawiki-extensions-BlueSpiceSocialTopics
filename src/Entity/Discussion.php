@@ -168,4 +168,9 @@ class Discussion extends Page {
 		}
 		return parent::save( $oUser, $aOptions );
 	}
+
+	public function invalidateCache() {
+		parent::invalidateCache();
+		$this->getRelatedTitle()->invalidateCache();
+	}
 }
