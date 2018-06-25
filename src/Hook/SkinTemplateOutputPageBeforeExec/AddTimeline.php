@@ -69,6 +69,7 @@ class AddTimeline extends SkinTemplateOutputPageBeforeExec {
 			),
 			$this->getConfig(),
 			$this->getContext()->getUser(),
+			null,
 			$this->skin->getTitle()
 		);
 		$renderer = $this->getServices()->getBSRendererFactory()->get(
