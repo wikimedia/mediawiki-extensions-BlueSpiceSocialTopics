@@ -22,7 +22,9 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 	 */
 	public function __construct( \IContextSource $context, \Config $config, \User $user = null, \Title $title = null ) {
 		parent::__construct( $context, $config, $user );
-		$this->title = $title;
+		if( $title ) {
+			$this->title = $title;
+		}
 	}
 
 	public function getTitle() {
@@ -59,7 +61,7 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 	protected function getDiscussionTitleIDFilter() {
 		return (object)[
 			Numeric::KEY_PROPERTY => Topic::ATTR_DISCUSSION_TITLE_ID,
-			Numeric::KEY_VALUE => $this->title->getTalkPage()->getArticleID(),
+			Numeric::KEY_VALUE => $this->getTitle()->getTalkPage()->getArticleID(),
 			Numeric::KEY_COMPARISON => Numeric::COMPARISON_EQUALS,
 			Numeric::KEY_TYPE => 'numeric'
 		];
@@ -87,7 +89,7 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 
 	public function getMoreLink() {
 		return Services::getInstance()->getLinkRenderer()->makeKnownLink(
-			$this->title->getTalkPage(),
+			$this->getTitle()->getTalkPage(),
 			new \HtmlArmor( $this->getMoreLinkMessage()->text() )
 		);
 	}
@@ -114,7 +116,7 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 		return (object) [
 			Topic::ATTR_TYPE => Topic::TYPE,
 			Topic::ATTR_DISCUSSION_TITLE_ID
-				=> $this->title->getTalkPage()->getArticleID(),
+				=> $this->getTitle()->getTalkPage()->getArticleID(),
 		];
 	}
 }
