@@ -20,8 +20,8 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 */
-	public function __construct( \IContextSource $context, \Config $config, \User $user = null, \Title $title = null ) {
-		parent::__construct( $context, $config, $user );
+	public function __construct( \IContextSource $context, \Config $config, \User $user = null, Entity $entity = null, \Title $title = null ) {
+		parent::__construct( $context, $config, $user, $entity );
 		if( $title ) {
 			$this->title = $title;
 		}

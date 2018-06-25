@@ -25,7 +25,7 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 	 * @param \Config $config
 	 */
 	public function __construct( \IContextSource $context, \Config $config, \User $user = null, Discussion $discussion = null ) {
-		parent::__construct( $context, $config, $user );
+		parent::__construct( $context, $config, $user, $discussion );
 		$this->discussion = $discussion;
 		if( !$this->discussion ) {
 			throw new \MWException( 'Discussion entity missing' );
