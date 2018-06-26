@@ -50,10 +50,16 @@ class Discussion extends Page {
 	 * @return Discussion | null
 	 */
 	public static function newFromDiscussionTitle( $oTitle ) {
-		if( !$oTitle instanceof \Title || empty( $oTitle->getArticleID() ) ) {
+		if( !$oTitle instanceof \Title || !$oTitle->exists() ) {
 			return null;
 		}
 
+		if( !$oTitle->isTalkPage() ) {
+			$oTitle = $oTitle->getTalkPage();
+			if( !$oTitle instanceof \Title || !$oTitle->exists() ) {
+				return null;
+			}
+		}
 		$oStatus = Entities::get(
 			['limit' => 1],
 			[
@@ -167,10 +173,5 @@ class Discussion extends Page {
 			));
 		}
 		return parent::save( $oUser, $aOptions );
-	}
-
-	public function invalidateCache() {
-		parent::invalidateCache();
-		$this->getRelatedTitle()->invalidateCache();
 	}
 }
