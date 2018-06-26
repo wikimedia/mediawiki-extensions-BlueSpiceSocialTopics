@@ -17,24 +17,17 @@ bs.social.EntityEditorTopic.prototype.makeFields = function() {
 	});
 	fields.topictitle = this.topictitle;
 
-	var discussiontitleid = 0, titleText = '', disabled = false;
-	if( this.getEntity().exists() ) {
-		discussiontitleid = this.getEntity().data.get(
-			'discussiontitleid',
-			0
-		);
-		titleText = this.getEntity().data.get(
-			'relatedtitle',
-			''
-		);
+	var disabled = false;
+	var discussiontitleid = this.getEntity().data.get(
+		'discussiontitleid',
+		0
+	);
+	var titleText = this.getEntity().data.get(
+		'relatedtitle',
+		''
+	);
+	if( discussiontitleid > 0 && titleText !== '' ) {
 		disabled = true;
-	} else {
-		var ns = mw.config.get( 'wgNamespaceNumber', 0 );
-		if( ns > 0 && (ns%2) === 1 ) {
-			disabled = true;
-			discussiontitleid = mw.config.get( 'wgArticleId', 0 );
-			titleText = mw.config.get( 'wgPageName', '' );
-		}
 	}
 	var option = '', localData = [];
 	if( discussiontitleid > 0 ) {

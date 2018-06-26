@@ -91,12 +91,22 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 	}
 
 	protected function getRawTopic() {
+		$title = \Title::newFromID( $this->discussion->get(
+			Topic::ATTR_DISCUSSION_TITLE_ID,
+			0
+		));
 		return (object) [
 			Topic::ATTR_TYPE => Topic::TYPE,
-			Topic::ATTR_DISCUSSION_TITLE_ID => $this->discussion->get(
-				Topic::ATTR_DISCUSSION_TITLE_ID,
-				0
-			),
+			Topic::ATTR_DISCUSSION_TITLE_ID => (int) $title->getArticleID(),
+			Topic::ATTR_RELATED_TITLE => $title->getFullText(),
 		];
+	}
+
+	/**
+	 *
+	 * @return boolean
+	 */
+	public function showEntitySpawner() {
+		return false;
 	}
 }

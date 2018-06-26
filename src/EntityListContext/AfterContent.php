@@ -113,10 +113,16 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 	}
 
 	protected function getRawTopic() {
+		$talkPage = $this->getTitle()->getTalkPage();
 		return (object) [
 			Topic::ATTR_TYPE => Topic::TYPE,
-			Topic::ATTR_DISCUSSION_TITLE_ID
-				=> $this->getTitle()->getTalkPage()->getArticleID(),
+			Topic::ATTR_DISCUSSION_TITLE_ID => $talkPage->getArticleID(),
+			Topic::ATTR_RELATED_TITLE => $talkPage->getFullText(),
 		];
 	}
+
+	public function showEntityListMenu() {
+		return false;
+	}
+
 }
