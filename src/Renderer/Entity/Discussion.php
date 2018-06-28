@@ -15,6 +15,10 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 		$this->aArgs['basetitlecontent'] = '';
 	}
 
+	protected function render_userimage( $val ) {
+		return \Html::element( 'div', [ 'class' => 'bs-social-icon-discussion bs-social-entity-icon' ] );
+	}
+
 	protected function render_children( $val ) {
 		if( $this->renderType !== static::RENDER_TYPE_PAGE ) {
 			return '';
