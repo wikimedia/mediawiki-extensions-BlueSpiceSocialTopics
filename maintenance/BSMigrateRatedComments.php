@@ -175,7 +175,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 		if( !$title = \Title::newFromID( $articleID ) ) {
 			return false;
 		}
-		if( $title->getNamespace() === NS_SOCIAL_ENTITY || $title->getNamespace() === NS_SOCIAL_ENTITY_TALK ) {
+		if( $title->getNamespace() === NS_SOCIALENTITY || $title->getNamespace() === NS_SOCIALENTITY_TALK ) {
 			return false;
 		}
 		if( $title->getTalkPage()->exists() ) {
