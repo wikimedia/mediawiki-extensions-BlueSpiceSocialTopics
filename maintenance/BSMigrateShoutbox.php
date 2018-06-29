@@ -139,7 +139,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 		if( !$title = \Title::newFromID( $articleID ) ) {
 			return false;
 		}
-		if( $title->getNamespace() === NS_BSSOCIAL || $title->getNamespace() === NS_BSSOCIAL_TALK ) {
+		if( $title->getNamespace() === NS_SOCIALENTITY || $title->getNamespace() === NS_SOCIALENTITY_TALK ) {
 			return false;
 		}
 		if( $title->getTalkPage()->exists() ) {

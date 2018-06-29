@@ -12,7 +12,7 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 
 	public function __construct( \Config $config, Params $params, LinkRenderer $linkRenderer = null ) {
 		parent::__construct( $config, $params, $linkRenderer );
-		$this->aArgs['basetitlecontent'] = '';
+		$this->args['basetitlecontent'] = '';
 	}
 
 	protected function render_userimage( $val ) {

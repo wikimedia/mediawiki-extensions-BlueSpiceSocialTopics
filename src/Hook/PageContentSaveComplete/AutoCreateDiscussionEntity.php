@@ -13,7 +13,7 @@ class AutoCreateDiscussionEntity extends PageContentSaveComplete {
 		if( !$this->wikipage->getTitle()->isTalkPage() ) {
 			return false;
 		}
-		if( $this->wikipage->getTitle()->getNamespace() === NS_BSSOCIAL_TALK ) {
+		if( $this->wikipage->getTitle()->getNamespace() === NS_SOCIALENTITY_TALK ) {
 			return true;
 		}
 		if( !$this->wikipage->getTitle()->exists() ) {
