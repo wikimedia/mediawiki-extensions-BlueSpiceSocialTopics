@@ -51,7 +51,7 @@ class Extension extends \BlueSpice\Extension {
 				NS_MEDIAWIKI,
 				NS_SPECIAL,
 				NS_USER,
-				NS_BSSOCIAL
+				NS_SOCIAL_ENTITY
 			]
 		);
 	}
@@ -68,7 +68,7 @@ class Extension extends \BlueSpice\Extension {
 		
 		$oUser = Services::getInstance()->getBSUtilityFactory()
 			->getMaintenanceUser()->getUser();
-		if( !$oTitle->isTalkPage() || $oTitle->getNamespace() === NS_BSSOCIAL_TALK ) {
+		if( !$oTitle->isTalkPage() || $oTitle->getNamespace() === NS_SOCIAL_ENTITY_TALK ) {
 			return \Status::newFatal( wfMessage(
 				'bs-socialtopics-entity-fatalstatus-save-notalkpage' //wrong msg
 			));

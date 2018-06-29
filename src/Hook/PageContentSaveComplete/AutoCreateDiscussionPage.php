@@ -9,7 +9,7 @@ class AutoCreateDiscussionPage extends PageContentSaveComplete {
 		if( !$this->wikipage->getTitle() ) {
 			return false;
 		}
-		if( $this->wikipage->getTitle()->getNamespace() === NS_BSSOCIAL ) {
+		if( $this->wikipage->getTitle()->getNamespace() === NS_SOCIAL_ENTITY ) {
 			return false;
 		}
 		if( $this->wikipage->getTitle()->isTalkPage() ) {
@@ -21,7 +21,7 @@ class AutoCreateDiscussionPage extends PageContentSaveComplete {
 		if( !$this->wikipage->getTitle()->getTalkPage() ) {
 			return false;
 		}
-		if( $this->wikipage->getTitle()->getTalkPage()->getNamespace() === NS_BSSOCIAL_TALK ) {
+		if( $this->wikipage->getTitle()->getTalkPage()->getNamespace() === NS_SOCIAL_ENTITY_TALK ) {
 			return false;
 		}
 		if( $this->wikipage->getTitle()->getTalkPage()->exists() ) {
