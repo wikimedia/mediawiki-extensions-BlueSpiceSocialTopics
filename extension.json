@@ -40,7 +40,7 @@
 	},
 	"ResourceModules": {
 		"ext.bluespice.social.topics.styles": {
-			"styles": "bluespice.social.topics.css",
+			"styles": "bluespice.social.topics.less",
 			"targets": [ "desktop", "mobile" ]
 		},
 		"ext.bluespice.social.entity.topic": {
