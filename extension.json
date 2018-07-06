@@ -38,6 +38,12 @@
 		"BSMigrateShoutbox": "maintenance/BSMigrateShoutbox.php",
 		"BSMigrateRatedComments": "maintenance/BSMigrateRatedComments.php"
 	},
+	"ExtensionMessagesFiles": {
+		"BlueSpiceSocialTopicsAlias": "languages/Topics.alias.php"
+	},
+	"SpecialPages": {
+		"Topics": "\\BlueSpice\\Social\\Topics\\Special\\Topics"
+	},
 	"ResourceModules": {
 		"ext.bluespice.social.topics.styles": {
 			"styles": "bluespice.social.topics.less",
