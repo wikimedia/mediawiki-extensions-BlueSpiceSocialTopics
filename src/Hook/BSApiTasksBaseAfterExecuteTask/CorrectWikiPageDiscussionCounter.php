@@ -30,7 +30,7 @@ class CorrectWikiPageDiscussionCounter extends BSApiTasksBaseAfterExecuteTask {
 		if( !$this->taskApi instanceof \BSApiWikiPageTasks ) {
 			return true;
 		}
-		if( !$this->taskKey == 'getDiscussionCount' ) {
+		if( $this->taskKey !== 'getDiscussionCount' ) {
 			return true;
 		}
 		$oTitle = $this->makeTitle();
