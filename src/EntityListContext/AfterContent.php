@@ -55,7 +55,7 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 	}
 
 	public function getOutputTypes() {
-		return array_merge( parent::getOutputTypes(), [ Topic::TYPE => 'Short'] );
+		return array_merge( parent::getOutputTypes(), [ Topic::TYPE => 'Default'] );
 	}
 
 	protected function getDiscussionTitleIDFilter() {
