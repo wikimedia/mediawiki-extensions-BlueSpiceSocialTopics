@@ -91,10 +91,7 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 	}
 
 	protected function getRawTopic() {
-		$title = \Title::newFromID( $this->discussion->get(
-			Topic::ATTR_DISCUSSION_TITLE_ID,
-			0
-		));
+		$title = $this->discussion->getRelatedTitle();
 		return (object) [
 			Topic::ATTR_TYPE => Topic::TYPE,
 			Topic::ATTR_DISCUSSION_TITLE_ID => (int) $title->getArticleID(),
