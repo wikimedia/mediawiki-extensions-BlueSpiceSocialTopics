@@ -20,7 +20,8 @@
 	"bs-socialtopics-var-discussiontitleid": "Discussion page",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Not a valid discussion page",
 	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 started the topic:",
-	"bs-socialtopics-entityaction-classicdiscussion": "Klassische Diskussionsseite",
+	"bs-socialtopics-entityaction-classicdiscussion": "Classic discussionpage",
 	"topics": "Topics",
-	"bs-socialtopics-special-topics-heading": "All topics"
+	"bs-socialtopics-special-topics-heading": "All topics",
+	"bs-socialtopics-aftercontent-heading": "Discussions"
 }

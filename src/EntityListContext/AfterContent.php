@@ -125,4 +125,11 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 		return false;
 	}
 
+	public function showHeadline() {
+		return true;
+	}
+
+	public function getHeadlineMessageKey() {
+		return 'bs-socialtopics-aftercontent-heading';
+	}
 }
