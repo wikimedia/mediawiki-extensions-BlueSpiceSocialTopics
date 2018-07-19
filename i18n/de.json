@@ -22,5 +22,6 @@
 	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 erstellte das Thema:",
 	"bs-socialtopics-entityaction-classicdiscussion": "Klassische Diskussionsseite",
 	"topics": "Themen",
-	"bs-socialtopics-special-topics-heading": "Alle Themen"
+	"bs-socialtopics-special-topics-heading": "Alle Themen",
+	"bs-socialtopics-aftercontent-heading": "Diskussionen"
 }
