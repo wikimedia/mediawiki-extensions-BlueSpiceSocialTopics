@@ -60,7 +60,7 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 	}
 
 	public function getSortProperty() {
-		return Topic::ATTR_TIMESTAMP_TOUCHED;
+		return Topic::ATTR_TIMESTAMP_CREATED;
 	}
 
 	protected function getTypeFilter() {
