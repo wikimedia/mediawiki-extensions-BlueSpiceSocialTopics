@@ -153,6 +153,9 @@ class Discussion extends Page {
 	}
 
 	public function getRelatedTitle() {
+		if( $this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 ) < 1 ) {
+			return parent::getRelatedTitle();
+		}
 		$oTitle = \Title::newFromID(
 			$this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 )
 		);
