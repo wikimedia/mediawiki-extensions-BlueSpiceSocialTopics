@@ -29,9 +29,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  */
 namespace BlueSpice\Social\Topics\Entity;
+
 use BlueSpice\Social\Entity\Text;
 use BlueSpice\Social\Parser\Input;
-use BlueSpice\Social\Topics\Entity\Discussion;
 use BlueSpice\Services;
 
 /**
@@ -171,7 +171,10 @@ class Topic extends Text {
 		}
 		$status = \Status::newGood();
 		try {
-			$entity = Discussion::newFromDiscussionTitle( $oTitle );
+			$factory = Services::getInstance()->getService(
+				'BSSocialDiscussionEntityFactory'
+			);
+			$entity = $factory->newFromDiscussionTitle( $oTitle );
 			if( !$entity->exists() ) {
 				$status = $entity->save( $oUser );
 			}
@@ -192,7 +195,10 @@ class Topic extends Text {
 		if( !$title|| !$title->exists() ) {
 			return;
 		}
-		$entity = Discussion::newFromDiscussionTitle( $title );
+		$factory = Services::getInstance()->getService(
+			'BSSocialDiscussionEntityFactory'
+		);
+		$entity = $factory->newFromDiscussionTitle( $title );
 		if( $entity && $entity->exists() ) {
 			$entity->invalidateCache();
 		}

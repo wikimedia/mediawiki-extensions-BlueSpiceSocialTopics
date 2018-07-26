@@ -1,0 +1,95 @@
+<?php
+
+namespace BlueSpice\Social\Topics;
+
+use BlueSpice\Services;
+use BlueSpice\EntityFactory;
+use BlueSpice\Data\ReaderParams;
+use BlueSpice\Data\Filter\Numeric;
+use BlueSpice\Social\Topics\EntityListContext\SpecialDiscussions;
+use BlueSpice\Social\Topics\Entity\Discussion;
+
+class DiscussionFactory extends EntityFactory{
+
+	/**
+	 *
+	 * @var Discussion[] 
+	 */
+	protected $discussionInstances = [];
+
+	/**
+	 * @param \Title $title
+	 * @return Discussion | null
+	 */
+	public function newFromDiscussionTitle( \Title $title ) {
+		if( !$title->exists() ) {
+			return null;
+		}
+
+		if( !$title->isTalkPage() ) {
+			$title = $title->getTalkPage();
+			if( !$title instanceof \Title || !$title->exists() ) {
+				return null;
+			}
+		}
+		if( isset( $this->discussionInstances[$title->getArticleID()] ) ) {
+			return $this->discussionInstances[$title->getArticleID()];
+		}
+
+		$context = new \BlueSpice\Context(
+			\RequestContext::getMain(),
+			$this->config
+		);
+		$serviceUser = Services::getInstance()->getBSUtilityFactory()
+			->getMaintenanceUser()->getUser();
+
+		$listContext = new SpecialDiscussions(
+			$context,
+			$context->getConfig(),
+			$serviceUser,
+			null
+		);
+		$filters = $listContext->getFilters();
+		$filters[] = (object)[
+			Numeric::KEY_PROPERTY => Discussion::ATTR_DISCUSSION_TITLE_ID,
+			Numeric::KEY_VALUE => $title->getArticleID(),
+			Numeric::KEY_COMPARISON => Numeric::COMPARISON_EQUALS,
+			Numeric::KEY_TYPE => 'numeric'
+		];
+
+		$instance = null;
+		$params = new ReaderParams([
+			'filter' => $filters,
+			'sort' => $listContext->getSort(),
+			'limit' => 1,
+			'start' => 0,
+		]);
+		$res = $this->getStore( $listContext )->getReader()->read( $params );
+		foreach( $res->getRecords() as $row ) {
+			$instance = $this->newFromObject( $row->getData() );
+		}
+		if( !$instance ) {
+			$instance = $this->newFromObject( (object) [
+				Discussion::ATTR_OWNER_ID => $title->getArticleIDId(),
+				Discussion::ATTR_TYPE => Discussion::TYPE
+			]);
+		}
+		$this->discussionInstances[$title->getArticleID()] = $instance;
+		return $instance;
+	}
+
+	/**
+	 *
+	 * @param SpecialDiscussions $context
+	 * @return \BlueSpice\Social\Data\Entity\Store
+	 * @throws \MWException
+	 */
+	protected function getStore( SpecialDiscussions $context ) {
+		$config = $this->configFactory->newFromType( Discussion::TYPE );
+		$storeClass = $config->get( 'StoreClass' );
+		if( !class_exists( $storeClass ) ) {
+			throw new \MWException( "Store class '$storeClass' not found" );
+		}
+		return new $storeClass( $context );
+	}
+}

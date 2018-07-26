@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice\Social\Topics\Hook\PageContentSaveComplete;
+
 use BlueSpice\Hook\PageContentSaveComplete;
 use BlueSpice\Social\Topics\Entity\Discussion;
 
@@ -32,19 +33,22 @@ class AutoCreateDiscussionEntity extends PageContentSaveComplete {
 			return true;
 		}
 		
-		$oEntity = Discussion::newFromDiscussionTitle(
+		$factory = $this->getServices()->getService(
+			'BSSocialDiscussionEntityFactory'
+		);
+		$entity = $factory->newFromDiscussionTitle(
 			$this->wikipage->getTitle()
 		);
-		if( !$oEntity instanceof Discussion ) {
+		if( !$entity instanceof Discussion ) {
 			return true;
 		}
-		if( !$oEntity->exists() ) {
+		if( !$entity->exists() ) {
 			//TODO: Status check
-			$oTMPStatus = $oEntity->save();
+			$oTMPStatus = $entity->save();
 			return true;
 		}
-		if( $oEntity->exists() ) {
-			$oEntity->invalidateCache();
+		if( $entity->exists() ) {
+			$entity->invalidateCache();
 			return true;
 		}
 		return true;

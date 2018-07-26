@@ -28,7 +28,6 @@
 
 namespace BlueSpice\Social\Topics;
 
-use BlueSpice\Social\Topics\Entity\Discussion;
 use BlueSpice\Social\Topics\Content\Discussion as DiscussionContent;
 use BlueSpice\Services;
 
@@ -131,10 +130,10 @@ class Extension extends \BlueSpice\Extension {
 		if( $classic ) {
 			return true;
 		}
-		$oEntity = Discussion::newFromDiscussionTitle(
-			$title
+		$factory = Services::getInstance()->getService(
+			'BSSocialDiscussionEntityFactory'
 		);
-		if( !$oEntity ) {
+		if( !$entity = $factory->newFromDiscussionTitle( $title ) ) {
 			return true;
 		}
 		$model = CONTENT_MODEL_BSSOCIALDISCUSSION;
@@ -148,8 +147,8 @@ class Extension extends \BlueSpice\Extension {
 	 * @param boolen $useParserCache
 	 */
 	public static function onArticleViewHeader( &$oArticle, &$outputDone, &$useParserCache ) {
-		$oTitle = $oArticle->getTitle();
-		if( !$oTitle->exists() || !$oTitle->isTalkPage() ) {
+		$title = $oArticle->getTitle();
+		if( !$title->exists() || !$title->isTalkPage() ) {
 			return true;
 		}
 		$classic = \RequestContext::getMain()->getRequest()->getBool(
@@ -159,10 +158,10 @@ class Extension extends \BlueSpice\Extension {
 		if( $classic ) {
 			return true;
 		}
-		$oEntity = Discussion::newFromDiscussionTitle(
-			$oTitle
+		$factory = Services::getInstance()->getService(
+			'BSSocialDiscussionEntityFactory'
 		);
-		if( !$oEntity ) {
+		if( !$entity = $factory->newFromDiscussionTitle( $title ) ) {
 			return true;
 		}
 		$useParserCache = false;

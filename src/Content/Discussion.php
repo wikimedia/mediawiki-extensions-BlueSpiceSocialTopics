@@ -1,6 +1,7 @@
 <?php
 namespace BlueSpice\Social\Topics\Content;
-use BlueSpice\Social\Topics\Entity\Discussion as DiscussionEntity;
+
+use BlueSpice\Services;
 
 class Discussion extends \WikitextContent {
 
@@ -80,15 +81,18 @@ class Discussion extends \WikitextContent {
 		if( !$title ) {
 			return $output;
 		}
-		$oEntity = DiscussionEntity::newFromDiscussionTitle( $title );
-		if( !$oEntity ) {
+		$factory = Services::getInstance()->getService(
+			'BSSocialDiscussionEntityFactory'
+		);
+		$entity = $factory->newFromDiscussionTitle( $title );
+		if( !$entity ) {
 			return $output;
 		}
 
 		$output->setTitleText(
-			strip_tags( $oEntity->getHeader()->parse() )
+			strip_tags( $entity->getHeader()->parse() )
 		);
-		$output->setText( $oEntity->getRenderer()->render( 'Page' ) );
+		$output->setText( $entity->getRenderer()->render( 'Page' ) );
 		return $output;
 	}
 }
