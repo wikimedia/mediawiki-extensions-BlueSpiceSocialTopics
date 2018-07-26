@@ -70,7 +70,7 @@ class DiscussionFactory extends EntityFactory{
 		}
 		if( !$instance ) {
 			$instance = $this->newFromObject( (object) [
-				Discussion::ATTR_OWNER_ID => $title->getArticleIDId(),
+				Discussion::ATTR_OWNER_ID => $title->getArticleID(),
 				Discussion::ATTR_TYPE => Discussion::TYPE
 			]);
 		}
