@@ -38,8 +38,4 @@ class SpecialDiscussions extends \BlueSpice\Social\EntityListContext {
 	public function showEntitySpawner() {
 		return false;
 	}
-
-	public function getParent() {
-		return $this->discussion;
-	}
 }
