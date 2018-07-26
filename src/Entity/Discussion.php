@@ -113,13 +113,18 @@ class Discussion extends Page {
 	}
 
 	public function getRelatedTitle() {
+		if( $this->relatedTitle ) {
+			return $this->relatedTitle;
+		}
 		if( $this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 ) < 1 ) {
 			return parent::getRelatedTitle();
 		}
-		$oTitle = \Title::newFromID(
+		$this->relatedTitle = \Title::newFromID(
 			$this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 )
 		);
-		return $oTitle instanceof \Title ? $oTitle : parent::getRelatedTitle();
+		return $this->relatedTitle instanceof \Title
+			? $this->relatedTitle
+			: parent::getRelatedTitle();
 	}
 
 	public function save( \User $oUser = null, $aOptions = array() ) {
