@@ -26,6 +26,9 @@
 		}
 	},
 	"callback": "\\BlueSpice\\Social\\Topics\\Extension::onRegistration",
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"MessagesDirs": {
 		"BlueSpiceSocialTopics": [
 			"i18n"
@@ -101,7 +104,6 @@
 			"\\BlueSpice\\Social\\Topics\\Hook\\PageContentSaveComplete\\AutoCreateDiscussionEntity::callback"
 		],
 		"BSSocialEntitiesRegisterValidators": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialEntitiesRegisterValidators\\RegisterValidators::callback",
-		"BSApiTasksBaseAfterExecuteTask": "\\BlueSpice\\Social\\Topics\\Hook\\BSApiTasksBaseAfterExecuteTask\\CorrectWikiPageDiscussionCounter::callback",
 		"LoadExtensionSchemaUpdates": [
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddShoutboxMigrationMaintenanceScript::callback",
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddRatedCommentsMigrationMaintenanceScript::callback"

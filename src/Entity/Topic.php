@@ -29,9 +29,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  */
 namespace BlueSpice\Social\Topics\Entity;
+
 use BlueSpice\Social\Entity\Text;
 use BlueSpice\Social\Parser\Input;
-use BlueSpice\Social\Topics\Entity\Discussion;
 use BlueSpice\Services;
 
 /**
@@ -129,13 +129,18 @@ class Topic extends Text {
 	}
 
 	public function getRelatedTitle() {
+		if( $this->relatedTitle ) {
+			return $this->relatedTitle;
+		}
 		if( $this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 ) < 1 ) {
 			return parent::getRelatedTitle();
 		}
-		$oTitle = \Title::newFromID(
+		$this->relatedTitle = \Title::newFromID(
 			$this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 )
 		);
-		return $oTitle instanceof \Title ? $oTitle : parent::getRelatedTitle();
+		return $this->relatedTitle instanceof \Title
+			? $this->relatedTitle
+			: parent::getRelatedTitle();
 	}
 
 	public function getRelatedContentTitle() {
@@ -174,7 +179,10 @@ class Topic extends Text {
 		}
 		$status = \Status::newGood();
 		try {
-			$entity = Discussion::newFromDiscussionTitle( $oTitle );
+			$factory = Services::getInstance()->getService(
+				'BSSocialDiscussionEntityFactory'
+			);
+			$entity = $factory->newFromDiscussionTitle( $oTitle );
 			if( !$entity->exists() ) {
 				$status = $entity->save( $oUser );
 			}
@@ -195,7 +203,10 @@ class Topic extends Text {
 		if( !$title|| !$title->exists() ) {
 			return;
 		}
-		$entity = Discussion::newFromDiscussionTitle( $title );
+		$factory = Services::getInstance()->getService(
+			'BSSocialDiscussionEntityFactory'
+		);
+		$entity = $factory->newFromDiscussionTitle( $title );
 		if( $entity && $entity->exists() ) {
 			$entity->invalidateCache();
 		}

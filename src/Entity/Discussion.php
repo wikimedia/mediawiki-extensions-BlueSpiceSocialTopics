@@ -30,8 +30,6 @@
  */
 namespace BlueSpice\Social\Topics\Entity;
 use BlueSpice\Social\Entity\Page;
-use BlueSpice\Social\Entities;
-use BlueSpice\Social\Entity;
 
 /**
  * BSSociaEntityDiscussion class for BSSocial extension
@@ -44,44 +42,6 @@ class Discussion extends Page {
 	const ATTR_DISCUSSION_TITLE_ID = 'discussiontitleid';
 
 	protected $sBaseTitleContent = null;
-
-	/**
-	 * @param \Title $oTitle
-	 * @return Discussion | null
-	 */
-	public static function newFromDiscussionTitle( $oTitle ) {
-		if( !$oTitle instanceof \Title || !$oTitle->exists() ) {
-			return null;
-		}
-
-		if( !$oTitle->isTalkPage() ) {
-			$oTitle = $oTitle->getTalkPage();
-			if( !$oTitle instanceof \Title || !$oTitle->exists() ) {
-				return null;
-			}
-		}
-		$oStatus = Entities::get(
-			['limit' => 1],
-			[
-				static::ATTR_TYPE => static::TYPE,
-				static::ATTR_DISCUSSION_TITLE_ID => $oTitle->getArticleID()
-			],
-			0,
-			false
-		);
-		if( !$oStatus->isOK() ) {
-			return null;
-		}
-		$aEntities = $oStatus->getValue();
-
-		if( empty($aEntities[0]) ) {
-			return Entity::newFromObject( (object) [
-				static::ATTR_TYPE => static::TYPE,
-				static::ATTR_DISCUSSION_TITLE_ID => $oTitle->getArticleID(),
-			]);
-		}
-		return $aEntities[0];
-	}
 
 	public function getActions( array $actions = [], \User $user = null ) {
 		if( !$user ) {
@@ -153,13 +113,18 @@ class Discussion extends Page {
 	}
 
 	public function getRelatedTitle() {
+		if( $this->relatedTitle ) {
+			return $this->relatedTitle;
+		}
 		if( $this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 ) < 1 ) {
 			return parent::getRelatedTitle();
 		}
-		$oTitle = \Title::newFromID(
+		$this->relatedTitle = \Title::newFromID(
 			$this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 )
 		);
-		return $oTitle instanceof \Title ? $oTitle : parent::getRelatedTitle();
+		return $this->relatedTitle instanceof \Title
+			? $this->relatedTitle
+			: parent::getRelatedTitle();
 	}
 
 	public function save( \User $oUser = null, $aOptions = array() ) {
