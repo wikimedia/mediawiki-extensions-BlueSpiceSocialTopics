@@ -22,6 +22,10 @@
 			"RendererRegistry": {
 				"socialentitydiscussion": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Discussion",
 				"socialentitytopic": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Topic"
+			},
+			"EntityRegistry": {
+				"discussion": "\\BlueSpice\\Social\\Topics\\EntityConfig\\Discussion",
+				"topic": "\\BlueSpice\\Social\\Topics\\EntityConfig\\Topic"
 			}
 		}
 	},
