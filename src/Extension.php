@@ -167,7 +167,7 @@ class Extension extends \BlueSpice\Extension {
 		$useParserCache = false;
 		$oContentModel = new DiscussionContent(
 			' ',
-			CONTENT_MODEL_BSSOCIALGROUP
+			CONTENT_MODEL_BSSOCIALDISCUSSION
 		);
 		$outputDone = $oContentModel->getParserOutput(
 			$oArticle->getTitle()
