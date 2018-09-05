@@ -16,7 +16,6 @@ class AddTopicTalkPageTag extends BSSocialTagsForceTags {
 		$this->tags = array_values( array_unique( array_merge( $this->tags, [
 			$this->entity->getRelatedTitle()->getOtherPage()->getFullText()
 		])));
-		error_log(var_export($this->tags,1));
 		return true;
 	}
 
