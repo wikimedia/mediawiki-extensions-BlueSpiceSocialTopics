@@ -110,7 +110,8 @@
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddShoutboxMigrationMaintenanceScript::callback",
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddRatedCommentsMigrationMaintenanceScript::callback"
 		],
-		"SkinTemplateOutputPageBeforeExec": "\\BlueSpice\\Social\\Topics\\Hook\\SkinTemplateOutputPageBeforeExec\\AddTimeline::callback"
+		"SkinTemplateOutputPageBeforeExec": "\\BlueSpice\\Social\\Topics\\Hook\\SkinTemplateOutputPageBeforeExec\\AddTimeline::callback",
+		"BSSocialTagsForceTags": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialTagsForceTags\\AddTopicTalkPageTag::callback"
 	},
 	"manifest_version": 2
 }
