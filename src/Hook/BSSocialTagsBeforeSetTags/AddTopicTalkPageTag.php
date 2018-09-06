@@ -1,10 +1,10 @@
 <?php
-namespace BlueSpice\Social\Topics\Hook\BSSocialTagsForceTags;
+namespace BlueSpice\Social\Topics\Hook\BSSocialTagsBeforeSetTags;
 
-use BlueSpice\Social\Tags\Hook\BSSocialTagsForceTags;
+use BlueSpice\Social\Tags\Hook\BSSocialTagsBeforeSetTags;
 use BlueSpice\Social\Topics\Entity\Topic;
 
-class AddTopicTalkPageTag extends BSSocialTagsForceTags {
+class AddTopicTalkPageTag extends BSSocialTagsBeforeSetTags {
 	protected function skipProcessing() {
 		if( !$this->entity instanceof Topic ) {
 			return true;

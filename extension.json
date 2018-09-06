@@ -111,7 +111,7 @@
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddRatedCommentsMigrationMaintenanceScript::callback"
 		],
 		"SkinTemplateOutputPageBeforeExec": "\\BlueSpice\\Social\\Topics\\Hook\\SkinTemplateOutputPageBeforeExec\\AddTimeline::callback",
-		"BSSocialTagsForceTags": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialTagsForceTags\\AddTopicTalkPageTag::callback"
+		"BSSocialTagsBeforeSetTags": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialTagsBeforeSetTags\\AddTopicTalkPageTag::callback"
 	},
 	"manifest_version": 2
 }
