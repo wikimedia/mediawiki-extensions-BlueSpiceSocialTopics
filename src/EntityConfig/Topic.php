@@ -117,4 +117,8 @@ class Topic extends Text{
 	protected function get_ForceRelatedTitleTag() {
 		return true;
 	}
+
+	protected function get_EntityListInitialyHiddenChildrenDefault() {
+		return false;
+	}
 }
