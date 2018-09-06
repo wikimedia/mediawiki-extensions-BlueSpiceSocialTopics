@@ -113,4 +113,8 @@ class Topic extends Text{
 	protected function get_ExtendedSearchListable() {
 		return true;
 	}
+
+	protected function get_ForceRelatedTitleTag() {
+		return true;
+	}
 }
