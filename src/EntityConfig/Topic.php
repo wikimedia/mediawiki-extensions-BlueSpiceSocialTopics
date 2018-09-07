@@ -118,7 +118,7 @@ class Topic extends Text{
 		return true;
 	}
 
-	protected function get_EntityListInitialyHiddenChildrenDefault() {
+	protected function get_EntityListInitiallyHiddenChildrenDefault() {
 		return false;
 	}
 }
