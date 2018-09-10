@@ -117,3 +117,7 @@ bs.social.EntityEditorTopic.prototype.addContentFieldsetItems = function() {
 		this
 	);
 };
+
+bs.social.EntityEditorTopic.prototype.getShortModeField = function() {
+	return this.topictitle;
+};
