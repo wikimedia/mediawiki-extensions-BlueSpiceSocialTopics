@@ -19,23 +19,10 @@ bs.social.EntityTopic.prototype.reset = function( data ) {
 };
 
 bs.social.EntityTopic.prototype.makeEditor = function() {
-	if( this.editor ) {
-		return this.editor;
-	}
-	this.editor = new bs.social.EntityEditorTopic(
+	return new bs.social.EntityEditorTopic(
 		this.getEditorConfig(),
 		this
 	);
-	var me = this;
-	this.editor.on( 'submit', function( editor, data ) {
-		me.save( data );
-		return false;
-	});
-	this.editor.on( 'cancel', function( editor, data ) {
-		me.removeEditMode( data );
-		return false;
-	});
-	return this.editor;
 };
 
 bs.social.EntityTopic.static.name = "\\BlueSpice\\Social\\Topics\\Entity\\Topic";
