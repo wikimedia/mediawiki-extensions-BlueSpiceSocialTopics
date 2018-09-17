@@ -15,7 +15,7 @@
 	"bs-social-entitydiscussion-header-create": "Neue Diskussion",
 	"bs-socialtopics-topictext": "$1 {{plural:$1|Thema|Themen}}",
 	"bs-social-entitytopic-header-create": "Neues Thema",
-	"bs-social-entitytopic-header": "[[$10|$9]]",
+	"bs-social-entitytopic-header": "[[Special:Topics/$3|$9]]",
 	"bs-socialtopics-var-topictitle": "Titel",
 	"bs-socialtopics-var-discussiontitleid": "Diskussionsseite",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Keine gültige Diskussionsseite",
@@ -23,5 +23,6 @@
 	"bs-socialtopics-entityaction-classicdiscussion": "Klassische Diskussionsseite",
 	"topics": "Themen",
 	"bs-socialtopics-special-topics-heading": "Alle Themen",
+	"bs-socialtopics-special-topics-heading-entry": "Thema/$1",
 	"bs-socialtopics-aftercontent-heading": "Diskussionen"
 }
