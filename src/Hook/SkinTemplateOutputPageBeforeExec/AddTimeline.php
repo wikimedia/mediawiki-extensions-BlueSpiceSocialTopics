@@ -27,6 +27,7 @@
 namespace BlueSpice\Social\Topics\Hook\SkinTemplateOutputPageBeforeExec;
 
 use BlueSpice\Context;
+use BlueSpice\Services;
 use BlueSpice\Renderer\Params;
 use BlueSpice\Hook\SkinTemplateOutputPageBeforeExec;
 use BlueSpice\Social\Topics\EntityListContext\AfterContent;
@@ -62,29 +63,49 @@ class AddTimeline extends SkinTemplateOutputPageBeforeExec {
 	}
 
 	protected function doProcess() {
-		$context = new AfterContent(
-			new Context(
-				$this->getContext(),
-				$this->getConfig()
-			),
-			$this->getConfig(),
-			$this->getContext()->getUser(),
-			null,
-			$this->skin->getTitle()
+		$factory = Services::getInstance()->getService(
+			'BSSocialDiscussionEntityFactory'
 		);
-		$renderer = $this->getServices()->getBSRendererFactory()->get(
-			'entitylist',
-			new Params( [ 'context' => $context ])
+		$entity = $factory->newFromDiscussionTitle(
+			$this->skin->getTitle()->getTalkPage()
 		);
-		$item = [
-			'socialtopics' => $renderer->render(),
-		];
+		if( !$entity || !$entity->exists() ) {
+			$renderer = $this->getCreateDiscussionRenderer();
+		} else {
+			$renderer = $this->getTimeLineRenderer();
+		}
 
 		$this->mergeSkinDataArray(
 			\BlueSpice\SkinData::AFTER_CONTENT,
-			$item
+			[ 'socialtopics' => $renderer->render() ]
 		);
 		return true;
 	}
 
+	protected function getContext() {
+		return new AfterContent(
+			new Context(
+				parent::getContext(),
+				$this->getConfig()
+			),
+			$this->getConfig(),
+			parent::getContext()->getUser(),
+			null,
+			$this->skin->getTitle()
+		);
+	}
+
+	protected function getTimeLineRenderer() {
+		return $this->getServices()->getBSRendererFactory()->get(
+			'entitylist',
+			new Params( [ 'context' => $this->getContext() ] )
+		);
+	}
+
+	protected function getCreateDiscussionRenderer() {
+		return $this->getServices()->getBSRendererFactory()->get(
+			'socialentitynewdiscussionaftercontent',
+			new Params( [ 'context' => $this->getContext() ] )
+		);
+	}
 }

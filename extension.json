@@ -21,7 +21,8 @@
 			},
 			"RendererRegistry": {
 				"socialentitydiscussion": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Discussion",
-				"socialentitytopic": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Topic"
+				"socialentitytopic": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Topic",
+				"socialentitynewdiscussionaftercontent": "\\BlueSpice\\Social\\Topics\\Renderer\\NewDiscussion"
 			},
 			"EntityRegistry": {
 				"discussion": "\\BlueSpice\\Social\\Topics\\EntityConfig\\Discussion",
