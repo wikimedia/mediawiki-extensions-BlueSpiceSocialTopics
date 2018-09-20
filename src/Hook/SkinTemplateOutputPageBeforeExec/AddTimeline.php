@@ -104,7 +104,7 @@ class AddTimeline extends SkinTemplateOutputPageBeforeExec {
 
 	protected function getCreateDiscussionRenderer() {
 		return $this->getServices()->getBSRendererFactory()->get(
-			'socialentitynewdiscussionaftercontent',
+			'socialtopicsentitylistnewdiscussion',
 			new Params( [ 'context' => $this->getContext() ] )
 		);
 	}

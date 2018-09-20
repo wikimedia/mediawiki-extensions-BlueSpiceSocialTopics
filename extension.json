@@ -15,14 +15,14 @@
 					"status": "beta",
 					"package": "BlueSpiceSocial",
 					"configDefinitions": {
-						"BSSocialenTalkpageAutoCreate": "\\BlueSpice\\Social\\Topics\\ConfigDefinition\\BSSocialTalkpageAutoCreate::getInstance"
+						"SocialTopicsTalkPageAutoCreate": "\\BlueSpice\\Social\\Topics\\ConfigDefinition\\BSSocialTalkpageAutoCreate::getInstance"
 					}
 				}
 			},
 			"RendererRegistry": {
 				"socialentitydiscussion": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Discussion",
 				"socialentitytopic": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Topic",
-				"socialentitynewdiscussionaftercontent": "\\BlueSpice\\Social\\Topics\\Renderer\\NewDiscussion"
+				"socialtopicsentitylistnewdiscussion": "\\BlueSpice\\Social\\Topics\\Renderer\\EntityList\\NewDiscussion"
 			},
 			"EntityRegistry": {
 				"discussion": "\\BlueSpice\\Social\\Topics\\EntityConfig\\Discussion",
@@ -80,6 +80,24 @@
 			"messages": [
 				"bs-socialtopics-entityaction-classicdiscussion"
 			]
+		},
+		"ext.bluespice.social.creatediscussion": {
+			"dependencies": [
+				"ext.bluespice.social.entity"
+			],
+			"targets": [ "desktop", "mobile" ],
+			"scripts": [
+				"bluespice.social.topics.createDiscussion.js",
+				"EntityList/CreateDiscussion.js",
+				"EntityList/CreateDiscussion/Dialog.js"
+			],
+			"messages": [
+				"bs-socialtopics-dialog-creatediscussion-btn-label-save",
+				"bs-socialtopics-dialog-creatediscussion-btn-label-cancel",
+				"bs-socialtopics-dialog-creatediscussion-label-text",
+				"bs-socialtopics-autocreated-discussionpage",
+				"bs-socialtopics-autocreated-discussionpagefile"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -88,8 +106,8 @@
 	},
 	"config_prefix": "bsg",
 	"config": {
-		"BSSocialenTalkpageAutoCreate": {
-			"value": true,
+		"SocialTopicsTalkPageAutoCreate": {
+			"value": false,
 			"descriptionmsg": "bs-socialtopics-toc-entalkpageautocreate",
 			"public": true
 		},
@@ -112,7 +130,9 @@
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddRatedCommentsMigrationMaintenanceScript::callback"
 		],
 		"SkinTemplateOutputPageBeforeExec": "\\BlueSpice\\Social\\Topics\\Hook\\SkinTemplateOutputPageBeforeExec\\AddTimeline::callback",
-		"BSSocialTagsBeforeSetTags": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialTagsBeforeSetTags\\AddTopicTalkPageTag::callback"
+		"BSSocialTagsBeforeSetTags": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialTagsBeforeSetTags\\AddTopicTalkPageTag::callback",
+		"BSMigrateSettingsFromDeviatingNames": "\\BlueSpice\\Social\\Topics\\Hook\\BSMigrateSettingsFromDeviatingNames\\MigrateSettings::callback",
+		"BSSocialModuleDepths": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialModuleDepths\\AddModules::callback"
 	},
 	"manifest_version": 2
 }

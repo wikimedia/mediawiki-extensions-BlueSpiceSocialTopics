@@ -5,39 +5,36 @@ use BlueSpice\Hook\PageContentSaveComplete;
 
 class AutoCreateDiscussionPage extends PageContentSaveComplete {
 
-	protected function checkTitle() {
+	protected function skipProcessing() {
+		if( !$this->getConfig()->get( 'SocialTopicsTalkPageAutoCreate' ) ) {
+			return true;
+		}
 		if( !$this->wikipage->getTitle() ) {
-			return false;
+			return true;
 		}
 		if( $this->wikipage->getTitle()->getNamespace() === NS_SOCIALENTITY ) {
-			return false;
+			return true;
 		}
 		if( $this->wikipage->getTitle()->isTalkPage() ) {
-			return false;
+			return true;
 		}
 		if( !$this->wikipage->getTitle()->exists() ) {
-			return false;
+			return true;
 		}
 		if( !$this->wikipage->getTitle()->getTalkPage() ) {
-			return false;
+			return true;
 		}
 		if( $this->wikipage->getTitle()->getTalkPage()->getNamespace() === NS_SOCIALENTITY_TALK ) {
-			return false;
+			return true;
 		}
 		if( $this->wikipage->getTitle()->getTalkPage()->exists() ) {
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	protected function doProcess() {
-		if( !$this->getConfig()->get( 'BSSocialenTalkpageAutoCreate' ) ) {
-			return true;
-		}
-		if( !$this->checkTitle() ) {
-			return true;
-		}
-		$oTMPStatus = \BlueSpice\Social\Topics\Extension::createDiscussionPage(
+		$status = \BlueSpice\Social\Topics\Extension::createDiscussionPage(
 			$this->wikipage->getTitle()->getTalkPage(),
 			$this->user
 		);

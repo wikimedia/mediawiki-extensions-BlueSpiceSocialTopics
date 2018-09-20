@@ -11,8 +11,8 @@
 	"bs-socialtopics-autocreated-discussionpagefile": "This discussion page was created automatically.",
 	"bs-socialdiscussion-discussiontype": "Discussion",
 	"bs-socialdiscussion-topictype": "Discussion topic",
-	"bs-social-entitydiscussion-header": "[[$9]]",
-	"bs-social-entitydiscussion-header-create": "New discussion",
+	"bs-socialtopics-entitydiscussion-header": "[[$9]]",
+	"bs-socialtopics-entitydiscussion-header-create": "Create new discussion",
 	"bs-socialtopics-topictext": "$1 {{plural:$1|Topic|Topicss}}",
 	"bs-social-entitytopic-header-create": "New Topic",
 	"bs-social-entitytopic-header": "[[Special:Topics/$3|$9]]",
@@ -24,5 +24,9 @@
 	"topics": "Topics",
 	"bs-socialtopics-special-topics-heading": "All topics",
 	"bs-socialtopics-special-topics-heading-entry": "Topic/$1",
-	"bs-socialtopics-aftercontent-heading": "Discussions"
+	"bs-socialtopics-aftercontent-heading": "Discussions",
+	"bs-socialtopics-entitylist-nodiscussion": "No discussion page has been created yet.",
+	"bs-socialtopics-dialog-creatediscussion-btn-label-save": "Save",
+	"bs-socialtopics-dialog-creatediscussion-btn-label-cancel": "Cancel",
+	"bs-socialtopics-dialog-creatediscussion-label-text": "Content"
 }
