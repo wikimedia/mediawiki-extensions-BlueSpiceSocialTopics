@@ -24,9 +24,6 @@ class AutoCreateDiscussionPage extends PageContentSaveComplete {
 		if( !$this->wikipage->getTitle()->getTalkPage() ) {
 			return true;
 		}
-		if( $this->wikipage->getTitle()->getTalkPage()->getNamespace() === NS_SOCIALENTITY_TALK ) {
-			return true;
-		}
 		if( $this->wikipage->getTitle()->getTalkPage()->exists() ) {
 			return true;
 		}

@@ -3,7 +3,7 @@ bs.social.EntityList.CreateDiscussion = function( $el, entityList ) {
 
 	bs.social.El.call( this, $el );
 	var me = this;
-	me.BUTTON_SECTION = 'bs-socialtopics-discussionpage-create';
+	me.BUTTON_SECTION = 'bs-socialtopics-discussion-create';
 	me.entityList = entityList;
 	me.data = {};
 	me.makeUiID();
@@ -12,8 +12,9 @@ bs.social.EntityList.CreateDiscussion = function( $el, entityList ) {
 	if( !me.$button || me.$button.length < 1 ) {
 		return;
 	}
+
 	me.$button.on( 'click', function( e ) {
-		me.showCreateDiscussion();
+		me.createDiscussion();
 		e.stopPropagation();
 		return false;
 	});
@@ -23,28 +24,37 @@ bs.social.EntityList.CreateDiscussion = function( $el, entityList ) {
 OO.initClass( bs.social.EntityList.CreateDiscussion );
 OO.inheritClass( bs.social.EntityList.CreateDiscussion, bs.social.El );
 
-bs.social.EntityList.CreateDiscussion.prototype.showCreateDiscussion = function() {
-	var factory = new OO.Factory();
-	var windowManager = new OO.ui.WindowManager( {
-		factory: factory
-	} );
-	factory.register( bs.social.EntityList.CreateDiscussion.Dialog );
-	$( 'body' ).append( windowManager.$element );
+bs.social.EntityList.CreateDiscussion.prototype.createDiscussion = function() {
+	var dfd = $.Deferred();
+	var taskData = this.makeTaskData();
 
-	var nsText = bs.util.getNamespaceText(
-		mw.config.get( 'wgNamespaceNumber', 0 ) +1
-	);
-	var nsFile = mw.config.get( 'wgNamespaceIds' )['file'];
-	var msg = mw.config.get( 'wgNamespaceNumber', 0 ) === nsFile
-		? "bs-socialtopics-autocreated-discussionpagefile"
-		: "bs-socialtopics-autocreated-discussionpage";
+	this.showLoadMask();
+	var me = this;
+	bs.api.tasks.execSilent( 'social', 'editEntity', taskData )
+	.done( function( response ) {
+		//ignore errors for now
+		//me.replaceEL( response.payload.view );
+		if( !response.success ) {
+			if( response.message && response.message !== '' ) {
+				OO.ui.alert( response.message );
+			}
+			dfd.resolve( me );
+			return;
+		}
+		me.reloadPage();
+		me.hideLoadMask();
+		dfd.resolve( me );
+	});
 
-	windowManager.openWindow( 'createDiscussion', {
-		text: mw.message( msg ).plain(),
-		title: nsText + ':' + mw.config.get( 'wgTitle' ),
-		entityList: this.entityList
-	} );
-	return true;
+	return dfd;
 };
 
+bs.social.EntityList.CreateDiscussion.prototype.makeTaskData = function() {
+	return [];
+};
 
+bs.social.EntityList.CreateDiscussion.prototype.reloadPage = function() {
+	window.location = mw.util.getUrl(
+		mw.config.get( 'wgPageName' )
+	);
+};

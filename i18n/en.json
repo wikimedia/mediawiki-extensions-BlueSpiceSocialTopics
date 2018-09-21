@@ -25,8 +25,10 @@
 	"bs-socialtopics-special-topics-heading": "All topics",
 	"bs-socialtopics-special-topics-heading-entry": "Topic/$1",
 	"bs-socialtopics-aftercontent-heading": "Discussions",
-	"bs-socialtopics-entitylist-nodiscussion": "No discussion page has been created yet.",
-	"bs-socialtopics-dialog-creatediscussion-btn-label-save": "Save",
-	"bs-socialtopics-dialog-creatediscussion-btn-label-cancel": "Cancel",
-	"bs-socialtopics-dialog-creatediscussion-label-text": "Content"
+	"bs-socialtopics-nodiscussionpage": "No discussion page has been created yet.",
+	"bs-socialtopics-nodiscussionpage-create": "Create new discussion page",
+	"bs-socialtopics-nodiscussion": "No discussion has been created yet.",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Save",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancel",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Content"
 }

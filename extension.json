@@ -89,12 +89,13 @@
 			"scripts": [
 				"bluespice.social.topics.createDiscussion.js",
 				"EntityList/CreateDiscussion.js",
-				"EntityList/CreateDiscussion/Dialog.js"
+				"EntityList/CreateDiscussionPage.js",
+				"EntityList/CreateDiscussionPage/Dialog.js"
 			],
 			"messages": [
-				"bs-socialtopics-dialog-creatediscussion-btn-label-save",
-				"bs-socialtopics-dialog-creatediscussion-btn-label-cancel",
-				"bs-socialtopics-dialog-creatediscussion-label-text",
+				"bs-socialtopics-dialog-creatediscussionpage-btn-label-save",
+				"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel",
+				"bs-socialtopics-dialog-creatediscussionpage-label-text",
 				"bs-socialtopics-autocreated-discussionpage",
 				"bs-socialtopics-autocreated-discussionpagefile"
 			]
