@@ -15,6 +15,28 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 		$this->args['basetitlecontent'] = '';
 	}
 
+	/**
+	 *
+	 * @param string $renderType
+	 * @param bool $noCache
+	 * @return string
+	 * @throws \MWException
+	 */
+	public function render( $renderType = 'Default', $noCache = false ) {
+		if ( $renderType === static::RENDER_TYPE_PAGE && !$this->getEntity()->exists() ) {
+			return $this->renderNewDiscussion();
+		}
+		return parent::render( $renderType, $noCache );
+	}
+
+	protected function renderNewDiscussion() {
+		$renderer = Services::getInstance()->getBSRendererFactory()->get(
+			'socialtopicscreatenewdiscussion',
+			new Params( [ 'context' => $this->getContext() ] )
+		);
+		return $renderer->render();
+	}
+
 	protected function render_userimage( $val ) {
 		return \Html::element( 'div', [ 'class' => 'bs-social-icon-discussion bs-social-entity-icon' ] );
 	}

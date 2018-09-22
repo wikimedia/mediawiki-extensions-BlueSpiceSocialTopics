@@ -4,8 +4,11 @@ $( document ).bind( 'BSSocialEntityListInit', function( event, EntityList, $el )
 		$el,
 		EntityList
 	);
-	new bs.social.EntityList.CreateDiscussion(
-		$el,
-		EntityList
+});
+
+$( document ).bind( 'BSSocialInit', function( bssocial ) {
+	new bs.social.CreateDiscussion(
+		$( this )
 	);
 });
+

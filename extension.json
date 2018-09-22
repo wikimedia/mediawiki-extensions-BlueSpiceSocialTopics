@@ -22,7 +22,9 @@
 			"RendererRegistry": {
 				"socialentitydiscussion": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Discussion",
 				"socialentitytopic": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Topic",
-				"socialtopicsentitylistnewdiscussion": "\\BlueSpice\\Social\\Topics\\Renderer\\EntityList\\NewDiscussion"
+				"socialtopicsentitylistnewdiscussion": "\\BlueSpice\\Social\\Topics\\Renderer\\EntityList\\NewDiscussion",
+				"socialtopicscreatenewdiscussion": "\\BlueSpice\\Social\\Topics\\Renderer\\CreateNewDiscussion",
+				"socialtopicscreatenewdiscussionpage": "\\BlueSpice\\Social\\Topics\\Renderer\\CreateNewDiscussionPage"
 			},
 			"EntityRegistry": {
 				"discussion": "\\BlueSpice\\Social\\Topics\\EntityConfig\\Discussion",
@@ -88,7 +90,7 @@
 			"targets": [ "desktop", "mobile" ],
 			"scripts": [
 				"bluespice.social.topics.createDiscussion.js",
-				"EntityList/CreateDiscussion.js",
+				"CreateDiscussion.js",
 				"EntityList/CreateDiscussionPage.js",
 				"EntityList/CreateDiscussionPage/Dialog.js"
 			],

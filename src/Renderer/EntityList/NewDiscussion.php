@@ -57,82 +57,19 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 	}
 
 	protected function renderNewDiscussionPage() {
-		$out = '';
-		$msg = \Message::newFromKey(
-			'bs-socialtopics-entitylist-nodiscussionpage'
+		$renderer = Services::getInstance()->getBSRendererFactory()->get(
+			'socialtopicscreatenewdiscussionpage',
+			new Params( [ 'context' => $this->getContext() ] )
 		);
-		$title = $this->getContext()->getTitle()->getTalkPage();
-		if( !$title->userCan( 'create', $this->getUser() ) ) {
-			$out .= new \OOUI\LabelWidget( [
-				'label' => $msg->pLain(),
-			] );
-			return $out;
-		}
-		
-		$btn = new \OOUI\ButtonWidget( [
-			'infusable' => false,
-			'label' => \Message::newFromKey(
-				'bs-socialtopics-entitydiscussion-header-create'
-			)->plain(),
-			'href' => '#',
-			'flags' => [
-				'primary',
-				'progressive'
-			],
-			'href' => $title->getLocalURL( [
-				'action' => 'edit',
-			] )
-		] );
-		$btn->addClasses( [
-			'bs-socialtopics-discussionpage-create'
-		] );
-		$label = new \OOUI\LabelWidget( [
-			'label' => $msg->plain(),
-			'input' => $btn
-		] );
-		$out .= $label;
-		$out .= $btn;
-		return $out;
+		return $renderer->render();
 	}
 
 	protected function renderNewDiscussion() {
-		$out = '';
-		$msg = \Message::newFromKey( 'bs-socialtopics-nodiscussion' );
-		$title = $this->getContext()->getTitle()->getTalkPage();
-		$factory = Services::getInstance()->getService(
-			'BSSocialDiscussionEntityFactory'
+		$renderer = Services::getInstance()->getBSRendererFactory()->get(
+			'socialtopicscreatenewdiscussion',
+			new Params( [ 'context' => $this->getContext() ] )
 		);
-		$entity = $factory->newFromDiscussionTitle( $title );
-		if( !$entity->userCan( 'create', $this->getUser() ) ) {
-			$out .= new \OOUI\LabelWidget( [
-				'label' => $msg->pLain(),
-			] );
-			return $out;
-		}
-		
-		$btn = new \OOUI\ButtonWidget( [
-			'infusable' => false,
-			'label' => \Message::newFromKey(
-				'bs-socialtopics-entitydiscussion-header-create'
-			)->plain(),
-			'href' => '#',
-			'flags' => [
-				'primary',
-				'progressive'
-			],
-			'href' => $title->getLocalURL( [
-				'action' => 'edit',
-			] )
-		] );
-		$btn->addClasses( [
-			'bs-socialtopics-discussion-create'
-		] );
-		$label = new \OOUI\LabelWidget( [
-			'label' => $msg->plain(),
-			'input' => $btn
-		] );
-		$out .= $label;
-		$out .= $btn;
-		return $out;
+		return $renderer->render();
 	}
+
 }

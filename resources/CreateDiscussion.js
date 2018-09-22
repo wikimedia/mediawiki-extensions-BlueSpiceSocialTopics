@@ -1,10 +1,9 @@
 
-bs.social.EntityList.CreateDiscussion = function( $el, entityList ) {
+bs.social.CreateDiscussion = function( $el ) {
 
 	bs.social.El.call( this, $el );
 	var me = this;
 	me.BUTTON_SECTION = 'bs-socialtopics-discussion-create';
-	me.entityList = entityList;
 	me.data = {};
 	me.makeUiID();
 
@@ -14,19 +13,22 @@ bs.social.EntityList.CreateDiscussion = function( $el, entityList ) {
 	}
 
 	me.$button.on( 'click', function( e ) {
-		me.createDiscussion();
+		me.createDiscussion( $( this ).parent().attr('value') );
 		e.stopPropagation();
 		return false;
 	});
-	$(document).trigger( 'BSSocialEntityListCreateDiscussionInit', [ me, $el ] );
+	$(document).trigger( 'BSSocialCreateDiscussionInit', [ me, $el ] );
 
 };
-OO.initClass( bs.social.EntityList.CreateDiscussion );
-OO.inheritClass( bs.social.EntityList.CreateDiscussion, bs.social.El );
+OO.initClass( bs.social.CreateDiscussion );
+OO.inheritClass( bs.social.CreateDiscussion, bs.social.El );
 
-bs.social.EntityList.CreateDiscussion.prototype.createDiscussion = function() {
+bs.social.CreateDiscussion.prototype.createDiscussion = function( id ) {
 	var dfd = $.Deferred();
-	var taskData = this.makeTaskData();
+	var taskData = {
+		'discussiontitleid': id,
+		'type': 'discussion'
+	};
 
 	this.showLoadMask();
 	var me = this;
@@ -38,22 +40,18 @@ bs.social.EntityList.CreateDiscussion.prototype.createDiscussion = function() {
 			if( response.message && response.message !== '' ) {
 				OO.ui.alert( response.message );
 			}
+			me.hideLoadMask();
 			dfd.resolve( me );
 			return;
 		}
 		me.reloadPage();
-		me.hideLoadMask();
 		dfd.resolve( me );
 	});
 
 	return dfd;
 };
 
-bs.social.EntityList.CreateDiscussion.prototype.makeTaskData = function() {
-	return [];
-};
-
-bs.social.EntityList.CreateDiscussion.prototype.reloadPage = function() {
+bs.social.CreateDiscussion.prototype.reloadPage = function() {
 	window.location = mw.util.getUrl(
 		mw.config.get( 'wgPageName' )
 	);
