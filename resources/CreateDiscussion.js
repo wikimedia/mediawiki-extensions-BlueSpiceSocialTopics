@@ -1,4 +1,3 @@
-
 bs.social.CreateDiscussion = function( $el ) {
 
 	bs.social.El.call( this, $el );
