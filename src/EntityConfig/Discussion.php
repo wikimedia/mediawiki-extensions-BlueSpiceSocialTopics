@@ -75,13 +75,13 @@ class Discussion extends Page {
 		return 'bs-socialdiscussion-discussiontype';
 	}
 	protected function get_HeaderMessageKey() {
-		return 'bs-social-entitydiscussion-header';
+		return 'bs-socialtopics-entitydiscussion-header';
 	}
 	protected function get_HeaderWithTitleMessageKey() {
 		return 'bs-social-entitydiscussion-withtitleheader';
 	}
 	protected function get_HeaderMessageKeyCreateNew() {
-		return 'bs-social-entitydiscussion-header-create';
+		return 'bs-socialtopics-entitydiscussion-header-create';
 	}
 	protected function get_IsTagable() {
 		return false;

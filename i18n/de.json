@@ -11,8 +11,8 @@
 	"bs-socialtopics-autocreated-discussionpagefile": "Diese Diskussionsseite wurde automatisch angelegt.",
 	"bs-socialdiscussion-discussiontype": "Diskussion",
 	"bs-socialdiscussion-topictype": "Diskussionsthema",
-	"bs-social-entitydiscussion-header": "[[$9]]",
-	"bs-social-entitydiscussion-header-create": "Neue Diskussion",
+	"bs-socialtopics-entitydiscussion-header": "[[$9]]",
+	"bs-socialtopics-entitydiscussion-header-create": "Neue Diskussion anlegen",
 	"bs-socialtopics-topictext": "$1 {{plural:$1|Thema|Themen}}",
 	"bs-social-entitytopic-header-create": "Neues Thema",
 	"bs-social-entitytopic-header": "[[Special:Topics/$3|$9]]",
@@ -24,5 +24,11 @@
 	"topics": "Themen",
 	"bs-socialtopics-special-topics-heading": "Alle Themen",
 	"bs-socialtopics-special-topics-heading-entry": "Thema/$1",
-	"bs-socialtopics-aftercontent-heading": "Diskussionen"
+	"bs-socialtopics-aftercontent-heading": "Diskussionen",
+	"bs-socialtopics-nodiscussionpage": "Es wurde noch keine Diskussionsseite angelegt.",
+	"bs-socialtopics-nodiscussionpage-create": "Neue Diskussionsseite erstellen",
+	"bs-socialtopics-nodiscussion": "Es wurde noch keine Diskussion angelegt",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Speichern",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Abrechen",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Seiteninhalt"
 }
