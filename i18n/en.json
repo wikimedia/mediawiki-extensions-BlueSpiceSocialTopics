@@ -4,7 +4,7 @@
 			"Patric Wirth <wirth@hallowelt.com>"
 		]
 	},
-	"bs-socialtopics-desc": "BlueSpiceSocialTopics",
+	"bs-socialtopics-desc": "Topic and discussion entities for BlueSpiceSocial",
 	"prefs-bssocialtopics": "BlueSpiceSocial Discussions",
 	"bs-socialtopics-toc-entalkpageautocreate": "Automatically create all discussion pages",
 	"bs-socialtopics-autocreated-discussionpage": "This discussion page was created automatically.",
