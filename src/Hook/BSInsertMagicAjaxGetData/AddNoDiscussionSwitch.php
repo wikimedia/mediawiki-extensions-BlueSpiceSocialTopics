@@ -12,7 +12,7 @@ class AddNoDiscussionSwitch extends BSInsertMagicAjaxGetData {
 
 	protected function doProcess() {
 		$this->response->result[] = (object) [
-			'id' => 'ndl',
+			'id' => 'bs:nodiscussion',
 			'type' => 'switch',
 			'name' => 'NODISCUSSION',
 			'desc' => \Message::newFromKey(
