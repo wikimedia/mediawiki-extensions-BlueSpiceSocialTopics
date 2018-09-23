@@ -137,7 +137,8 @@
 		"BSSocialTagsBeforeSetTags": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialTagsBeforeSetTags\\AddTopicTalkPageTag::callback",
 		"BSMigrateSettingsFromDeviatingNames": "\\BlueSpice\\Social\\Topics\\Hook\\BSMigrateSettingsFromDeviatingNames\\MigrateSettings::callback",
 		"BSSocialModuleDepths": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialModuleDepths\\AddModules::callback",
-		"GetDoubleUnderscoreIDs": "\\BlueSpice\\Social\\Topics\\Hook\\GetDoubleUnderscoreIDs\\AddNoDiscussion::callback"
+		"GetDoubleUnderscoreIDs": "\\BlueSpice\\Social\\Topics\\Hook\\GetDoubleUnderscoreIDs\\AddNoDiscussion::callback",
+		"BSInsertMagicAjaxGetData": "\\BlueSpice\\Social\\Topics\\Hook\\BSInsertMagicAjaxGetData\\AddNoDiscussionSwitch::callback"
 	},
 	"manifest_version": 2
 }
