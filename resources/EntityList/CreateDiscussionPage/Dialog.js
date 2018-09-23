@@ -36,7 +36,7 @@ bs.social.EntityList.CreateDiscussionPage.Dialog.prototype.setup = function( cfg
 bs.social.EntityList.CreateDiscussionPage.Dialog.prototype.initialize = function() {
 	bs.social.EntityList.CreateDiscussionPage.Dialog.super.prototype.initialize.call(
 		this
-	)
+	);
 
 	this.panel = new OO.ui.PanelLayout( {
 		padded: true,
@@ -64,7 +64,7 @@ bs.social.EntityList.CreateDiscussionPage.Dialog.prototype.makeTextInput = funct
 		required: true,
 		disabled: false
 	});
-}
+};
 
 bs.social.EntityList.CreateDiscussionPage.Dialog.prototype.save = function() {
 	var api = new mw.Api();
@@ -81,10 +81,11 @@ bs.social.EntityList.CreateDiscussionPage.Dialog.prototype.getActionProcess = fu
 	if ( action === 'save' ) {
 		 return new OO.ui.Process( function () {
 			var dfd = $.Deferred();
+			me.close( { action: action } );
+			me.data.entityList.showLoadMask();
 			me.save().fail( function( code, error ){
 				dfd.reject( me.showError( error ) );
 			} ).done( function( data ) {
-				console.log(data);
 				me.reloadPage();
 				dfd.resolve( me.close( { action: action } ) );		
 			});
