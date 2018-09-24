@@ -49,7 +49,8 @@
 		"BSMigrateRatedComments": "maintenance/BSMigrateRatedComments.php"
 	},
 	"ExtensionMessagesFiles": {
-		"BlueSpiceSocialTopicsAlias": "languages/Topics.alias.php"
+		"BlueSpiceSocialTopicsAlias": "languages/Topics.alias.php",
+		"TopicsDiscussionMagic": "languages/TopicsDiscussion.i18n.magic.php"
 	},
 	"SpecialPages": {
 		"Topics": "\\BlueSpice\\Social\\Topics\\Special\\Topics"
@@ -135,7 +136,9 @@
 		"SkinTemplateOutputPageBeforeExec": "\\BlueSpice\\Social\\Topics\\Hook\\SkinTemplateOutputPageBeforeExec\\AddTimeline::callback",
 		"BSSocialTagsBeforeSetTags": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialTagsBeforeSetTags\\AddTopicTalkPageTag::callback",
 		"BSMigrateSettingsFromDeviatingNames": "\\BlueSpice\\Social\\Topics\\Hook\\BSMigrateSettingsFromDeviatingNames\\MigrateSettings::callback",
-		"BSSocialModuleDepths": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialModuleDepths\\AddModules::callback"
+		"BSSocialModuleDepths": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialModuleDepths\\AddModules::callback",
+		"GetDoubleUnderscoreIDs": "\\BlueSpice\\Social\\Topics\\Hook\\GetDoubleUnderscoreIDs\\AddNoDiscussion::callback",
+		"BSInsertMagicAjaxGetData": "\\BlueSpice\\Social\\Topics\\Hook\\BSInsertMagicAjaxGetData\\AddNoDiscussionSwitch::callback"
 	},
 	"manifest_version": 2
 }

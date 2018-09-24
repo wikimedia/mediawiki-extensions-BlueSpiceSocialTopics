@@ -59,6 +59,12 @@ class AddTimeline extends SkinTemplateOutputPageBeforeExec {
 			return true;
 		}
 
+		$prop = \BsArticleHelper::getInstance( $this->skin->getTitle() )
+			->getPageProp( 'bs_nodiscussion' );
+		if( !is_null( $prop ) ) {
+			return true;
+		}
+
 		return false;
 	}
 
