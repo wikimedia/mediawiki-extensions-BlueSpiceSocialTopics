@@ -49,9 +49,12 @@ class CreateNewDiscussion extends \BlueSpice\Renderer {
 		$content = '';
 		\OutputPage::setupOOUI();
 		$msg = \Message::newFromKey( 'bs-socialtopics-nodiscussion' );
-		if( !$this->getContext()->getTitle() || !$this->getContext()->getTitle() ) {
+		if( !$this->getContext()->getTitle() ) {
 			return $content;
 		}
+        if( $this->getContext()->getTitle()->getNamespace() < 0 ) {
+            return $content;
+        }
 		$title = $this->getContext()->getTitle()->getTalkPage();
 		$factory = Services::getInstance()->getService(
 			'BSSocialDiscussionEntityFactory'
