@@ -29,6 +29,10 @@
 			"EntityRegistry": {
 				"discussion": "\\BlueSpice\\Social\\Topics\\EntityConfig\\Discussion",
 				"topic": "\\BlueSpice\\Social\\Topics\\EntityConfig\\Topic"
+			},
+			"PageToolRegistry": {
+				"classictalk": "BlueSpice\\Social\\Topics\\PageTool\\ClassicTalk::factory",
+				"newtalk": "BlueSpice\\Social\\Topics\\PageTool\\NewTalk::factory"
 			}
 		}
 	},
@@ -80,9 +84,7 @@
 			"scripts": [
 				"entities/bluespice.social.Entity.Discussion.js"
 			],
-			"messages": [
-				"bs-socialtopics-entityaction-classicdiscussion"
-			]
+			"messages": []
 		},
 		"ext.bluespice.social.creatediscussion": {
 			"dependencies": [

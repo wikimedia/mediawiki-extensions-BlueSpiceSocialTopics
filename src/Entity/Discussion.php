@@ -43,16 +43,6 @@ class Discussion extends Page {
 
 	protected $sBaseTitleContent = null;
 
-	public function getActions( array $actions = [], \User $user = null ) {
-		if( !$user ) {
-			$user = \RequestContext::getMain()->getUser();
-		}
-		$actions = parent::getActions( $actions, $user );
-		$actions[] = 'classicdiscussion';
-		return $actions;
-		
-	}
-
 	/**
 	 * Gets the BSSociaEntityPage attributes formated for the api
 	 * @return object
