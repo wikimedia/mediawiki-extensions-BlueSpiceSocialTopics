@@ -32,6 +32,6 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Abrechen",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Seiteninhalt",
 	"bs-socialtopics-switch-nodiscussion-description": "Diskussionen werden auf dieser Seite nicht angezeigt.",
-	"bs-socialtopics-switch-moderndiscussion-tooltip": "",
-	"bs-socialtopics-switch-classsicdiscussion-tooltip": ""
+	"bs-socialtopics-switch-moderndiscussion-tooltip": "Zur klassischen Diskussionsseite wechseln",
+	"bs-socialtopics-switch-classsicdiscussion-tooltip": "Zur modernen Diskussionsseite wechseln"
 }
