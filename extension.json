@@ -32,7 +32,7 @@
 			},
 			"PageToolRegistry": {
 				"classictalk": "BlueSpice\\Social\\Topics\\PageTool\\ClassicTalk::factory",
-				"newtalk": "BlueSpice\\Social\\Topics\\PageTool\\NewTalk::factory"
+				"moderntalk": "BlueSpice\\Social\\Topics\\PageTool\\ModernTalk::factory"
 			}
 		}
 	},
