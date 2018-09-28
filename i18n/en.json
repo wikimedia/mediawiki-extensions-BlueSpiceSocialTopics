@@ -31,5 +31,7 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Save",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancel",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Content",
-	"bs-socialtopics-switch-nodiscussion-description": "Hides discussion on this page."
+	"bs-socialtopics-switch-nodiscussion-description": "Hides discussion on this page.",
+	"bs-socialtopics-switch-classsicdiscussion-tooltip": "Switch to classic discussion page",
+	"bs-socialtopics-switch-moderndiscussion-tooltip": "Switch to modern disucussion page"
 }
