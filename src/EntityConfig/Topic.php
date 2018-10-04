@@ -121,4 +121,8 @@ class Topic extends Text{
 	protected function get_EntityListInitiallyHiddenChildrenDefault() {
 		return false;
 	}
+
+	protected function get_EntityListSpecialTimelineTypeSelected() {
+		return true;
+	}
 }
