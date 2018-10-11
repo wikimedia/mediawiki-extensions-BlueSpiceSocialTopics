@@ -41,9 +41,9 @@ bs.social.EntityEditorTopic.prototype.makeFields = function() {
 	this.discussiontitleid = {
 		select2: true,
 		$element: $(
-			'<div class="bs-social-field">'
+			'<div class="oo-ui-layout oo-ui-labelElement oo-ui-fieldLayout oo-ui-fieldLayout-align-top">'
 				+ '<label>'
-					/*+ this.getVarLabel( 'discussiontitleid' )*/
+					+ this.getVarLabel( 'discussiontitleid' )
 					+ '<select style="width:100%">'
 						+ option
 					+ '</select>'
@@ -63,7 +63,6 @@ bs.social.EntityEditorTopic.prototype.makeFields = function() {
 	this.discussiontitleid.$element.find( 'select' ).select2({
 		data: localData,
 		placeholder: this.getVarLabel( 'discussiontitleid' ),
-		label: this.getVarLabel( 'discussiontitleid' ),
 		allowClear: true,
 		disabled: disabled,
 		ajax: {
@@ -105,10 +104,6 @@ bs.social.EntityEditorTopic.prototype.addContentFieldsetItems = function() {
 	this.contentfieldset.addItems( [
 		new OO.ui.FieldLayout( this.topictitle, {
 			label: this.getVarLabel( 'topictitle' ),
-			align: 'top'
-		}),
-		new OO.ui.FieldLayout( this.text, {
-			label: this.getVarLabel( 'text' ),
 			align: 'top'
 		}),
 		this.discussiontitleid

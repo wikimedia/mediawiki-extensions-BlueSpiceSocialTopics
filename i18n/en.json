@@ -17,7 +17,7 @@
 	"bs-social-entitytopic-header-create": "New Topic",
 	"bs-social-entitytopic-header": "[[Special:Topics/$3|$9]]",
 	"bs-socialtopics-var-topictitle": "Title",
-	"bs-socialtopics-var-discussiontitleid": "Discussion page",
+	"bs-socialtopics-var-discussiontitleid": "Relation to discussion page",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Not a valid discussion page",
 	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 started the topic:",
 	"bs-socialtopics-entityaction-classicdiscussion": "Classic discussionpage",
