@@ -17,7 +17,7 @@
 	"bs-social-entitytopic-header-create": "Neues Thema",
 	"bs-social-entitytopic-header": "[[Special:Topics/$3|$9]]",
 	"bs-socialtopics-var-topictitle": "Titel",
-	"bs-socialtopics-var-discussiontitleid": "Diskussionsseite",
+	"bs-socialtopics-var-discussiontitleid": "Zugeordnete Diskussionsseite",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Keine gültige Diskussionsseite",
 	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 erstellte das Thema:",
 	"bs-socialtopics-entityaction-classicdiscussion": "Klassische Diskussionsseite",
