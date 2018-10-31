@@ -4,6 +4,7 @@ $extDir = dirname( dirname( __DIR__ ) );
 
 require_once( "$extDir/BlueSpiceFoundation/maintenance/BSMaintenance.php" );
 
+use BlueSpice\Services;
 use BlueSpice\Social\Topics\Entity\Topic;
 
 class BSMigrateShoutbox extends LoggedUpdateMaintenance {
@@ -116,9 +117,12 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	}
 
 	protected function makeGenericTopicTitle( $user ) {
+		$userHelper = Services::getInstance()->getBSUtilityFactory()
+			->getUserHelper( $user );
+
 		$msg = \Message::newFromKey(
 			'bs-socialtopics-entity-topic-topictitle-shoutboxmigration',
-			\BsUserHelper::getUserDisplayName( $user )
+			$userHelper->getDisplayName()
 		);
 		return $msg->inContentLanguage()->plain();
 	}
@@ -127,7 +131,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	 * @retrun \BlueSpice\EntityFactory
 	 */
 	protected function getFactory() {
-		return \BlueSpice\Services::getInstance()->getBSEntityFactory();
+		return Services::getInstance()->getBSEntityFactory();
 	}
 
 	/**
@@ -182,7 +186,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	}
 
 	protected function getMaintenanceUser() {
-		return \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+		return Services::getInstance()->getBSUtilityFactory()
 			->getMaintenanceUser()->getUser();
 	}
 
