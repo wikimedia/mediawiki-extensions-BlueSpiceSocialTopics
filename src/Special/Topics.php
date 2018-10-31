@@ -9,7 +9,7 @@ use BlueSpice\Social\Renderer\Entity as Renderer;
 use BlueSpice\Social\Topics\EntityListContext\SpecialTopics;
 use BlueSpice\Social\Topics\Entity\Topic as TopicEntity;
 
-class Topics extends \BsSpecialPage {
+class Topics extends \BlueSpice\SpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'Topics', 'read' );
