@@ -61,15 +61,15 @@
 	},
 	"ResourceModules": {
 		"ext.bluespice.social.topics.styles": {
-			"styles": "bluespice.social.topics.less",
-			"targets": [ "desktop", "mobile" ]
+			"styles": [
+				"bluespice.social.topics.less"
+			]
 		},
 		"ext.bluespice.social.entity.topic": {
 			"scripts": [
 				"entities/bluespice.social.Entity.Topic.js",
 				"ui/EntityEditorTopic.js"
 			],
-			"targets": [ "desktop", "mobile" ],
 			"dependencies": [
 				"ext.bluespice.social.entity.text",
 				"ext.bluespice.oojs"
@@ -80,7 +80,6 @@
 				"ext.bluespice.social.entity",
 				"ext.bluespice.oojs"
 			],
-			"targets": [ "desktop", "mobile" ],
 			"scripts": [
 				"entities/bluespice.social.Entity.Discussion.js"
 			],
@@ -90,7 +89,6 @@
 			"dependencies": [
 				"ext.bluespice.social.entity"
 			],
-			"targets": [ "desktop", "mobile" ],
 			"scripts": [
 				"bluespice.social.topics.createDiscussion.js",
 				"CreateDiscussion.js",
