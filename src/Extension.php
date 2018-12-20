@@ -120,6 +120,10 @@ class Extension extends \BlueSpice\Extension {
 	 * @return boolean
 	 */
 	public static function onContentHandlerDefaultModelFor( \Title $title, &$model ) {
+		if( defined( 'MW_API' ) || defined( 'DO_MAINTENANCE' ) ) {
+			return true;
+		}
+
 		if( !$title->exists() || !$title->isTalkPage() ) {
 			return true;
 		}
@@ -147,6 +151,10 @@ class Extension extends \BlueSpice\Extension {
 	 * @param boolen $useParserCache
 	 */
 	public static function onArticleViewHeader( &$oArticle, &$outputDone, &$useParserCache ) {
+		if( defined( 'MW_API' ) || defined( 'DO_MAINTENANCE' ) ) {
+			return true;
+		}
+
 		$title = $oArticle->getTitle();
 		if( !$title->exists() || !$title->isTalkPage() ) {
 			return true;
