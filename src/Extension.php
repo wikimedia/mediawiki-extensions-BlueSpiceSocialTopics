@@ -114,46 +114,12 @@ class Extension extends \BlueSpice\Extension {
 	}
 
 	/**
-	 *
-	 * @param \Title $title
-	 * @param \Content $model
-	 * @return boolean
-	 */
-	public static function onContentHandlerDefaultModelFor( \Title $title, &$model ) {
-		if( defined( 'MW_API' ) || defined( 'DO_MAINTENANCE' ) ) {
-			return true;
-		}
-
-		if( !$title->exists() || !$title->isTalkPage() ) {
-			return true;
-		}
-		$classic = \RequestContext::getMain()->getRequest()->getBool(
-			'classicdiscussion',
-			false
-		);
-		if( $classic ) {
-			return true;
-		}
-		$factory = Services::getInstance()->getService(
-			'BSSocialDiscussionEntityFactory'
-		);
-		if( !$entity = $factory->newFromDiscussionTitle( $title ) ) {
-			return true;
-		}
-		$model = CONTENT_MODEL_BSSOCIALDISCUSSION;
-		return true;
-	}
-
-	/**
 	 * This is so hacky i cant breathe ^^
 	 * @param Article $oArticle
 	 * @param boolean $outputDone
 	 * @param boolen $useParserCache
 	 */
 	public static function onArticleViewHeader( &$oArticle, &$outputDone, &$useParserCache ) {
-		if( defined( 'MW_API' ) || defined( 'DO_MAINTENANCE' ) ) {
-			return true;
-		}
 
 		$title = $oArticle->getTitle();
 		if( !$title->exists() || !$title->isTalkPage() ) {
