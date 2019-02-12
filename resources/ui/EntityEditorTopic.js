@@ -12,7 +12,6 @@ bs.social.EntityEditorTopic.prototype.makeFields = function() {
 	this.topictitle = new OO.ui.TextInputWidget( {
 		placeholder: this.getVarLabel( 'topictitle' ),
 		autosize: false,
-		multiline: false,
 		value: this.getEntity().data.get( 'topictitle', '' )
 	});
 	fields.topictitle = this.topictitle;
