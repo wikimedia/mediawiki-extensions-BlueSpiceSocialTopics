@@ -60,7 +60,7 @@ class CreateNewDiscussion extends \BlueSpice\Renderer {
 			'BSSocialDiscussionEntityFactory'
 		);
 		$entity = $factory->newFromDiscussionTitle( $title );
-		if( !$entity->userCan( 'create', $this->getContext()->getUser() ) ) {
+		if( !$entity->userCan( 'create', $this->getContext()->getUser() )->isOK() ) {
 			$content .= new \OOUI\LabelWidget( [
 				'label' => $msg->pLain(),
 			] );
