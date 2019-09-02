@@ -30,6 +30,7 @@
  * @filesource
  */
 namespace BlueSpice\Social\Topics\EntityConfig;
+
 use BlueSpice\Social\EntityConfig\Page;
 use BlueSpice\Social\Data\Entity\Schema;
 use BlueSpice\Data\FieldType;
@@ -41,58 +42,135 @@ use BlueSpice\Social\Topics\Entity\Discussion as Entity;
  * @subpackage BlueSpiceSocialTopics
  */
 class Discussion extends Page {
+	/**
+	 *
+	 * @return array
+	 */
 	public function addGetterDefaults() {
-		return array();
+		return [];
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	public function get_EntityClass() {
 		return "\\BlueSpice\\Social\\Topics\\Entity\\Discussion";
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_Renderer() {
 		return 'social-topics-entity-discussion';
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_EntityTemplateDefault() {
 		return 'BlueSpiceSocialTopics.Entity.Discussion.Default';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_EntityTemplatePage() {
 		return 'BlueSpiceSocialTopics.Entity.Discussion.Page';
 	}
+
+	/**
+	 *
+	 * @return array
+	 */
 	protected function get_ModuleStyles() {
 		return array_merge( parent::get_ModuleStyles(), [
 			'ext.bluespice.social.topics.styles'
-		]);
+		] );
 	}
+
+	/**
+	 *
+	 * @return array
+	 */
 	protected function get_ModuleScripts() {
 		return array_merge( parent::get_ModuleScripts(), [
 			'ext.bluespice.social.entity.discussion',
-		]);
+		] );
 	}
+
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_CanHaveChildren() {
 		return false;
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_TypeMessageKey() {
 		return 'bs-socialdiscussion-discussiontype';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_HeaderMessageKey() {
 		return 'bs-socialtopics-entitydiscussion-header';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_HeaderWithTitleMessageKey() {
 		return 'bs-social-entitydiscussion-withtitleheader';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_HeaderMessageKeyCreateNew() {
 		return 'bs-socialtopics-entitydiscussion-header-create';
 	}
+
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_IsTagable() {
 		return false;
 	}
+
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_IsEditable() {
 		return false;
 	}
+
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_IsDeleteable() {
-		return false; //for now. TODO: make backgroud jobs for deleteing like
-		//in BSSocialGroups
+		// for now. TODO: make backgroud jobs for deleteing like in BSSocialGroups
+		return false;
 	}
+
+	/**
+	 *
+	 * @return array
+	 */
 	protected function get_AttributeDefinitions() {
 		return array_merge(
 			parent::get_AttributeDefinitions(),

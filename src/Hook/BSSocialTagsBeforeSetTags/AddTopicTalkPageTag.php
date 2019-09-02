@@ -6,7 +6,7 @@ use BlueSpice\Social\Topics\Entity\Topic;
 
 class AddTopicTalkPageTag extends BSSocialTagsBeforeSetTags {
 	protected function skipProcessing() {
-		if( !$this->entity instanceof Topic ) {
+		if ( !$this->entity instanceof Topic ) {
 			return true;
 		}
 		return parent::skipProcessing();
@@ -15,7 +15,7 @@ class AddTopicTalkPageTag extends BSSocialTagsBeforeSetTags {
 	protected function doProcess() {
 		$this->tags = array_values( array_unique( array_merge( $this->tags, [
 			$this->entity->getRelatedTitle()->getOtherPage()->getFullText()
-		])));
+		] ) ) );
 		return true;
 	}
 

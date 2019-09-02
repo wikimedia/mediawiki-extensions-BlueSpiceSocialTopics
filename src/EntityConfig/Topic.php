@@ -30,6 +30,7 @@
  * @filesource
  */
 namespace BlueSpice\Social\Topics\EntityConfig;
+
 use BlueSpice\Social\EntityConfig\Text;
 use BlueSpice\Social\Data\Entity\Schema;
 use BlueSpice\Data\FieldType;
@@ -40,33 +41,70 @@ use BlueSpice\Social\Topics\Entity\Topic as Entity;
  * @package BlueSpiceTopics
  * @subpackage BSSocial
  */
-class Topic extends Text{
+class Topic extends Text {
+	/**
+	 *
+	 * @return array
+	 */
 	public function addGetterDefaults() {
-		return array();
+		return [];
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	public function get_EntityClass() {
 		return "\\BlueSpice\\Social\\Topics\\Entity\\Topic";
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_Renderer() {
 		return 'social-topics-entity-topic';
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function get_ModuleScripts() {
 		return array_merge(
 			parent::get_ModuleScripts(),
 			[ 'ext.bluespice.social.entity.topic' ]
 		);
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_TypeMessageKey() {
 		return 'bs-socialdiscussion-topictype';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_HeaderMessageKeyCreateNew() {
 		return 'bs-social-entitytopic-header-create';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_HeaderMessageKey() {
 		return 'bs-social-entitytopic-header';
 	}
+
+	/**
+	 *
+	 * @return array
+	 */
 	protected function get_VarMessageKeys() {
 		return array_merge(
 			parent::get_VarMessageKeys(),
@@ -76,6 +114,11 @@ class Topic extends Text{
 			]
 		);
 	}
+
+	/**
+	 *
+	 * @return array
+	 */
 	protected function get_AttributeDefinitions() {
 		return array_merge(
 			parent::get_AttributeDefinitions(),
@@ -98,30 +141,58 @@ class Topic extends Text{
 		);
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_EntityListDiscussionPageTypeAllowed() {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_EntityListAfterContentTypeAllowed() {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_IsResolvable() {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_ExtendedSearchListable() {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_ForceRelatedTitleTag() {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_EntityListInitiallyHiddenChildrenDefault() {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_EntityListSpecialTimelineTypeSelected() {
 		return true;
 	}

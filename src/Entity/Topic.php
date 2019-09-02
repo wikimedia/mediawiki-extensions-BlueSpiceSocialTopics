@@ -30,6 +30,12 @@
  */
 namespace BlueSpice\Social\Topics\Entity;
 
+use Exception;
+use Message;
+use Status;
+use Title;
+use User;
+use BsNamespaceHelper;
 use BlueSpice\Social\Entity\Text;
 use BlueSpice\Social\Parser\Input;
 use BlueSpice\Services;
@@ -45,12 +51,10 @@ class Topic extends Text {
 	const ATTR_DISCUSSION_TITLE_ID = 'discussiontitleid';
 	const ATTR_TOPIC_TITLE = 'topictitle';
 
-	protected $iDiscussionTitleID = 0;
-	protected $sTopicTitle = '';
-
 	/**
 	 * Gets the attributes formated for the api
-	 * @return object
+	 * @param array $a
+	 * @return \sdtClass
 	 */
 	public function getFullData( $a = [] ) {
 		return parent::getFullData( array_merge(
@@ -65,7 +69,7 @@ class Topic extends Text {
 					''
 				),
 			]
-		));
+		) );
 	}
 
 	/**
@@ -82,30 +86,44 @@ class Topic extends Text {
 	 * Sets the discussiontitleid attribute
 	 * @deprecated since version 3.0.0 - use set( $attrName, $value ) instead
 	 * @param integer $iID
-	 * @return integer
+	 * @return Topic
 	 */
 	public function setDiscussionTitleID( $iID ) {
 		wfDeprecated( __METHOD__, '3.0.0' );
 		return $this->set( static::ATTR_DISCUSSION_TITLE_ID, $iID );
 	}
 
+	/**
+	 * @deprecated since version 3.0.0 - use get( $attrName, $default ) instead
+	 * @return string
+	 */
 	public function getTopicTitle() {
-		return $this->sTopicTitle;
+		wfDeprecated( __METHOD__, '3.0.0' );
+		return $this->get( static::ATTR_TOPIC_TITLE, '' );
 	}
 
+	/**
+	 * @deprecated since version 3.0.0 - use set( $attrName, $value ) instead
+	 * @param string $sTopicTitle
+	 * @return Topic
+	 */
 	public function setTopicTitle( $sTopicTitle ) {
-		$this->sTopicTitle = $sTopicTitle;
-		return $this;
+		wfDeprecated( __METHOD__, '3.0.0' );
+		return $this->set( static::ATTR_TOPIC_TITLE, $sTopicTitle );
 	}
 
+	/**
+	 *
+	 * @param \stdClass $o
+	 */
 	public function setValuesByObject( \stdClass $o ) {
-		if( !empty( $o->{static::ATTR_DISCUSSION_TITLE_ID} ) ) {
+		if ( !empty( $o->{static::ATTR_DISCUSSION_TITLE_ID} ) ) {
 			$this->set(
 				static::ATTR_DISCUSSION_TITLE_ID,
 				$o->{static::ATTR_DISCUSSION_TITLE_ID}
 			);
 		}
-		if( !empty( $o->{static::ATTR_TOPIC_TITLE} ) ) {
+		if ( !empty( $o->{static::ATTR_TOPIC_TITLE} ) ) {
 			$this->set(
 				static::ATTR_TOPIC_TITLE,
 				$o->{static::ATTR_TOPIC_TITLE}
@@ -114,100 +132,123 @@ class Topic extends Text {
 		parent::setValuesByObject( $o );
 	}
 
-	public function getHeader( $oMsg = null ) {
-		$oMsg = parent::getHeader( $oMsg );
-		return $oMsg->params([
+	/**
+	 *
+	 * @param Message|null $msg
+	 * @return Message
+	 */
+	public function getHeader( $msg = null ) {
+		$msg = parent::getHeader( $msg );
+		return $msg->params( [
 			$this->getRelatedTitle()->getText(),
 			$this->getRelatedTitle()->getNamespace(),
-			\BsNamespaceHelper::getNamespaceName(
+			BsNamespaceHelper::getNamespaceName(
 				$this->getRelatedTitle()->getNamespace()
 			),
 			$this->get( static::ATTR_TOPIC_TITLE, '' ),
 			$this->getRelatedTitle()->getFullText(),
 			$this->getRelatedContentTitle()->getFullText(),
-		]);
+		] );
 	}
 
+	/**
+	 *
+	 * @return Title
+	 */
 	public function getRelatedTitle() {
-		if( $this->relatedTitle ) {
+		if ( $this->relatedTitle ) {
 			return $this->relatedTitle;
 		}
-		if( $this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 ) < 1 ) {
+		if ( $this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 ) < 1 ) {
 			return parent::getRelatedTitle();
 		}
-		$this->relatedTitle = \Title::newFromID(
+		$this->relatedTitle = Title::newFromID(
 			$this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 )
 		);
-		return $this->relatedTitle instanceof \Title
+		return $this->relatedTitle instanceof Title
 			? $this->relatedTitle
 			: parent::getRelatedTitle();
 	}
 
+	/**
+	 *
+	 * @return Title
+	 */
 	public function getRelatedContentTitle() {
-		$oTitle = $this->getRelatedTitle();
-		$oContentTitle = \Title::newFromText(
-			$oTitle->getText(),
-			$oTitle->getNamespace()-1
+		$title = $this->getRelatedTitle();
+		$contentTitle = Title::newFromText(
+			$title->getText(),
+			$title->getNamespace() - 1
 		);
-		return $oContentTitle;
+		return $contentTitle;
 	}
 
-	public function save( \User $oUser = null, $aOptions = array() ) {
-		$oParser = new Input();
+	/**
+	 *
+	 * @param User|null $user
+	 * @param array $options
+	 * @return Status
+	 */
+	public function save( User $user = null, $options = [] ) {
+		$parser = new Input();
 		$this->set( static::ATTR_TOPIC_TITLE,
-			$oParser->parse( $this->get( static::ATTR_TOPIC_TITLE, '' ) )
+			$parser->parse( $this->get( static::ATTR_TOPIC_TITLE, '' ) )
 		);
-		if( empty( $this->get( static::ATTR_TOPIC_TITLE, '' ) ) ) {
-			return \Status::newFatal( wfMessage(
+		if ( empty( $this->get( static::ATTR_TOPIC_TITLE, '' ) ) ) {
+			return Status::newFatal( wfMessage(
 				'bs-social-entity-fatalstatus-save-emptyfield',
 				$this->getVarMessage( static::ATTR_TOPIC_TITLE )->plain()
-			));
+			) );
 		}
-		if( empty( $this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 ) ) ) {
-			return \Status::newFatal( wfMessage(
+		if ( empty( $this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 ) ) ) {
+			return Status::newFatal( wfMessage(
 				'bs-social-entity-fatalstatus-save-emptyfield',
 				$this->getVarMessage( static::ATTR_DISCUSSION_TITLE_ID )->plain()
-			));
+			) );
 		}
-		$oTitle = \Title::newFromID(
+		$title = Title::newFromID(
 			$this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 )
 		);
-		if( !$oTitle|| !$oTitle->exists() || !$oTitle->isTalkPage() ) {
-			return \Status::newFatal( wfMessage(
+		if ( !$title || !$title->exists() || !$title->isTalkPage() ) {
+			return Status::newFatal( wfMessage(
 				'bs-socialtopics-entity-fatalstatus-save-notalkpage'
-			));
+			) );
 		}
-		$status = \Status::newGood();
+		$status = Status::newGood();
 		try {
 			$factory = Services::getInstance()->getService(
 				'BSSocialDiscussionEntityFactory'
 			);
-			$entity = $factory->newFromDiscussionTitle( $oTitle );
-			if( !$entity->exists() ) {
-				$status = $entity->save( $oUser );
+			$entity = $factory->newFromDiscussionTitle( $title );
+			if ( !$entity->exists() ) {
+				$status = $entity->save( $user );
 			}
-		} catch( \Exception $e ) {
-			return \Status::newFatal( $e->getMessage() );
+		} catch ( Exception $e ) {
+			return Status::newFatal( $e->getMessage() );
 		}
-		if( !$status->isOK() ) {
+		if ( !$status->isOK() ) {
 			return $status;
 		}
-		return parent::save( $oUser, $aOptions );
+		return parent::save( $user, $options );
 	}
 
+	/**
+	 *
+	 * @return void
+	 */
 	public function invalidateCache() {
 		parent::invalidateCache();
-		$title = \Title::newFromID(
+		$title = Title::newFromID(
 			$this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 )
 		);
-		if( !$title|| !$title->exists() ) {
+		if ( !$title || !$title->exists() ) {
 			return;
 		}
 		$factory = Services::getInstance()->getService(
 			'BSSocialDiscussionEntityFactory'
 		);
 		$entity = $factory->newFromDiscussionTitle( $title );
-		if( $entity && $entity->exists() ) {
+		if ( $entity && $entity->exists() ) {
 			$entity->invalidateCache();
 		}
 	}

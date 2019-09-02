@@ -6,12 +6,20 @@ use BlueSpice\InsertMagic\Hook\BSInsertMagicAjaxGetData;
 
 class AddNoDiscussionSwitch extends BSInsertMagicAjaxGetData {
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function skipProcessing() {
 		return $this->type !== 'switches';
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function doProcess() {
-		$this->response->result[] = (object) [
+		$this->response->result[] = (object)[
 			'id' => 'bs:nodiscussion',
 			'type' => 'switch',
 			'name' => 'NODISCUSSION',
@@ -25,13 +33,21 @@ class AddNoDiscussionSwitch extends BSInsertMagicAjaxGetData {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getCode() {
 		return '__NODISCUSSION__';
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getHelpLink() {
 		$extensions = \ExtensionRegistry::getInstance()->getAllThings();
-		if( !isset( $extensions['BlueSpiceSocialTopics'] ) ) {
+		if ( !isset( $extensions['BlueSpiceSocialTopics'] ) ) {
 			return '';
 		}
 		return $extensions['BlueSpiceSocialTopics']['url'];

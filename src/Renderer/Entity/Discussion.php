@@ -20,7 +20,7 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 	 * @param LinkRenderer|null $linkRenderer
 	 * @param IContextSource|null $context
 	 * @param string $name | ''
-	 * @param CacheHelper $cacheHelper
+	 * @param CacheHelper|null $cacheHelper
 	 */
 	protected function __construct( Config $config, Params $params,
 		LinkRenderer $linkRenderer = null, IContextSource $context = null,
@@ -43,7 +43,7 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 	 * @return string
 	 */
 	public function render_basetitlecontent( $val ) {
-		if( $this->renderType !== static::RENDER_TYPE_PAGE ) {
+		if ( $this->renderType !== static::RENDER_TYPE_PAGE ) {
 			return '';
 		}
 
@@ -72,12 +72,17 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 		return $renderer->render();
 	}
 
+	/**
+	 *
+	 * @param mixed $val
+	 * @return string
+	 */
 	protected function render_children( $val ) {
-		if( $this->renderType !== static::RENDER_TYPE_PAGE ) {
+		if ( $this->renderType !== static::RENDER_TYPE_PAGE ) {
 			return '';
 		}
 
-		if( !$this->getEntity()->exists() ) {
+		if ( !$this->getEntity()->exists() ) {
 			return '';
 		}
 
@@ -92,7 +97,7 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 		);
 		$renderer = $this->getServices()->getBSRendererFactory()->get(
 			'entitylist',
-			new Params( [ 'context' => $context ])
+			new Params( [ 'context' => $context ] )
 		);
 		return $renderer->render();
 	}
