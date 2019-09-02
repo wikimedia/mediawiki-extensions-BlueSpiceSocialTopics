@@ -15,6 +15,11 @@ class Topics extends \BlueSpice\SpecialPage {
 		parent::__construct( 'Topics', 'read' );
 	}
 
+	/**
+	 *
+	 * @param string $par
+	 * @return void
+	 */
 	public function execute( $par ) {
 		$this->checkPermissions();
 
@@ -31,7 +36,8 @@ class Topics extends \BlueSpice\SpecialPage {
 			$this->getContext()->getUser()
 		);
 
-		if( $entity = $this->extractEntity( $par ) ) {
+		$entity = $this->extractEntity( $par );
+		if ( $entity ) {
 			$this->getOutput()->addBacklinkSubtitle(
 				$entity->getRelatedTitle()
 			);
@@ -56,19 +62,24 @@ class Topics extends \BlueSpice\SpecialPage {
 		$this->getOutput()->addHTML( $renderer->render() );
 	}
 
+	/**
+	 *
+	 * @param string $param
+	 * @return bool|TopicEntity
+	 */
 	protected function extractEntity( $param = '' ) {
-		if( empty( $param ) ) {
+		if ( empty( $param ) ) {
 			return false;
 		}
 		$title = \Title::makeTitle( NS_SOCIALENTITY, $param );
-		if( !$title || !$title->exists() ) {
+		if ( !$title || !$title->exists() ) {
 			return false;
-		}		
-		$factory =  Services::getInstance()->getService(
+		}
+		$factory = Services::getInstance()->getService(
 			'BSSocialWikiPageEntityFactory'
 		);
 		$entity = $factory->newFromSourceTitle( $title );
-		if( !$entity instanceof TopicEntity || !$entity->exists() ) {
+		if ( !$entity instanceof TopicEntity || !$entity->exists() ) {
 			return false;
 		}
 		return $entity;

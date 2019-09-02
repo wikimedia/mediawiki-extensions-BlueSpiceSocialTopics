@@ -2,7 +2,13 @@
 
 namespace BlueSpice\Social\Topics\EntityListContext;
 
+use IContextSource;
+use Config;
+use User;
+use Title;
+use HtmlArmor;
 use BlueSpice\Social\Entity;
+use BlueSpice\Data\FieldType;
 use BlueSpice\Data\Filter\ListValue;
 use BlueSpice\Data\Filter\Numeric;
 use BlueSpice\Social\Topics\Entity\Topic;
@@ -12,42 +18,70 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 
 	/**
 	 *
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
 	 *
-	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param User|null $user
+	 * @param Entity|null $entity
+	 * @param Title|null $title
 	 */
-	public function __construct( \IContextSource $context, \Config $config, \User $user = null, Entity $entity = null, \Title $title = null ) {
+	public function __construct( IContextSource $context, Config $config, User $user = null,
+		Entity $entity = null, Title $title = null ) {
 		parent::__construct( $context, $config, $user, $entity );
-		if( $title ) {
+		if ( $title ) {
 			$this->title = $title;
 		}
 	}
 
+	/**
+	 *
+	 * @return Title
+	 */
 	public function getTitle() {
 		return $this->title ? $this->title : $this->context->getTitle();
 	}
 
+	/**
+	 *
+	 * @return int
+	 */
 	public function getLimit() {
 		return 3;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getSortProperty() {
 		return Topic::ATTR_TIMESTAMP_TOUCHED;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function useEndlessScroll() {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function useMoreScroll() {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getLockedFilterNames() {
 		return array_merge(
 			parent::getLockedFilterNames(),
@@ -55,10 +89,18 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 		);
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getOutputTypes() {
-		return array_merge( parent::getOutputTypes(), [ Topic::TYPE => 'Default'] );
+		return array_merge( parent::getOutputTypes(), [ Topic::TYPE => 'Default' ] );
 	}
 
+	/**
+	 *
+	 * @return \stdClass
+	 */
 	protected function getDiscussionTitleIDFilter() {
 		return (object)[
 			Numeric::KEY_PROPERTY => Topic::ATTR_DISCUSSION_TITLE_ID,
@@ -70,42 +112,53 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 
 	/**
 	 *
-	 * @return \stdClass[]
+	 * @return \stdClass
 	 */
 	protected function getTypeFilter() {
 		return (object)[
 			ListValue::KEY_PROPERTY => Topic::ATTR_TYPE,
 			ListValue::KEY_VALUE => [ Topic::TYPE ],
 			ListValue::KEY_COMPARISON => ListValue::COMPARISON_CONTAINS,
-			ListValue::KEY_TYPE => \BlueSpice\Data\FieldType::LISTVALUE
+			ListValue::KEY_TYPE => FieldType::LISTVALUE
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getFilters() {
-		return array_merge( 
-			parent::getFilters(),
+		return array_merge( parent::getFilters(),
 			[ $this->getDiscussionTitleIDFilter() ]
 		);
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getMoreLink() {
 		return Services::getInstance()->getLinkRenderer()->makeKnownLink(
 			$this->getTitle()->getTalkPage(),
-			new \HtmlArmor( $this->getMoreLinkMessage()->text() )
+			new HtmlArmor( $this->getMoreLinkMessage()->text() )
 		);
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getPreloadedEntities() {
 		$preloaded = parent::getPreloadedEntities();
 		$topic = Services::getInstance()->getBSEntityFactory()->newFromObject(
 			$this->getRawTopic()
 		);
-		if( !$topic instanceof Topic ) {
+		if ( !$topic instanceof Topic ) {
 			return $preloaded;
 		}
 
 		$status = $topic->userCan( 'create', $this->getUser() );
-		if( !$status->isOK() ) {
+		if ( !$status->isOK() ) {
 			return $preloaded;
 		}
 
@@ -113,23 +166,39 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 		return $preloaded;
 	}
 
+	/**
+	 *
+	 * @return \stdClass
+	 */
 	protected function getRawTopic() {
 		$talkPage = $this->getTitle()->getTalkPage();
-		return (object) [
+		return (object)[
 			Topic::ATTR_TYPE => Topic::TYPE,
 			Topic::ATTR_DISCUSSION_TITLE_ID => $talkPage->getArticleID(),
 			Topic::ATTR_RELATED_TITLE => $talkPage->getFullText(),
 		];
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function showEntityListMenu() {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function showHeadline() {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getHeadlineMessageKey() {
 		return 'bs-socialtopics-aftercontent-heading';
 	}
@@ -145,6 +214,10 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 		return 'social-topics-entitylist-topicsaftercontent';
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function showEntityListMore() {
 		return $this->entity && $this->entity->exists();
 	}

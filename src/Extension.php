@@ -36,7 +36,7 @@ class Extension extends \BlueSpice\Extension {
 	public static function onRegistration() {
 		global $wgContentHandlers, $wgNamespaceContentModels;
 
-		if( !defined('CONTENT_MODEL_BSSOCIALDISCUSSION') ) {
+		if ( !defined( 'CONTENT_MODEL_BSSOCIALDISCUSSION' ) ) {
 			define( 'CONTENT_MODEL_BSSOCIALDISCUSSION', 'BSSocialDiscussion' );
 			$wgContentHandlers[CONTENT_MODEL_BSSOCIALDISCUSSION]
 				= "\\BlueSpice\\Social\\Topics\\Content\\DiscussionHandler";
@@ -57,33 +57,33 @@ class Extension extends \BlueSpice\Extension {
 
 	/**
 	 * @param \Title $oTitle
-	 * @param \User $oUser
+	 * @param \User|null $oUser
 	 * @return type
 	 */
 	public static function createDiscussionPage( \Title $oTitle, \User $oUser = null ) {
 		/*if( !$oUser instanceof User ) {
 			$oUser = RequestContext::getMain()->getUser();
 		}*/
-		
+
 		$oUser = Services::getInstance()->getBSUtilityFactory()
 			->getMaintenanceUser()->getUser();
-		if( !$oTitle->isTalkPage() || $oTitle->getNamespace() === NS_SOCIALENTITY_TALK ) {
+		if ( !$oTitle->isTalkPage() || $oTitle->getNamespace() === NS_SOCIALENTITY_TALK ) {
+			// wrong msg
 			return \Status::newFatal( wfMessage(
-				'bs-socialtopics-entity-fatalstatus-save-notalkpage' //wrong msg
-			));
+				'bs-socialtopics-entity-fatalstatus-save-notalkpage'
+			) );
 		}
-		if( $oTitle->exists() ) {
+		if ( $oTitle->exists() ) {
 			return \Status::newGood( $oTitle );
 		}
 		$oWikiPage = \WikiPage::factory( $oTitle );
 		$oRelatedTitle = \Title::makeTitle(
-			$oTitle->getNamespace()-1,
+			$oTitle->getNamespace() - 1,
 			$oTitle->getText()
 		);
 		$sRelatedTitleFullText = $oRelatedTitle->getNamespace() === NS_FILE
 			? ":File:{$oRelatedTitle->getText()}"
-			: $oRelatedTitle->getFullText()
-		;
+			: $oRelatedTitle->getFullText();
 		$oMsg = wfMessage(
 			$oRelatedTitle->getNamespace() !== NS_FILE
 				? 'bs-socialtopics-autocreated-discussionpage'
@@ -93,7 +93,7 @@ class Extension extends \BlueSpice\Extension {
 			$oTitle->getFullText(),
 			$sRelatedTitleFullText,
 			$oRelatedTitle->getFullText(),
-		]);
+		] );
 
 		try {
 			$oStatus = $oWikiPage->doEditContent(
@@ -104,7 +104,7 @@ class Extension extends \BlueSpice\Extension {
 				$oUser,
 				null
 			);
-		} catch( \Exception $e ) {
+		} catch ( \Exception $e ) {
 			return \Status::newFatal( $e->getMessage() );
 		}
 		if ( !$oStatus->isOK() ) {
@@ -115,21 +115,22 @@ class Extension extends \BlueSpice\Extension {
 
 	/**
 	 * This is so hacky i cant breathe ^^
-	 * @param Article $oArticle
-	 * @param boolean $outputDone
-	 * @param boolen $useParserCache
+	 * @param Article &$oArticle
+	 * @param bool &$outputDone
+	 * @param bool &$useParserCache
+	 * @return bool
 	 */
 	public static function onArticleViewHeader( &$oArticle, &$outputDone, &$useParserCache ) {
-
 		$title = $oArticle->getTitle();
-		if( !$title->exists() || !$title->isTalkPage() ) {
+		if ( !$title->exists() || !$title->isTalkPage() ) {
 			return true;
 		}
 
 		$factory = Services::getInstance()->getService(
 			'BSSocialDiscussionEntityFactory'
 		);
-		if( !$entity = $factory->newFromDiscussionTitle( $title ) ) {
+		$entity = $factory->newFromDiscussionTitle( $title );
+		if ( !$entity ) {
 			return true;
 		}
 		$useParserCache = false;
@@ -140,7 +141,7 @@ class Extension extends \BlueSpice\Extension {
 		$outputDone = $oContentModel->getParserOutput(
 			$oArticle->getTitle()
 		);
-		$oArticle->getContext()->getOutput()->addParserOutput($outputDone);
+		$oArticle->getContext()->getOutput()->addParserOutput( $outputDone );
 		return true;
 	}
 }

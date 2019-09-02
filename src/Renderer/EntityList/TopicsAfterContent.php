@@ -74,7 +74,7 @@ class TopicsAfterContent extends \BlueSpice\Social\Renderer\EntityList {
 	 * @param Params $params
 	 * @param IContextSource|null $context
 	 * @param LinkRenderer|null $linkRenderer
-	 * @param RendererFactory|null
+	 * @param RendererFactory|null $rendererFactory
 	 * @return Renderer
 	 */
 	public static function factory( $name, Services $services, Config $config, Params $params,
@@ -115,8 +115,8 @@ class TopicsAfterContent extends \BlueSpice\Social\Renderer\EntityList {
 		$content .= Html::openElement( 'li' );
 		$content .= Html::openElement( 'div', [
 			'class' => 'bs-social-entity-content-topics'
-		]);
-		foreach( $this->getEntities() as $entity ) {
+		] );
+		foreach ( $this->getEntities() as $entity ) {
 			$content .= $this->renderEntitiy( $entity );
 		}
 		$content .= Html::closeElement( 'div' );

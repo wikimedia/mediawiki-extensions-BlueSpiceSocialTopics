@@ -5,11 +5,25 @@ use BlueSpice\Services;
 
 class Discussion extends \WikitextContent {
 
+	/**
+	 *
+	 * @var string
+	 */
 	public $mModelID = CONTENT_MODEL_WIKITEXT;
+
+	/**
+	 *
+	 * @return string
+	 */
 	public function getModel() {
 		return CONTENT_MODEL_WIKITEXT;
 	}
 
+	/**
+	 *
+	 * @param string $text
+	 * @param string $modelId
+	 */
 	public function __construct( $text, $modelId = CONTENT_MODEL_BSSOCIALDISCUSSION ) {
 		parent::__construct( $text, CONTENT_MODEL_WIKITEXT );
 	}
@@ -31,10 +45,12 @@ class Discussion extends \WikitextContent {
 	 * @param int|null $revId Revision ID (for {{REVISIONID}})
 	 * @param \ParserOptions|null $options Parser options
 	 * @param bool $generateHtml Whether or not to generate HTML
+	 * @param bool $bForceOrigin
 	 *
 	 * @return ParserOutput Containing information derived from this content.
 	 */
-	public function getParserOutput( \Title $title, $revId = null, \ParserOptions $options = null, $generateHtml = true, $bForceOrigin = false ) {
+	public function getParserOutput( \Title $title, $revId = null, \ParserOptions $options = null,
+		$generateHtml = true, $bForceOrigin = false ) {
 		if ( $options === null ) {
 			$options = $this->getContentHandler()->makeParserOptions( 'canonical' );
 		}
@@ -65,9 +81,12 @@ class Discussion extends \WikitextContent {
 	 * @param int $revId
 	 * @param \ParserOptions $options
 	 * @param bool $generateHtml
-	 * @param ParserOutput $output
+	 * @param ParserOutput &$output
+	 * @param bool $bForceOrigin
+	 * @return \ParserOutput
 	 */
-	protected function fillParserOutput( \Title $title, $revId, \ParserOptions $options, $generateHtml, \ParserOutput &$output, $bForceOrigin = false ) {
+	protected function fillParserOutput( \Title $title, $revId, \ParserOptions $options,
+		$generateHtml, \ParserOutput &$output, $bForceOrigin = false ) {
 		parent::fillParserOutput(
 			$title,
 			$revId,
@@ -75,17 +94,17 @@ class Discussion extends \WikitextContent {
 			$generateHtml,
 			$output
 		);
-		if( $bForceOrigin ) {
+		if ( $bForceOrigin ) {
 			return $output;
 		}
-		if( !$title ) {
+		if ( !$title ) {
 			return $output;
 		}
 		$factory = Services::getInstance()->getService(
 			'BSSocialDiscussionEntityFactory'
 		);
 		$entity = $factory->newFromDiscussionTitle( $title );
-		if( !$entity ) {
+		if ( !$entity ) {
 			return $output;
 		}
 

@@ -24,7 +24,7 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 		$name = '' ) {
 		parent::__construct( $config, $params, $linkRenderer, $context, $name );
 
-		if( !$this->getContext()->getTitle()->getTalkPage()->exists() ) {
+		if ( !$this->getContext()->getTitle()->getTalkPage()->exists() ) {
 			$this->args[static::PARAM_CLASS] .= ' nodiscussion';
 		} else {
 			$this->args[static::PARAM_CLASS] .= ' nodiscussionpage';
@@ -37,13 +37,13 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 	 */
 	public function render() {
 		$content = '';
-		if( $this->args[ static::PARAM_SHOW_HEADLINE ] ) {
+		if ( $this->args[ static::PARAM_SHOW_HEADLINE ] ) {
 			$content .= $this->renderEntityListHeadline();
 		}
 		$content .= $this->getOpenTag();
 		$content .= $this->makeTagContent();
 		$content .= $this->getCloseTag();
-		if( $this->args[ static::PARAM_SHOW_ENTITY_LIST_MORE ] ) {
+		if ( $this->args[ static::PARAM_SHOW_ENTITY_LIST_MORE ] ) {
 			$content .= $this->renderEntityListMore();
 		}
 
@@ -54,7 +54,7 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 		$content = '';
 		$content .= Html::openElement( 'li' );
 
-		if( !$this->getContext()->getTitle()->getTalkPage()->exists() ) {
+		if ( !$this->getContext()->getTitle()->getTalkPage()->exists() ) {
 			$content .= $this->renderNewDiscussionPage();
 		} else {
 			$content .= $this->renderNewDiscussion();

@@ -7,10 +7,18 @@ use BlueSpice\Social\Topics\Entity\Discussion;
 
 class SpecialDiscussions extends \BlueSpice\Social\EntityListContext {
 
+	/**
+	 *
+	 * @return int
+	 */
 	public function getLimit() {
 		return 10;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getLockedFilterNames() {
 		return array_merge(
 			parent::getLockedFilterNames(),
@@ -18,10 +26,18 @@ class SpecialDiscussions extends \BlueSpice\Social\EntityListContext {
 		);
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getSortProperty() {
 		return Discussion::ATTR_TIMESTAMP_CREATED;
 	}
 
+	/**
+	 *
+	 * @return \stdClass
+	 */
 	protected function getTypeFilter() {
 		return (object)[
 			ListValue::KEY_PROPERTY => Discussion::ATTR_TYPE,
@@ -33,7 +49,7 @@ class SpecialDiscussions extends \BlueSpice\Social\EntityListContext {
 
 	/**
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function showEntitySpawner() {
 		return false;

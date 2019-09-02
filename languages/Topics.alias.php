@@ -1,12 +1,12 @@
 <?php
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English */
-$specialPageAliases['en'] = array(
-	'Topics' => array( 'Topics' ),
-);
+$specialPageAliases['en'] = [
+	'Topics' => [ 'Topics' ],
+];
 
 /** German (Deutsch) */
-$specialPageAliases['de'] = array(
-	'Topics' => array( 'Topics', 'Themen' ),
-);
+$specialPageAliases['de'] = [
+	'Topics' => [ 'Topics', 'Themen' ],
+];

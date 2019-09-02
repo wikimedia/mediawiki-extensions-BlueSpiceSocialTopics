@@ -2,6 +2,10 @@
 
 namespace BlueSpice\Social\Topics\EntityListContext;
 
+use MWException;
+use IContextSource;
+use Config;
+use User;
 use BlueSpice\Services;
 use BlueSpice\Data\Filter\ListValue;
 use BlueSpice\Data\Filter\Numeric;
@@ -21,17 +25,25 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 
 	/**
 	 *
-	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param User|null $user
+	 * @param Discussion|null $discussion
+	 * @throws MWException
 	 */
-	public function __construct( \IContextSource $context, \Config $config, \User $user = null, Discussion $discussion = null ) {
+	public function __construct( IContextSource $context, Config $config, User $user = null,
+		Discussion $discussion = null ) {
 		parent::__construct( $context, $config, $user, $discussion );
 		$this->discussion = $discussion;
-		if( !$this->discussion ) {
-			throw new \MWException( 'Discussion entity missing' );
+		if ( !$this->discussion ) {
+			throw new MWException( 'Discussion entity missing' );
 		}
 	}
 
+	/**
+	 *
+	 * @return \stdClass
+	 */
 	protected function getDiscussionTitleIDFilter() {
 		return (object)[
 			Numeric::KEY_PROPERTY => Topic::ATTR_DISCUSSION_TITLE_ID,
@@ -41,17 +53,28 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getFilters() {
-		return array_merge( 
-			parent::getFilters(),
+		return array_merge( parent::getFilters(),
 			[ $this->getDiscussionTitleIDFilter() ]
 		);
 	}
 
+	/**
+	 *
+	 * @return int
+	 */
 	public function getLimit() {
 		return 10;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getLockedFilterNames() {
 		return array_merge(
 			parent::getLockedFilterNames(),
@@ -59,10 +82,18 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 		);
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getSortProperty() {
 		return Topic::ATTR_TIMESTAMP_CREATED;
 	}
 
+	/**
+	 *
+	 * @return \stdClass
+	 */
 	protected function getTypeFilter() {
 		return (object)[
 			ListValue::KEY_PROPERTY => Topic::ATTR_TYPE,
@@ -72,17 +103,21 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getPreloadedEntities() {
 		$preloaded = parent::getPreloadedEntities();
 		$topic = Services::getInstance()->getBSEntityFactory()->newFromObject(
 			$this->getRawTopic()
 		);
-		if( !$topic instanceof Topic ) {
+		if ( !$topic instanceof Topic ) {
 			return $preloaded;
 		}
 
 		$status = $topic->userCan( 'create', $this->getUser() );
-		if( !$status->isOK() ) {
+		if ( !$status->isOK() ) {
 			return $preloaded;
 		}
 
@@ -90,23 +125,31 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 		return $preloaded;
 	}
 
+	/**
+	 *
+	 * @return \stdCLass
+	 */
 	protected function getRawTopic() {
 		$title = $this->discussion->getRelatedTitle();
-		return (object) [
+		return (object)[
 			Topic::ATTR_TYPE => Topic::TYPE,
-			Topic::ATTR_DISCUSSION_TITLE_ID => (int) $title->getArticleID(),
+			Topic::ATTR_DISCUSSION_TITLE_ID => (int)$title->getArticleID(),
 			Topic::ATTR_RELATED_TITLE => $title->getFullText(),
 		];
 	}
 
 	/**
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function showEntitySpawner() {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return Discussion
+	 */
 	public function getParent() {
 		return $this->discussion;
 	}

@@ -4,6 +4,10 @@ namespace BlueSpice\Social\Topics\ConfigDefinition;
 
 class BSSocialTalkpageAutoCreate extends \BlueSpice\ConfigDefinition\BooleanSetting {
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getPaths() {
 		return [
 			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_CONTENT_STRUCTURING . '/BlueSpiceSocialTopics',
@@ -12,6 +16,10 @@ class BSSocialTalkpageAutoCreate extends \BlueSpice\ConfigDefinition\BooleanSett
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getLabelMessageKey() {
 		return 'bs-socialtopics-toc-entalkpageautocreate';
 	}

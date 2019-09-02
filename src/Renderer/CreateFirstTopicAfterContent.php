@@ -26,6 +26,7 @@ class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 	 * @param LinkRenderer|null $linkRenderer
 	 * @param IContextSource|null $context
 	 * @param string $name | ''
+	 * @param EntityFactory|null $factory
 	 */
 	protected function __construct( Config $config, Params $params,
 		LinkRenderer $linkRenderer = null, IContextSource $context = null,
@@ -43,6 +44,7 @@ class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 	 * @param Params $params
 	 * @param IContextSource|null $context
 	 * @param LinkRenderer|null $linkRenderer
+	 * @param EntityFactory|null $factory
 	 * @return Renderer
 	 */
 	public static function factory( $name, Services $services, Config $config, Params $params,
@@ -89,7 +91,7 @@ class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 			Topic::ATTR_TYPE => Topic::TYPE,
 			Topic::ATTR_DISCUSSION_TITLE_ID => $title->getArticleID(),
 		] );
-		if( !$entity->userCan( 'create', $this->getContext()->getUser() )->isOK() ) {
+		if ( !$entity->userCan( 'create', $this->getContext()->getUser() )->isOK() ) {
 			$msg = $this->msg( 'bs-socialtopics-notopicsadded' );
 			$content .= new \OOUI\LabelWidget( [
 				'label' => $msg->plain(),
