@@ -111,6 +111,9 @@ class TopicsAfterContent extends \BlueSpice\Social\Renderer\EntityList {
 	 * @return string
 	 */
 	protected function makeTagContent() {
+		if ( !$this->getContext() instanceof AfterContent || !empty( $this->getEntities() ) ) {
+			return parent::makeTagContent();
+		}
 		$content = '';
 		$content .= Html::openElement( 'li' );
 		$content .= Html::openElement( 'div', [
