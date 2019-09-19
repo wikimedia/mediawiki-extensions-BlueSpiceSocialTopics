@@ -19,5 +19,10 @@
 	"bs-socialtopics-nodiscussionpage-create": "새 토론 문서 만들기",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "저장",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "취소",
-	"bs-socialtopics-switch-nodiscussion-description": "이 문서의 토론을 숨깁니다."
+	"bs-socialtopics-switch-nodiscussion-description": "이 문서의 토론을 숨깁니다.",
+	"bs-socialtopics-toc-entalkpageautocreate": "모든 토론 문서 자동 생성",
+	"bs-socialtopics-autocreated-discussionpage": "이 토론 문서는 자동 생성되었습니다.",
+	"bs-socialdiscussion-topictype": "토론 주제",
+	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "유효한 토론 문서가 아닙니다",
+	"bs-socialtopics-notopicsadded": "주제가 아직 만들어지지 않았습니다."
 }
