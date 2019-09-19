@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Elroy"
+		]
+	},
+	"bs-socialdiscussion-discussiontype": "Overleg",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Opslaan",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Annuleren",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Inhoud"
+}

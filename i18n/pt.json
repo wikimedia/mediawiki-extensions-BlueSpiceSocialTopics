@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mansil alfalb"
+		]
+	},
+	"bs-socialtopics-autocreated-discussionpage": "Esta página de discussão foi criada automaticamente.",
+	"bs-socialdiscussion-topictype": "Tópico de discussão",
+	"bs-socialtopics-entitydiscussion-header-create": "Criar nova discussão",
+	"bs-social-entitytopic-header-create": "Novo Tópico",
+	"bs-socialtopics-var-topictitle": "Título",
+	"bs-socialtopics-var-discussiontitleid": "Página de discussão atribuída",
+	"bs-socialtopics-special-topics-heading": "Todos os tópicos",
+	"bs-socialtopics-special-topics-heading-entry": "Tópico/$1",
+	"bs-socialtopics-aftercontent-heading": "Discussões",
+	"bs-socialtopics-nodiscussion": "Ainda não foi criada nenhuma discussão.",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancelar"
+}
