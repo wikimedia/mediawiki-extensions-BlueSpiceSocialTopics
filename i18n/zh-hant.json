@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"bs-socialdiscussion-discussiontype": "討論",
+	"bs-socialtopics-var-topictitle": "標題",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "儲存",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "取消"
+}
