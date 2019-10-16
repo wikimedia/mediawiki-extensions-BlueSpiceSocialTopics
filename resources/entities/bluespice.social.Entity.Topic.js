@@ -1,7 +1,7 @@
 /**
  * Js for Rating extension
  *
- * @author     Patric Wirth <wirth@hallowelt.com>
+ * @author     Patric Wirth
  * @package    BluespiceSocial
  * @subpackage BlueSpiceSocialTopics
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
