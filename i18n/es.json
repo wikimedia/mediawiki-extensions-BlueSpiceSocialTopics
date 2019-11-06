@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hasley",
+			"Fitoschido"
+		]
+	},
+	"bs-social-entitytopic-header-create": "Tema nuevo",
+	"bs-socialtopics-var-topictitle": "Título",
+	"bs-socialtopics-var-discussiontitleid": "Página de discusión asignada",
+	"topics": "Temas",
+	"bs-socialtopics-special-topics-heading": "Todos los temas",
+	"bs-socialtopics-special-topics-heading-entry": "Tema/$1",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Guardar",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancelar",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contenido"
+}
