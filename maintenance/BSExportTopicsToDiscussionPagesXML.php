@@ -10,7 +10,9 @@ use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\Sort;
 use BlueSpice\Data\FieldType;
 use BlueSpice\Data\Filter\StringValue;
+use BlueSpice\Social\Entity;
 use BlueSpice\Social\Data\Entity\Store;
+use BlueSpice\Social\Comments\Entity\Comment;
 use BlueSpice\Social\Topics\Entity\Topic;
 
 class BSExportTopicsToDiscussionPagesXML extends Maintenance {
@@ -137,7 +139,33 @@ class BSExportTopicsToDiscussionPagesXML extends Maintenance {
 					$entityTS->modify( "+$secondsCount seconds" );
 				}
 
-				fwrite( $this->handle, $this->writeRevision( $entity, $title, $text, $entityTS ) . "\n" );
+				fwrite(
+					$this->handle,
+					$this->writeRevision( $entity, $title, $text, $entityTS ) . "\n"
+				);
+				if ( !ExtensionRegistry::getInstance()->isLoaded( 'BlueSpiceSocialComments' ) ) {
+					continue;
+				}
+				$this->output( " => write children: " );
+				foreach ( array_reverse( $entity->getChildren() ) as $child ) {
+					if ( !$child instanceof Comment ) {
+						continue;
+					}
+					$childTS = DateTime::createFromFormat(
+						'YmdHis',
+						$child->get( Comment::ATTR_TIMESTAMP_CREATED ),
+						new DateTimeZone( 'UTC' )
+					);
+					if ( $lastRevTS > $childTS ) {
+						$childTS = $lastRevTS;
+						$childTS->modify( "+$secondsCount seconds" );
+					}
+					fwrite(
+						$this->handle,
+						$this->writeRevision( $child, $title, $text, $childTS ) . "\n"
+					);
+					$this->output( "." );
+				}
 			}
 			fwrite( $this->handle, $this->writer->closePage() . "\n" );
 			$this->output( "\n" );
@@ -152,13 +180,13 @@ class BSExportTopicsToDiscussionPagesXML extends Maintenance {
 
 	/**
 	 *
-	 * @param Topic $entity
+	 * @param Entity $entity
 	 * @param Title $title
 	 * @param string &$text
 	 * @param DateTime $date
 	 * @return string
 	 */
-	protected function writeRevision( Topic $entity, Title $title, &$text, DateTime $date ) {
+	protected function writeRevision( Entity $entity, Title $title, &$text, DateTime $date ) {
 		$out = "    <revision>\n";
 
 		$out .= $this->writer->writeTimestamp(
@@ -172,7 +200,12 @@ class BSExportTopicsToDiscussionPagesXML extends Maintenance {
 			$user ? $user->getId() : 0,
 			$user ? $user->getName() : ''
 		);
-		$text = $text . "\n" . $this->generateWikiText( $entity );
+		if ( $entity instanceof Topic ) {
+			$text = $text . "\n" . $this->generateTopicWikiText( $entity );
+		} elseif ( $entity instanceof Comment ) {
+			$text = $text . "\n" . $this->generateCommentWikiText( $entity );
+		}
+
 		$out .= "        " . Xml::elementClean(
 			'text',
 			[ 'bytes' => strlen( $text ) ],
@@ -186,10 +219,31 @@ class BSExportTopicsToDiscussionPagesXML extends Maintenance {
 
 	/**
 	 *
+	 * @param Comment $entity
+	 * @return string
+	 */
+	protected function generateCommentWikiText( Comment $entity ) {
+		$username = $entity->getOwner()->getName();
+		$date = DateTime::createFromFormat(
+			'YmdHis',
+			$entity->get( Topic::ATTR_TIMESTAMP_CREATED ),
+			new DateTimeZone( 'UTC' )
+		);
+		$ts = $date->format( 'd.m.Y H:i:s' );
+		$text = preg_replace( "#^(.*?)$#mi", ": $1", $entity->get( Comment::ATTR_TEXT ) );
+		return <<<EOT
+
+$text
+: [[User:$username]] $ts (UTC)
+EOT;
+	}
+
+	/**
+	 *
 	 * @param Topic $entity
 	 * @return string
 	 */
-	protected function generateWikiText( Topic $entity ) {
+	protected function generateTopicWikiText( Topic $entity ) {
 		$username = $entity->getOwner()->getName();
 		$date = DateTime::createFromFormat(
 			'YmdHis',
