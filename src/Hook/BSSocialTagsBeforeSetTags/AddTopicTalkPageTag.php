@@ -9,6 +9,10 @@ class AddTopicTalkPageTag extends BSSocialTagsBeforeSetTags {
 		if ( !$this->entity instanceof Topic ) {
 			return true;
 		}
+		if ( !$this->entity->getRelatedTitle()->exists() ) {
+			return true;
+		}
+
 		return parent::skipProcessing();
 	}
 
