@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mansil alfalb"
+			"Mansil alfalb",
+			"Fúlvio",
+			"Hamilton Abreu"
 		]
 	},
 	"bs-socialtopics-autocreated-discussionpage": "Esta página de discussão foi criada automaticamente.",
@@ -14,5 +16,17 @@
 	"bs-socialtopics-special-topics-heading-entry": "Tópico/$1",
 	"bs-socialtopics-aftercontent-heading": "Discussões",
 	"bs-socialtopics-nodiscussion": "Ainda não foi criada nenhuma discussão.",
-	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancelar"
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancelar",
+	"bs-socialtopics-desc": "Entidades de tópico e discussão para BlueSpiceSocial",
+	"bs-socialtopics-pref-skipcreatedialog": "Saltar diálogo ao criar uma discussão",
+	"bs-socialtopics-toc-entalkpageautocreate": "Criar automaticamente todas as páginas de discussão",
+	"bs-socialtopics-autocreated-discussionpagefile": "Esta página de discussão foi criada automaticamente.",
+	"bs-socialdiscussion-discussiontype": "Discussão",
+	"topics": "Tópicos",
+	"bs-socialtopics-nodiscussionpage": "Ainda não foi criada nenhuma página de discussão.",
+	"bs-socialtopics-nodiscussionpage-create": "Criar página de discussão nova",
+	"bs-socialtopics-notopicsadded": "Ainda não foi criado nenhum tópico.",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Gravar",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Conteúdo",
+	"bs-socialtopics-switch-nodiscussion-description": "Oculta a discussão nesta página."
 }
