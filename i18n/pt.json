@@ -17,6 +17,8 @@
 	"bs-social-entitytopic-header-create": "Novo Tópico",
 	"bs-socialtopics-var-topictitle": "Título",
 	"bs-socialtopics-var-discussiontitleid": "Página de discussão atribuída",
+	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Não é uma página de discussão válida",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 iniciou o tópico:",
 	"topics": "Tópicos",
 	"bs-socialtopics-special-topics-heading": "Todos os tópicos",
 	"bs-socialtopics-special-topics-heading-entry": "Tópico/$1",
