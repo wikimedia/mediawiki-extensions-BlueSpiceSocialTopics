@@ -30,15 +30,15 @@
  */
 namespace BlueSpice\Social\Topics\Entity;
 
+use BlueSpice\Services;
+use BlueSpice\Social\Entity\Text;
+use BlueSpice\Social\Parser\Input;
+use BsNamespaceHelper;
 use Exception;
 use Message;
 use Status;
 use Title;
 use User;
-use BsNamespaceHelper;
-use BlueSpice\Social\Entity\Text;
-use BlueSpice\Social\Parser\Input;
-use BlueSpice\Services;
 
 /**
  * Topic class for BSSocial extension

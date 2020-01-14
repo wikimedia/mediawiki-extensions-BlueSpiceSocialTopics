@@ -2,17 +2,17 @@
 
 namespace BlueSpice\Social\Topics;
 
-use MWException;
-use Title;
 use BlueSpice\Context;
-use BlueSpice\Services;
+use BlueSpice\Data\Filter\Numeric;
+use BlueSpice\Data\ReaderParams;
 use BlueSpice\Entity;
 use BlueSpice\EntityFactory;
-use BlueSpice\Data\ReaderParams;
-use BlueSpice\Data\Filter\Numeric;
+use BlueSpice\Services;
 use BlueSpice\Social\Data\Entity\Store;
-use BlueSpice\Social\Topics\EntityListContext\SpecialDiscussions;
 use BlueSpice\Social\Topics\Entity\Discussion;
+use BlueSpice\Social\Topics\EntityListContext\SpecialDiscussions;
+use MWException;
+use Title;
 
 class DiscussionFactory extends EntityFactory {
 

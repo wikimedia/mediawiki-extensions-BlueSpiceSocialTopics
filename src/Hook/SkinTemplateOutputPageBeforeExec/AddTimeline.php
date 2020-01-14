@@ -27,9 +27,9 @@
 namespace BlueSpice\Social\Topics\Hook\SkinTemplateOutputPageBeforeExec;
 
 use BlueSpice\Context;
-use BlueSpice\Renderer\Params;
-use BlueSpice\IRenderer;
 use BlueSpice\Hook\SkinTemplateOutputPageBeforeExec;
+use BlueSpice\IRenderer;
+use BlueSpice\Renderer\Params;
 use BlueSpice\Social\Topics\EntityListContext\AfterContent;
 
 class AddTimeline extends SkinTemplateOutputPageBeforeExec {
@@ -66,7 +66,7 @@ class AddTimeline extends SkinTemplateOutputPageBeforeExec {
 		$prop = $this->getServices()->getBSUtilityFactory()
 			->getPagePropHelper( $this->skin->getTitle() )
 			->getPageProp( 'bs_nodiscussion' );
-		if ( !is_null( $prop ) ) {
+		if ( $prop !== null ) {
 			return true;
 		}
 

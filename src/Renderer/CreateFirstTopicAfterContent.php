@@ -2,14 +2,14 @@
 
 namespace BlueSpice\Social\Topics\Renderer;
 
-use IContextSource;
-use Config;
-use OutputPage;
-use BlueSpice\Services;
-use MediaWiki\Linker\LinkRenderer;
-use BlueSpice\Renderer\Params;
 use BlueSpice\EntityFactory;
+use BlueSpice\Renderer\Params;
+use BlueSpice\Services;
 use BlueSpice\Social\Topics\Entity\Topic;
+use Config;
+use IContextSource;
+use MediaWiki\Linker\LinkRenderer;
+use OutputPage;
 
 class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 

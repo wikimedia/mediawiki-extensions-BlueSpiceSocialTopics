@@ -2,12 +2,12 @@
 
 namespace BlueSpice\Social\Topics\Renderer;
 
-use IContextSource;
-use Config;
-use RequestContext;
-use OutputPage;
-use MediaWiki\Linker\LinkRenderer;
 use BlueSpice\Renderer\Params;
+use Config;
+use IContextSource;
+use MediaWiki\Linker\LinkRenderer;
+use OutputPage;
+use RequestContext;
 
 class CreateNewDiscussionPage extends \BlueSpice\Renderer {
 	const PARAM_CONTEXT = 'context';

@@ -28,8 +28,8 @@
 
 namespace BlueSpice\Social\Topics;
 
-use BlueSpice\Social\Topics\Content\Discussion as DiscussionContent;
 use BlueSpice\Services;
+use BlueSpice\Social\Topics\Content\Discussion as DiscussionContent;
 
 class Extension extends \BlueSpice\Extension {
 

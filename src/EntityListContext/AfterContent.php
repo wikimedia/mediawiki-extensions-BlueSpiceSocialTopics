@@ -2,17 +2,17 @@
 
 namespace BlueSpice\Social\Topics\EntityListContext;
 
-use IContextSource;
-use Config;
-use User;
-use Title;
-use HtmlArmor;
-use BlueSpice\Social\Entity;
 use BlueSpice\Data\FieldType;
 use BlueSpice\Data\Filter\ListValue;
 use BlueSpice\Data\Filter\Numeric;
-use BlueSpice\Social\Topics\Entity\Topic;
 use BlueSpice\Services;
+use BlueSpice\Social\Entity;
+use BlueSpice\Social\Topics\Entity\Topic;
+use Config;
+use HtmlArmor;
+use IContextSource;
+use Title;
+use User;
 
 class AfterContent extends \BlueSpice\Social\EntityListContext {
 

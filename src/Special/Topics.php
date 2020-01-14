@@ -3,11 +3,11 @@
 namespace BlueSpice\Social\Topics\Special;
 
 use BlueSpice\Context;
-use BlueSpice\Services;
 use BlueSpice\Renderer\Params;
+use BlueSpice\Services;
 use BlueSpice\Social\Renderer\Entity as Renderer;
-use BlueSpice\Social\Topics\EntityListContext\SpecialTopics;
 use BlueSpice\Social\Topics\Entity\Topic as TopicEntity;
+use BlueSpice\Social\Topics\EntityListContext\SpecialTopics;
 
 class Topics extends \BlueSpice\SpecialPage {
 

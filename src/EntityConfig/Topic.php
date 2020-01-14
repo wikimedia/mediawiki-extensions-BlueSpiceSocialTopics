@@ -31,9 +31,9 @@
  */
 namespace BlueSpice\Social\Topics\EntityConfig;
 
-use BlueSpice\Social\EntityConfig\Text;
-use BlueSpice\Social\Data\Entity\Schema;
 use BlueSpice\Data\FieldType;
+use BlueSpice\Social\Data\Entity\Schema;
+use BlueSpice\Social\EntityConfig\Text;
 use BlueSpice\Social\Topics\Entity\Topic as Entity;
 
 /**

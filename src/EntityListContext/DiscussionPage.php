@@ -2,15 +2,15 @@
 
 namespace BlueSpice\Social\Topics\EntityListContext;
 
-use MWException;
-use IContextSource;
-use Config;
-use User;
-use BlueSpice\Services;
 use BlueSpice\Data\Filter\ListValue;
 use BlueSpice\Data\Filter\Numeric;
+use BlueSpice\Services;
 use BlueSpice\Social\Topics\Entity\Discussion;
 use BlueSpice\Social\Topics\Entity\Topic;
+use Config;
+use IContextSource;
+use MWException;
+use User;
 
 class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 	const CONFIG_NAME_OUTPUT_TYPE = 'EntityListDiscussionPageOutputType';

@@ -2,12 +2,12 @@
 
 namespace BlueSpice\Social\Topics\Renderer\EntityList;
 
-use IContextSource;
+use BlueSpice\Renderer\Params;
+use BlueSpice\Services;
 use Config;
 use Html;
-use BlueSpice\Services;
+use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
-use BlueSpice\Renderer\Params;
 
 class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 

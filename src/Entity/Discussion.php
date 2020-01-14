@@ -30,16 +30,16 @@
  */
 namespace BlueSpice\Social\Topics\Entity;
 
+use BlueSpice\Social\Entity\Page;
+use BsNamespaceHelper;
 use Exception;
 use Message;
+use ParserOptions;
+use RequestContext;
 use Status;
 use Title;
 use User;
-use ParserOptions;
 use WikiPage;
-use RequestContext;
-use BsNamespaceHelper;
-use BlueSpice\Social\Entity\Page;
 
 /**
  * BSSociaEntityDiscussion class for BSSocial extension

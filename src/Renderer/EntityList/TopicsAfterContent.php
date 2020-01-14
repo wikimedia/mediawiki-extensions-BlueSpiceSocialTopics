@@ -2,14 +2,14 @@
 
 namespace BlueSpice\Social\Topics\Renderer\EntityList;
 
-use Html;
-use Config;
-use IContextSource;
-use MediaWiki\Linker\LinkRenderer;
-use BlueSpice\RendererFactory;
 use BlueSpice\Renderer\Params;
+use BlueSpice\RendererFactory;
 use BlueSpice\Services;
 use BlueSpice\Social\Topics\EntityListContext\AfterContent;
+use Config;
+use Html;
+use IContextSource;
+use MediaWiki\Linker\LinkRenderer;
 
 class TopicsAfterContent extends \BlueSpice\Social\Renderer\EntityList {
 

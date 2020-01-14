@@ -2,14 +2,14 @@
 
 namespace BlueSpice\Social\Topics\Renderer\Entity;
 
-use IContextSource;
-use Config;
-use BlueSpice\Services;
 use BlueSpice\Context;
-use BlueSpice\Utility\CacheHelper;
-use MediaWiki\Linker\LinkRenderer;
 use BlueSpice\Renderer\Params;
+use BlueSpice\Services;
 use BlueSpice\Social\Topics\EntityListContext\DiscussionPage;
+use BlueSpice\Utility\CacheHelper;
+use Config;
+use IContextSource;
+use MediaWiki\Linker\LinkRenderer;
 
 class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 
