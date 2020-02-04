@@ -28,5 +28,7 @@
 	"bs-socialtopics-notopicsadded": "Ainda não foi criado nenhum tópico.",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Gravar",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Conteúdo",
-	"bs-socialtopics-switch-nodiscussion-description": "Oculta a discussão nesta página."
+	"bs-socialtopics-switch-nodiscussion-description": "Oculta a discussão nesta página.",
+	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Não é uma página de discussão válida",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 iniciou o tópico:"
 }
