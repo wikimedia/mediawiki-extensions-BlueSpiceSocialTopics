@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Verdy p"
+			"Verdy p",
+			"Thibaut120094"
 		]
 	},
 	"bs-socialtopics-desc": "Entités de fils de discussion pour ''BlueSpiceSocial''",
@@ -16,7 +17,7 @@
 	"bs-socialtopics-var-topictitle": "Titre",
 	"bs-socialtopics-var-discussiontitleid": "Page de discussion assignée",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Ce n’est pas une page de discussion valide",
-	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 a démarré le sujet :",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 a démarré le sujet :",
 	"topics": "Sujets",
 	"bs-socialtopics-special-topics-heading": "Tous les sujets",
 	"bs-socialtopics-special-topics-heading-entry": "Sujet/$1",
