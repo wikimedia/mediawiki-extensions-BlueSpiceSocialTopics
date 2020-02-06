@@ -52,7 +52,7 @@ class Discussion extends \WikitextContent {
 	public function getParserOutput( \Title $title, $revId = null, \ParserOptions $options = null,
 		$generateHtml = true, $bForceOrigin = false ) {
 		if ( $options === null ) {
-			$options = $this->getContentHandler()->makeParserOptions( 'canonical' );
+			$options = \ParserOptions::newCanonical( 'canonical' );
 		}
 
 		$po = new \ParserOutput();
