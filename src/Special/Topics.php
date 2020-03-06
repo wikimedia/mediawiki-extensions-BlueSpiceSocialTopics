@@ -54,7 +54,7 @@ class Topics extends \BlueSpice\SpecialPage {
 			return;
 		}
 
-		$renderer = Services::getInstance()->getBSRendererFactory()->get(
+		$renderer = Services::getInstance()->getService( 'BSRendererFactory' )->get(
 			'entitylist',
 			new Params( [ 'context' => $context ] )
 		);

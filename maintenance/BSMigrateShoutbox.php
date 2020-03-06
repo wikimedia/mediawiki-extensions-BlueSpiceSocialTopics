@@ -148,7 +148,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	 * @return string
 	 */
 	protected function makeGenericTopicTitle( $user ) {
-		$userHelper = Services::getInstance()->getBSUtilityFactory()
+		$userHelper = Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getUserHelper( $user );
 
 		$msg = \Message::newFromKey(
@@ -162,7 +162,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\EntityFactory
 	 */
 	protected function getFactory() {
-		return Services::getInstance()->getBSEntityFactory();
+		return Services::getInstance()->getService( 'BSEntityFactory' );
 	}
 
 	/**
@@ -228,7 +228,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	 * @return \User
 	 */
 	protected function getMaintenanceUser() {
-		return Services::getInstance()->getBSUtilityFactory()
+		return Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 	}
 

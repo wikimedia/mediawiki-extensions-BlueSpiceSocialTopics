@@ -109,7 +109,7 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 	 */
 	public function getPreloadedEntities() {
 		$preloaded = parent::getPreloadedEntities();
-		$topic = Services::getInstance()->getBSEntityFactory()->newFromObject(
+		$topic = Services::getInstance()->getService( 'BSEntityFactory' )->newFromObject(
 			$this->getRawTopic()
 		);
 		if ( !$topic instanceof Topic ) {
