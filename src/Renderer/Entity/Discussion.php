@@ -65,7 +65,7 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 	}
 
 	protected function renderNewDiscussion() {
-		$renderer = Services::getInstance()->getBSRendererFactory()->get(
+		$renderer = Services::getInstance()->getService( 'BSRendererFactory' )->get(
 			'social-topics-createnewdiscussion',
 			new Params( [ 'context' => $this->getContext() ] )
 		);
@@ -95,7 +95,7 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 			$this->getContext()->getUser(),
 			$this->getEntity()
 		);
-		$renderer = $this->getServices()->getBSRendererFactory()->get(
+		$renderer = $this->getServices()->getService( 'BSRendererFactory' )->get(
 			'entitylist',
 			new Params( [ 'context' => $context ] )
 		);

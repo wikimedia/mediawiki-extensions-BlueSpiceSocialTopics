@@ -73,7 +73,7 @@ class BSExportTopicsToDiscussionPagesXML extends Maintenance {
 
 		$discussions = [];
 		foreach ( $res->getRecords() as $record ) {
-			$entity = Services::getInstance()->getBSEntityFactory()
+			$entity = Services::getInstance()->getService( 'BSEntityFactory' )
 				->newFromObject( $record->getData() );
 			if ( !$entity instanceof Topic ) {
 				continue;
@@ -319,7 +319,7 @@ EOT;
 	 * @return User
 	 */
 	protected function getUser() {
-		return $this->getServices()->getBSUtilityFactory()->getMaintenanceUser()
+		return $this->getServices()->getService( 'BSUtilityFactory' )->getMaintenanceUser()
 			->getUser();
 	}
 
@@ -339,7 +339,7 @@ EOT;
 		if ( $this->config !== null ) {
 			return $this->config;
 		}
-		$this->config = $this->getServices()->getBSEntityConfigFactory()->newFromType(
+		$this->config = $this->getServices()->getService( 'BSEntityConfigFactory' )->newFromType(
 			Topic::TYPE
 		);
 

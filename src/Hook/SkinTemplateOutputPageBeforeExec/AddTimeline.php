@@ -63,7 +63,7 @@ class AddTimeline extends SkinTemplateOutputPageBeforeExec {
 			return true;
 		}
 
-		$prop = $this->getServices()->getBSUtilityFactory()
+		$prop = $this->getServices()->getService( 'BSUtilityFactory' )
 			->getPagePropHelper( $this->skin->getTitle() )
 			->getPageProp( 'bs_nodiscussion' );
 		if ( !is_null( $prop ) ) {
@@ -115,7 +115,7 @@ class AddTimeline extends SkinTemplateOutputPageBeforeExec {
 	 * @return IRenderer
 	 */
 	protected function getTimeLineRenderer() {
-		return $this->getServices()->getBSRendererFactory()->get(
+		return $this->getServices()->getService( 'BSRendererFactory' )->get(
 			$this->getContext()->getRendererName(),
 			new Params( [ 'context' => $this->getContext() ] )
 		);

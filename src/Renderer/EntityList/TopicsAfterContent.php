@@ -93,7 +93,7 @@ class TopicsAfterContent extends \BlueSpice\Social\Renderer\EntityList {
 			$linkRenderer = $services->getLinkRenderer();
 		}
 		if ( !$rendererFactory ) {
-			$rendererFactory = $services->getBSRendererFactory();
+			$rendererFactory = $services->getService( 'BSRendererFactory' );
 		}
 
 		return new static(

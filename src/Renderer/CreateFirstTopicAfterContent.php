@@ -63,7 +63,7 @@ class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 			$linkRenderer = $services->getLinkRenderer();
 		}
 		if ( !$factory ) {
-			$factory = $services->getBSEntityFactory();
+			$factory = $services->getService( 'BSEntityFactory' );
 		}
 
 		return new static( $config, $params, $linkRenderer, $context, $name, $factory );

@@ -65,7 +65,7 @@ class Extension extends \BlueSpice\Extension {
 			$oUser = RequestContext::getMain()->getUser();
 		}*/
 
-		$oUser = Services::getInstance()->getBSUtilityFactory()
+		$oUser = Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 		if ( !$oTitle->isTalkPage() || $oTitle->getNamespace() === NS_SOCIALENTITY_TALK ) {
 			// wrong msg

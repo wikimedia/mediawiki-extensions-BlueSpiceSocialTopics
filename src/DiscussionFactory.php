@@ -45,7 +45,7 @@ class DiscussionFactory extends EntityFactory {
 			\RequestContext::getMain(),
 			$this->config
 		);
-		$serviceUser = Services::getInstance()->getBSUtilityFactory()
+		$serviceUser = Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 
 		$listContext = new SpecialDiscussions(
