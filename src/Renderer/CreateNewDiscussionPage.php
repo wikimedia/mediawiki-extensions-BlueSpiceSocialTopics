@@ -52,7 +52,10 @@ class CreateNewDiscussionPage extends \BlueSpice\Renderer {
 		OutputPage::setupOOUI();
 
 		$title = $this->getContext()->getTitle()->getTalkPage();
-		if ( !$title->userCan( 'create', $this->getContext()->getUser() ) ) {
+		if ( !\MediaWiki\MediaWikiServices::getInstance()
+			->getPermissionManager()
+			->userCan( 'create', $this->getContext()->getUser(), $title )
+		) {
 			$msg = $this->msg( 'bs-socialtopics-nodiscussionpage' );
 			$content .= new \OOUI\LabelWidget( [
 				'label' => $msg->pLain(),
