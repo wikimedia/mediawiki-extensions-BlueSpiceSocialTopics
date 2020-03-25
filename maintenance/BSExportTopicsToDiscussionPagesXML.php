@@ -92,6 +92,7 @@ class BSExportTopicsToDiscussionPagesXML extends Maintenance {
 		fwrite( $this->handle, $this->writer->openStream() . "\n" );
 
 		$queryInfo = $this->getServices()->getRevisionStore()->getQueryInfo();
+		$revisionFactory = $this->getServices()->getRevisionFactory();
 		foreach ( $discussions as $articleID => $entities ) {
 			$title = Title::newFromID( $articleID );
 			if ( !$title ) {
@@ -118,7 +119,7 @@ class BSExportTopicsToDiscussionPagesXML extends Maintenance {
 			foreach ( $res as $row ) {
 				fwrite( $this->handle, $this->writer->writeRevision( $row ) . "\n" );
 			}
-			$lastRev = Revision::newFromRow( $row );
+			$lastRev = $revisionFactory->newRevisionFromRow( $row );
 			$lastRevTS = DateTime::createFromFormat(
 				'YmdHis',
 				$lastRev->getTimestamp(),
