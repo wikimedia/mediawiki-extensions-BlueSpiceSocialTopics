@@ -179,7 +179,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\EntityFactory
 	 */
 	protected function getFactory() {
-		return \BlueSpice\Services::getInstance()->getBSEntityFactory();
+		return \BlueSpice\Services::getInstance()->getService( 'BSEntityFactory' );
 	}
 
 	/**
@@ -257,10 +257,10 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\Social\Rating\RatingItem\Entity | null
 	 */
 	protected function restoreRatings( $ratings, $shout, $entity, $title ) {
-		$extRating = \BlueSpice\Services::getInstance()->getBSExtensionFactory()
+		$extRating = \BlueSpice\Services::getInstance()->getService( 'BSExtensionFactory' )
 			->getExtension( 'BlueSpiceRating' );
 		$extSocialRating = \BlueSpice\Services::getInstance()
-			->getBSExtensionFactory()->getExtension( 'BSSocialRating' );
+			->getService( 'BSExtensionFactory' )->getExtension( 'BSSocialRating' );
 
 		if ( !$extSocialRating || !$extRating ) {
 			$this->output( "Required Rating extensions not registered - skip" );
@@ -300,7 +300,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \User
 	 */
 	protected function getMaintenanceUser() {
-		return \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+		return \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 	}
 
