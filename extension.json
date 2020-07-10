@@ -134,9 +134,9 @@
 	},
 	"Hooks": {
 		"ArticleViewHeader": "\\BlueSpice\\Social\\Topics\\Extension::onArticleViewHeader",
-		"PageContentSaveComplete": [
-			"\\BlueSpice\\Social\\Topics\\Hook\\PageContentSaveComplete\\AutoCreateDiscussionPage::callback",
-			"\\BlueSpice\\Social\\Topics\\Hook\\PageContentSaveComplete\\AutoCreateDiscussionEntity::callback"
+		"PageSaveComplete": [
+			"\\BlueSpice\\Social\\Topics\\Hook\\PageSaveComplete\\AutoCreateDiscussionPage::callback",
+			"\\BlueSpice\\Social\\Topics\\Hook\\PageSaveComplete\\AutoCreateDiscussionEntity::callback"
 		],
 		"LoadExtensionSchemaUpdates": [
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddShoutboxMigrationMaintenanceScript::callback",
