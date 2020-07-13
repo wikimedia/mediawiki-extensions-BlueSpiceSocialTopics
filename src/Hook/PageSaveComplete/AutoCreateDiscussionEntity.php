@@ -1,23 +1,23 @@
 <?php
 
-namespace BlueSpice\Social\Topics\Hook\PageContentSaveComplete;
+namespace BlueSpice\Social\Topics\Hook\PageSaveComplete;
 
-use BlueSpice\Hook\PageContentSaveComplete;
+use BlueSpice\Hook\PageSaveComplete;
 use BlueSpice\Social\Topics\Entity\Discussion;
 
-class AutoCreateDiscussionEntity extends PageContentSaveComplete {
+class AutoCreateDiscussionEntity extends PageSaveComplete {
 
 	protected function skipProcessing() {
-		if ( !$this->wikipage->getTitle() ) {
+		if ( !$this->wikiPage->getTitle() ) {
 			return true;
 		}
-		if ( !$this->wikipage->getTitle()->isTalkPage() ) {
+		if ( !$this->wikiPage->getTitle()->isTalkPage() ) {
 			return true;
 		}
-		if ( $this->wikipage->getTitle()->getNamespace() === NS_SOCIALENTITY_TALK ) {
+		if ( $this->wikiPage->getTitle()->getNamespace() === NS_SOCIALENTITY_TALK ) {
 			return true;
 		}
-		if ( !$this->wikipage->getTitle()->exists() ) {
+		if ( !$this->wikiPage->getTitle()->exists() ) {
 			return true;
 		}
 		return false;
@@ -29,7 +29,7 @@ class AutoCreateDiscussionEntity extends PageContentSaveComplete {
 		);
 
 		$entity = $factory->newFromDiscussionTitle(
-			$this->wikipage->getTitle()
+			$this->wikiPage->getTitle()
 		);
 		if ( !$entity instanceof Discussion ) {
 			return true;
