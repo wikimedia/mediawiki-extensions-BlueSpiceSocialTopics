@@ -3,10 +3,10 @@
 namespace BlueSpice\Social\Topics\Renderer;
 
 use BlueSpice\Renderer\Params;
-use BlueSpice\Services;
 use Config;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\MediaWikiServices;
 use OutputPage;
 use RequestContext;
 
@@ -59,7 +59,7 @@ class CreateNewDiscussion extends \BlueSpice\Renderer {
 			return $content;
 		}
 		$title = $this->getContext()->getTitle()->getTalkPage();
-		$factory = Services::getInstance()->getService(
+		$factory = MediaWikiServices::getInstance()->getService(
 			'BSSocialDiscussionEntityFactory'
 		);
 		$entity = $factory->newFromDiscussionTitle( $title );

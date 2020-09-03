@@ -4,10 +4,10 @@ namespace BlueSpice\Social\Topics\Special;
 
 use BlueSpice\Context;
 use BlueSpice\Renderer\Params;
-use BlueSpice\Services;
 use BlueSpice\Social\Renderer\Entity as Renderer;
 use BlueSpice\Social\Topics\Entity\Topic as TopicEntity;
 use BlueSpice\Social\Topics\EntityListContext\SpecialTopics;
+use MediaWiki\MediaWikiServices;
 
 class Topics extends \BlueSpice\SpecialPage {
 
@@ -54,7 +54,7 @@ class Topics extends \BlueSpice\SpecialPage {
 			return;
 		}
 
-		$renderer = Services::getInstance()->getService( 'BSRendererFactory' )->get(
+		$renderer = MediaWikiServices::getInstance()->getService( 'BSRendererFactory' )->get(
 			'entitylist',
 			new Params( [ 'context' => $context ] )
 		);
@@ -75,7 +75,7 @@ class Topics extends \BlueSpice\SpecialPage {
 		if ( !$title || !$title->exists() ) {
 			return false;
 		}
-		$factory = Services::getInstance()->getService(
+		$factory = MediaWikiServices::getInstance()->getService(
 			'BSSocialWikiPageEntityFactory'
 		);
 		$entity = $factory->newFromSourceTitle( $title );

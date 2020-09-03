@@ -28,8 +28,8 @@
 
 namespace BlueSpice\Social\Topics;
 
-use BlueSpice\Services;
 use BlueSpice\Social\Topics\Content\Discussion as DiscussionContent;
+use MediaWiki\MediaWikiServices;
 
 class Extension extends \BlueSpice\Extension {
 
@@ -65,7 +65,7 @@ class Extension extends \BlueSpice\Extension {
 			$oUser = RequestContext::getMain()->getUser();
 		}*/
 
-		$oUser = Services::getInstance()->getService( 'BSUtilityFactory' )
+		$oUser = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 		if ( !$oTitle->isTalkPage() || $oTitle->getNamespace() === NS_SOCIALENTITY_TALK ) {
 			// wrong msg
@@ -126,7 +126,7 @@ class Extension extends \BlueSpice\Extension {
 			return true;
 		}
 
-		$factory = Services::getInstance()->getService(
+		$factory = MediaWikiServices::getInstance()->getService(
 			'BSSocialDiscussionEntityFactory'
 		);
 		$entity = $factory->newFromDiscussionTitle( $title );

@@ -4,11 +4,11 @@ namespace BlueSpice\Social\Topics\Renderer;
 
 use BlueSpice\EntityFactory;
 use BlueSpice\Renderer\Params;
-use BlueSpice\Services;
 use BlueSpice\Social\Topics\Entity\Topic;
 use Config;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\MediaWikiServices;
 use OutputPage;
 
 class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
@@ -39,7 +39,7 @@ class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 	/**
 	 *
 	 * @param string $name
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 * @param Config $config
 	 * @param Params $params
 	 * @param IContextSource|null $context
@@ -47,8 +47,8 @@ class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 	 * @param EntityFactory|null $factory
 	 * @return Renderer
 	 */
-	public static function factory( $name, Services $services, Config $config, Params $params,
-		IContextSource $context = null, LinkRenderer $linkRenderer = null,
+	public static function factory( $name, MediaWikiServices $services, Config $config,
+		Params $params, IContextSource $context = null, LinkRenderer $linkRenderer = null,
 		EntityFactory $factory = null ) {
 		if ( !$context ) {
 			$context = $params->get(

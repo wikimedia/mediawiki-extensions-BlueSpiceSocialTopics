@@ -9,11 +9,11 @@ use BlueSpice\Data\FieldType;
 use BlueSpice\Data\Filter\StringValue;
 use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\Sort;
-use BlueSpice\Services;
 use BlueSpice\Social\Comments\Entity\Comment;
 use BlueSpice\Social\Data\Entity\Store;
 use BlueSpice\Social\Entity;
 use BlueSpice\Social\Topics\Entity\Topic;
+use MediaWiki\MediaWikiServices;
 
 class BSExportTopicsToDiscussionPagesXML extends Maintenance {
 
@@ -73,7 +73,7 @@ class BSExportTopicsToDiscussionPagesXML extends Maintenance {
 
 		$discussions = [];
 		foreach ( $res->getRecords() as $record ) {
-			$entity = Services::getInstance()->getService( 'BSEntityFactory' )
+			$entity = MediaWikiServices::getInstance()->getService( 'BSEntityFactory' )
 				->newFromObject( $record->getData() );
 			if ( !$entity instanceof Topic ) {
 				continue;
@@ -326,10 +326,10 @@ EOT;
 
 	/**
 	 *
-	 * @return Services
+	 * @return MediaWikiServices
 	 */
 	protected function getServices() {
-		return Services::getInstance();
+		return MediaWikiServices::getInstance();
 	}
 
 	/**
