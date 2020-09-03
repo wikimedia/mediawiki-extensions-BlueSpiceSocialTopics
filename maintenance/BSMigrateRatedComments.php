@@ -5,6 +5,7 @@ $extDir = dirname( dirname( __DIR__ ) );
 require_once "$extDir/BlueSpiceFoundation/maintenance/BSMaintenance.php";
 
 use BlueSpice\Social\Topics\Entity\Topic;
+use MediaWiki\MediaWikiServices;
 
 class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 
@@ -179,7 +180,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\EntityFactory
 	 */
 	protected function getFactory() {
-		return \BlueSpice\Services::getInstance()->getService( 'BSEntityFactory' );
+		return MediaWikiServices::getInstance()->getService( 'BSEntityFactory' );
 	}
 
 	/**
@@ -187,7 +188,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\Social\Rating\RatingFactory\Entity
 	 */
 	protected function getRatingFactory() {
-		return \BlueSpice\Services::getInstance()->getService( 'BSRatingFactoryEntity' );
+		return MediaWikiServices::getInstance()->getService( 'BSRatingFactoryEntity' );
 	}
 
 	/**
@@ -257,9 +258,9 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\Social\Rating\RatingItem\Entity | null
 	 */
 	protected function restoreRatings( $ratings, $shout, $entity, $title ) {
-		$extRating = \BlueSpice\Services::getInstance()->getService( 'BSExtensionFactory' )
+		$extRating = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' )
 			->getExtension( 'BlueSpiceRating' );
-		$extSocialRating = \BlueSpice\Services::getInstance()
+		$extSocialRating = MediaWikiServices::getInstance()
 			->getService( 'BSExtensionFactory' )->getExtension( 'BSSocialRating' );
 
 		if ( !$extSocialRating || !$extRating ) {
@@ -300,7 +301,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \User
 	 */
 	protected function getMaintenanceUser() {
-		return \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
+		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 	}
 
