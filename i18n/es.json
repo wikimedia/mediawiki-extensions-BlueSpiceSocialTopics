@@ -16,5 +16,6 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancelar",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contenido",
 	"bs-socialdiscussion-discussiontype": "Discusión",
-	"bs-socialtopics-aftercontent-heading": "Discusiones"
+	"bs-socialtopics-aftercontent-heading": "Discusiones",
+	"bs-socialdiscussion-topictype": "Tema de debate"
 }
