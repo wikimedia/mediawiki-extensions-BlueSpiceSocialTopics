@@ -3,11 +3,11 @@
 namespace BlueSpice\Social\Topics\Renderer\EntityList;
 
 use BlueSpice\Renderer\Params;
-use BlueSpice\Services;
 use Config;
 use Html;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\MediaWikiServices;
 
 class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 
@@ -65,7 +65,7 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 	}
 
 	protected function renderNewDiscussionPage() {
-		$renderer = Services::getInstance()->getService( 'BSRendererFactory' )->get(
+		$renderer = MediaWikiServices::getInstance()->getService( 'BSRendererFactory' )->get(
 			'social-topics-createnewdiscussionpage',
 			new Params( [ 'context' => $this->getContext() ] )
 		);
@@ -73,7 +73,7 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 	}
 
 	protected function renderNewDiscussion() {
-		$renderer = Services::getInstance()->getService( 'BSRendererFactory' )->get(
+		$renderer = MediaWikiServices::getInstance()->getService( 'BSRendererFactory' )->get(
 			'social-topics-createnewdiscussion',
 			new Params( [ 'context' => $this->getContext() ] )
 		);

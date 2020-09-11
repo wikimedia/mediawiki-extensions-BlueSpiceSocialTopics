@@ -4,8 +4,8 @@ $extDir = dirname( dirname( __DIR__ ) );
 
 require_once "$extDir/BlueSpiceFoundation/maintenance/BSMaintenance.php";
 
-use BlueSpice\Services;
 use BlueSpice\Social\Topics\Entity\Topic;
+use MediaWiki\MediaWikiServices;
 
 class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 
@@ -148,7 +148,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	 * @return string
 	 */
 	protected function makeGenericTopicTitle( $user ) {
-		$userHelper = Services::getInstance()->getService( 'BSUtilityFactory' )
+		$userHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getUserHelper( $user );
 
 		$msg = \Message::newFromKey(
@@ -162,7 +162,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\EntityFactory
 	 */
 	protected function getFactory() {
-		return Services::getInstance()->getService( 'BSEntityFactory' );
+		return MediaWikiServices::getInstance()->getService( 'BSEntityFactory' );
 	}
 
 	/**
@@ -228,7 +228,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	 * @return \User
 	 */
 	protected function getMaintenanceUser() {
-		return Services::getInstance()->getService( 'BSUtilityFactory' )
+		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 	}
 

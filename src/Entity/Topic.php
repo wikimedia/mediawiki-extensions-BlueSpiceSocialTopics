@@ -30,11 +30,11 @@
  */
 namespace BlueSpice\Social\Topics\Entity;
 
-use BlueSpice\Services;
 use BlueSpice\Social\Entity\Text;
 use BlueSpice\Social\Parser\Input;
 use BsNamespaceHelper;
 use Exception;
+use MediaWiki\MediaWikiServices;
 use Message;
 use Status;
 use Title;
@@ -216,7 +216,7 @@ class Topic extends Text {
 		}
 		$status = Status::newGood();
 		try {
-			$factory = Services::getInstance()->getService(
+			$factory = MediaWikiServices::getInstance()->getService(
 				'BSSocialDiscussionEntityFactory'
 			);
 			$entity = $factory->newFromDiscussionTitle( $title );
@@ -244,7 +244,7 @@ class Topic extends Text {
 		if ( !$title || !$title->exists() ) {
 			return;
 		}
-		$factory = Services::getInstance()->getService(
+		$factory = MediaWikiServices::getInstance()->getService(
 			'BSSocialDiscussionEntityFactory'
 		);
 		$entity = $factory->newFromDiscussionTitle( $title );

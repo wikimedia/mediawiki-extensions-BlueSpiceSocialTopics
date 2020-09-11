@@ -1,7 +1,7 @@
 <?php
 namespace BlueSpice\Social\Topics\Content;
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class Discussion extends \WikitextContent {
 
@@ -100,7 +100,7 @@ class Discussion extends \WikitextContent {
 		if ( !$title ) {
 			return $output;
 		}
-		$factory = Services::getInstance()->getService(
+		$factory = MediaWikiServices::getInstance()->getService(
 			'BSSocialDiscussionEntityFactory'
 		);
 		$entity = $factory->newFromDiscussionTitle( $title );

@@ -4,12 +4,12 @@ namespace BlueSpice\Social\Topics\Renderer\EntityList;
 
 use BlueSpice\Renderer\Params;
 use BlueSpice\RendererFactory;
-use BlueSpice\Services;
 use BlueSpice\Social\Topics\EntityListContext\AfterContent;
 use Config;
 use Html;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\MediaWikiServices;
 
 class TopicsAfterContent extends \BlueSpice\Social\Renderer\EntityList {
 
@@ -69,7 +69,7 @@ class TopicsAfterContent extends \BlueSpice\Social\Renderer\EntityList {
 	/**
 	 *
 	 * @param string $name
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 * @param Config $config
 	 * @param Params $params
 	 * @param IContextSource|null $context
@@ -77,8 +77,8 @@ class TopicsAfterContent extends \BlueSpice\Social\Renderer\EntityList {
 	 * @param RendererFactory|null $rendererFactory
 	 * @return Renderer
 	 */
-	public static function factory( $name, Services $services, Config $config, Params $params,
-		IContextSource $context = null, LinkRenderer $linkRenderer = null,
+	public static function factory( $name, MediaWikiServices $services, Config $config,
+		Params $params, IContextSource $context = null, LinkRenderer $linkRenderer = null,
 		RendererFactory $rendererFactory = null ) {
 		if ( !$context ) {
 			$context = $params->get(

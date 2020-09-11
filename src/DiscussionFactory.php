@@ -7,10 +7,10 @@ use BlueSpice\Data\Filter\Numeric;
 use BlueSpice\Data\ReaderParams;
 use BlueSpice\Entity;
 use BlueSpice\EntityFactory;
-use BlueSpice\Services;
 use BlueSpice\Social\Data\Entity\Store;
 use BlueSpice\Social\Topics\Entity\Discussion;
 use BlueSpice\Social\Topics\EntityListContext\SpecialDiscussions;
+use MediaWiki\MediaWikiServices;
 use MWException;
 use Title;
 
@@ -45,7 +45,7 @@ class DiscussionFactory extends EntityFactory {
 			\RequestContext::getMain(),
 			$this->config
 		);
-		$serviceUser = Services::getInstance()->getService( 'BSUtilityFactory' )
+		$serviceUser = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 
 		$listContext = new SpecialDiscussions(
