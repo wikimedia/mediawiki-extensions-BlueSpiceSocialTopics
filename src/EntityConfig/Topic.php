@@ -79,6 +79,16 @@ class Topic extends Text {
 
 	/**
 	 *
+	 * @return string[]
+	 */
+	protected function get_ModuleEditScripts() {
+		return array_merge( parent::get_ModuleEditScripts(), [
+			'ext.bluespice.social.entity.editor.topic'
+		] );
+	}
+
+	/**
+	 *
 	 * @return string
 	 */
 	protected function get_TypeMessageKey() {

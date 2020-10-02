@@ -73,12 +73,19 @@
 		},
 		"ext.bluespice.social.entity.topic": {
 			"scripts": [
-				"entities/bluespice.social.Entity.Topic.js",
-				"ui/EntityEditorTopic.js"
+				"entities/bluespice.social.Entity.Topic.js"
 			],
 			"dependencies": [
 				"ext.bluespice.social.entity.text",
 				"ext.bluespice.oojs"
+			]
+		},
+		"ext.bluespice.social.entity.editor.topic": {
+			"scripts": [
+				"ui/EntityEditorTopic.js"
+			],
+			"dependencies": [
+				"ext.bluespice.social.entity.editor.text"
 			]
 		},
 		"ext.bluespice.social.entity.discussion": {
