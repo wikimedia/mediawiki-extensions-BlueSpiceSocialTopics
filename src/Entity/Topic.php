@@ -73,46 +73,6 @@ class Topic extends Text {
 	}
 
 	/**
-	 * Returns the discussiontitleid attribute
-	 * @deprecated since version 3.0.0 - use get( $attrName, $default ) instead
-	 * @return integer
-	 */
-	public function getDiscussionTitleID() {
-		wfDeprecated( __METHOD__, '3.0.0' );
-		return $this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 );
-	}
-
-	/**
-	 * Sets the discussiontitleid attribute
-	 * @deprecated since version 3.0.0 - use set( $attrName, $value ) instead
-	 * @param integer $iID
-	 * @return Topic
-	 */
-	public function setDiscussionTitleID( $iID ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
-		return $this->set( static::ATTR_DISCUSSION_TITLE_ID, $iID );
-	}
-
-	/**
-	 * @deprecated since version 3.0.0 - use get( $attrName, $default ) instead
-	 * @return string
-	 */
-	public function getTopicTitle() {
-		wfDeprecated( __METHOD__, '3.0.0' );
-		return $this->get( static::ATTR_TOPIC_TITLE, '' );
-	}
-
-	/**
-	 * @deprecated since version 3.0.0 - use set( $attrName, $value ) instead
-	 * @param string $sTopicTitle
-	 * @return Topic
-	 */
-	public function setTopicTitle( $sTopicTitle ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
-		return $this->set( static::ATTR_TOPIC_TITLE, $sTopicTitle );
-	}
-
-	/**
 	 *
 	 * @param \stdClass $o
 	 */
