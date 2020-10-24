@@ -106,27 +106,6 @@ class Discussion extends Page {
 	}
 
 	/**
-	 * Returns the discussiontitleid attribute
-	 * @deprecated since version 3.0.0 - use get( $attrName, $default ) instead
-	 * @return integer
-	 */
-	public function getDiscussionTitleID() {
-		wfDeprecated( __METHOD__, '3.0.0' );
-		return $this->get( static::ATTR_DISCUSSION_TITLE_ID, 0 );
-	}
-
-	/**
-	 * Sets the discussiontitleid attribute
-	 * @deprecated since version 3.0.0 - use set( $attrName, $value ) instead
-	 * @param integer $iID
-	 * @return Discussion
-	 */
-	public function setDiscussionTitleID( $iID ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
-		return $this->set( static::ATTR_DISCUSSION_TITLE_ID, $iID );
-	}
-
-	/**
 	 *
 	 * @param \stdClass $o
 	 */
