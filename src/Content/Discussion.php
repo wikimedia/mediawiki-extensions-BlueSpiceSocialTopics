@@ -57,7 +57,7 @@ class Discussion extends \WikitextContent {
 
 		$po = new \ParserOutput();
 
-		if ( \Hooks::run( 'ContentGetParserOutput',
+		if ( MediaWikiServices::getInstance()->getHookContainer()->run( 'ContentGetParserOutput',
 			[ $this, $title, $revId, $options, $generateHtml, &$po ] ) ) {
 
 			// Save and restore the old value, just in case something is reusing
@@ -68,7 +68,11 @@ class Discussion extends \WikitextContent {
 			$options->setRedirectTarget( $oldRedir );
 		}
 
-		\Hooks::run( 'ContentAlterParserOutput', [ $this, $title, $po ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'ContentAlterParserOutput', [
+			$this,
+			$title,
+			$po
+		] );
 
 		return $po;
 	}
