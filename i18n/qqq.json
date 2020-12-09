@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"MuratTheTurkish",
 			"Patric Wirth <wirth@hallowelt.com>",
 			"Umherirrender"
 		]
@@ -21,7 +22,7 @@
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Error text that is showen, when an entry is not assigned to a valid discussion page",
 	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "Default text for the \"topictitle\" field when migrated from Shoutbox extension that states who created it.\n* $1 - Name of the user, who created it",
 	"topics": "Special page name for [[Special:Topics]] special page.\n{{Identical|Topics}}",
-	"bs-socialtopics-special-topics-heading": "Special page header for [[Special:Topics]] special page.\n{{Identical|All topics}}",
+	"bs-socialtopics-special-topics-heading": "Special page header for [[Special:Topics]] special page.",
 	"bs-socialtopics-special-topics-heading-entry": "Special page header for [[Special:Topics]] special page, when a topic id was given as a subpage.\n{{Identical|Topic/$1}}\n* $1 - Title of the topic, that was given",
 	"bs-socialtopics-aftercontent-heading": "Label of the discussions section of a pages content\n{{Identical|Discussions}}",
 	"bs-socialtopics-nodiscussionpage": "Text that shows when no discussion page has been created yet.",
