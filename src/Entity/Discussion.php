@@ -51,6 +51,7 @@ class Discussion extends Page {
 
 	const ATTR_DISCUSSION_TITLE_ID = 'discussiontitleid';
 
+	/** @var string|null */
 	protected $baseTitleContent = null;
 
 	/**

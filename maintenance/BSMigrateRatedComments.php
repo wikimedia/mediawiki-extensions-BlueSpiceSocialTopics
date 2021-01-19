@@ -194,7 +194,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	/**
 	 *
 	 * @param int $articleID
-	 * @return \Title | false
+	 * @return \Title|false
 	 */
 	protected function ensureDiscussionPage( $articleID ) {
 		$title = \Title::newFromID( $articleID );
@@ -255,7 +255,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @param \stdClass $shout
 	 * @param Topic $entity
 	 * @param \Title $title
-	 * @return \BlueSpice\Social\Rating\RatingItem\Entity | null
+	 * @return \BlueSpice\Social\Rating\RatingItem\Entity|null
 	 */
 	protected function restoreRatings( $ratings, $shout, $entity, $title ) {
 		$extRating = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' )

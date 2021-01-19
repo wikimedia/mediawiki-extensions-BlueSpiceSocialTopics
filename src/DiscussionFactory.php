@@ -24,7 +24,7 @@ class DiscussionFactory extends EntityFactory {
 
 	/**
 	 * @param Title $title
-	 * @return Discussion | null
+	 * @return Discussion|null
 	 */
 	public function newFromDiscussionTitle( Title $title ) {
 		if ( !$title->exists() ) {

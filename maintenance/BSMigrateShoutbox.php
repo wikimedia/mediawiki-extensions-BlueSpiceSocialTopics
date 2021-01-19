@@ -168,7 +168,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	/**
 	 *
 	 * @param int $articleID
-	 * @return \Title | false
+	 * @return \Title|false
 	 */
 	protected function ensureDiscussionPage( $articleID ) {
 		$title = \Title::newFromID( $articleID );

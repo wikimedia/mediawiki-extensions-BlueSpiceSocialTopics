@@ -25,7 +25,7 @@ class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 	 * @param Params $params
 	 * @param LinkRenderer|null $linkRenderer
 	 * @param IContextSource|null $context
-	 * @param string $name | ''
+	 * @param string $name
 	 * @param EntityFactory|null $factory
 	 */
 	protected function __construct( Config $config, Params $params,
