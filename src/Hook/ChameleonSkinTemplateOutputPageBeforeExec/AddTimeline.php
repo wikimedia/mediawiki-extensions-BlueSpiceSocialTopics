@@ -26,8 +26,8 @@
  */
 namespace BlueSpice\Social\Topics\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 
-use BlueSpice\Calumma\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 use BlueSpice\Context;
+use BlueSpice\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 use BlueSpice\IRenderer;
 use BlueSpice\Renderer\Params;
 use BlueSpice\Social\Topics\EntityListContext\AfterContent;
