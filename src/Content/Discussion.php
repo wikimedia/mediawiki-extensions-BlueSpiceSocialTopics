@@ -107,6 +107,15 @@ class Discussion extends \WikitextContent {
 		if ( !$entity ) {
 			return $output;
 		}
+		if ( $entity->getRelatedTitle() && $entity->getRelatedTitle()->exists() ) {
+			$categories = \WikiPage::factory( $entity->getRelatedTitle() )
+				->getContent()->getParserOutput( $entity->getRelatedTitle() )
+				->getCategories();
+
+			foreach ( $categories as $category => $key ) {
+				$output->addCategory( $category, $key );
+			}
+		}
 
 		$output->setTitleText(
 			strip_tags( $entity->getHeader()->parse() )
