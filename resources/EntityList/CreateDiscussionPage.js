@@ -14,7 +14,7 @@ bs.social.EntityList.CreateDiscussionPage = function( $el, entityList ) {
 	}
 	var skip = mw.user.options.get( 'bs-social-topics-skipcreatedialog', false );
 	me.$button.on( 'click', function( e ) {
-		skip === false ? me.showCreateDiscussionPage() : me.createDiscussionPage();
+		!skip ? me.showCreateDiscussionPage() : me.createDiscussionPage();
 		e.stopPropagation();
 		return false;
 	});
@@ -25,24 +25,25 @@ OO.initClass( bs.social.EntityList.CreateDiscussionPage );
 OO.inheritClass( bs.social.EntityList.CreateDiscussionPage, bs.social.El );
 
 bs.social.EntityList.CreateDiscussionPage.prototype.showCreateDiscussionPage = function() {
-	var factory = new OO.Factory();
-	var windowManager = new OO.ui.WindowManager( {
-		factory: factory
-	} );
-	factory.register( bs.social.EntityList.CreateDiscussionPage.Dialog );
-	$( 'body' ).append( windowManager.$element );
+	var windowManager = OO.ui.getWindowManager();
 
-	windowManager.openWindow( 'createDiscussion', {
+	var cfg = {
 		text: this.getText(),
-		title: this.getTitle(),
-		entityList: this.entityList,
-		save: this.save
-	} );
-	return true;
+		title: this.getTitle()
+	};
+
+	var dialog = new bs.social.EntityList.CreateDiscussionPage.Dialog( cfg, this );
+
+	windowManager.addWindows( [ dialog ] );
+	windowManager.openWindow( dialog );
 };
 
 bs.social.EntityList.CreateDiscussionPage.prototype.createDiscussionPage = function() {
-	return this.save( this.getTitle(), this.getText() );
+	this.entityList.showLoadMask();
+	this.save( this.getTitle(), this.getText() )
+		.done( function( title ) {
+			this.loadDiscussionPage( title );
+		}.bind( this ) );
 };
 
 bs.social.EntityList.CreateDiscussionPage.prototype.getText = function() {
@@ -61,21 +62,33 @@ bs.social.EntityList.CreateDiscussionPage.prototype.getTitle = function() {
 };
 
 bs.social.EntityList.CreateDiscussionPage.prototype.save = function( title, text ) {
-	this.entityList.showLoadMask();
-	var api = new mw.Api();
-	var me = this;
-	return api.postWithToken( 'csrf', {
+	var api = new mw.Api(),
+		dfd = $.Deferred();
+
+	api.postWithToken( 'csrf', {
 		action: 'edit',
 		format: 'json',
 		title: title,
 		text: text
-	}).done( function( data ) {
-		me.loadDiscussionPage( data );
-	});
+	} ).done( function( response ) {
+		if (
+			response.hasOwnProperty( 'edit' ) &&
+			response.edit.hasOwnProperty( 'result' ) &&
+			response.edit.result === 'Success'
+		) {
+			dfd.resolve( title );
+		}
+		dfd.reject();
+	} ).fail( function( code, response ) {
+		if ( response.hasOwnProperty( 'error' ) ) {
+			dfd.reject( response.error.info || response.error.code );
+		}
+		dfd.reject( code );
+	} );
+
+	return dfd.promise();
 };
 
-bs.social.EntityList.CreateDiscussionPage.prototype.loadDiscussionPage = function( data ) {
-	window.location = mw.util.getUrl( this.getTitle() );
+bs.social.EntityList.CreateDiscussionPage.prototype.loadDiscussionPage = function( title ) {
+	window.location = mw.util.getUrl( title );
 };
-
-
