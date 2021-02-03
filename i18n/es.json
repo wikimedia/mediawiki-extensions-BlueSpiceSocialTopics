@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Fitoschido",
 			"Hasley",
-			"Fitoschido"
+			"Joanmp17"
 		]
 	},
 	"bs-social-entitytopic-header-create": "Tema nuevo",
@@ -13,5 +14,8 @@
 	"bs-socialtopics-special-topics-heading-entry": "Tema/$1",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Guardar",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancelar",
-	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contenido"
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contenido",
+	"bs-socialdiscussion-discussiontype": "Discusión",
+	"bs-socialdiscussion-topictype": "Tema de debate",
+	"bs-socialtopics-aftercontent-heading": "Discusiones"
 }

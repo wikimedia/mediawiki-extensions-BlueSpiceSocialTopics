@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Veeven"
+		]
+	},
+	"bs-socialdiscussion-discussiontype": "చర్చ",
+	"bs-social-entitytopic-header-create": "కొత్త విషయం",
+	"bs-socialtopics-var-topictitle": "శీర్షిక",
+	"bs-socialtopics-aftercontent-heading": "చర్చలు",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "భద్రపరుచు",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "రద్దుచేయి"
+}
