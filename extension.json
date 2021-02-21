@@ -137,7 +137,7 @@
 		}
 	},
 	"DefaultUserOptions": {
-		"bs-social-topics-skipcreatedialog" : true
+		"bs-social-topics-skipcreatedialog": true
 	},
 	"Hooks": {
 		"ArticleViewHeader": "\\BlueSpice\\Social\\Topics\\Extension::onArticleViewHeader",
