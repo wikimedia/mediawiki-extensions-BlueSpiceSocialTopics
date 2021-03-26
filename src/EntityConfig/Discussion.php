@@ -146,6 +146,14 @@ class Discussion extends Page {
 	 *
 	 * @return bool
 	 */
+	protected function get_IsCreatable() {
+		return false;
+	}
+
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function get_IsTagable() {
 		return false;
 	}
