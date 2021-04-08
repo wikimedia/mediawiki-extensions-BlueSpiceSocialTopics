@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"W"
+		]
+	},
+	"bs-socialdiscussion-discussiontype": "Абмеркаваньне",
+	"bs-socialdiscussion-topictype": "Прадмет абмеркаваньня",
+	"bs-socialtopics-entitydiscussion-header-create": "Стварыць новае абмеркаваньне",
+	"bs-social-entitytopic-header-create": "Новы прадмет",
+	"bs-socialtopics-var-topictitle": "Загаловак",
+	"topics": "Прадметы",
+	"bs-socialtopics-special-topics-heading": "Усе прадметы",
+	"bs-socialtopics-aftercontent-heading": "Абмеркаваньні",
+	"bs-socialtopics-nodiscussionpage-create": "Стварыць новую старонку абмеркаваньня",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Захаваць",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Скасаваць",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Зьмест",
+	"bs-socialtopics-switch-nodiscussion-description": "Схаваць абмеркаваньне на гэтай старонцы"
+}
