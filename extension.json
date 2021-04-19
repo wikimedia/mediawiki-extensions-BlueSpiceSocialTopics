@@ -20,11 +20,11 @@
 					"className": "\\BlueSpice\\Social\\Topics\\Extension",
 					"extPath": "/BlueSpiceSocialTopics",
 					"status": "beta",
-					"package": "BlueSpiceSocial",
-					"configDefinitions": {
-						"SocialTopicsTalkPageAutoCreate": "\\BlueSpice\\Social\\Topics\\ConfigDefinition\\BSSocialTalkpageAutoCreate::getInstance"
-					}
+					"package": "BlueSpiceSocial"
 				}
+			},
+			"ConfigDefinitionRegistry": {
+				"SocialTopicsTalkPageAutoCreate": "\\BlueSpice\\Social\\Topics\\ConfigDefinition\\BSSocialTalkpageAutoCreate::getInstance"
 			},
 			"RendererRegistry": {
 				"social-topics-entity-discussion": "\\BlueSpice\\Social\\Topics\\Renderer\\Entity\\Discussion::factory",
