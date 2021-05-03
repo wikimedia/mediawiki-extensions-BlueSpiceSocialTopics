@@ -106,12 +106,12 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \stdClass[]
 	 */
 	protected function getRawRatings( $shout ) {
-		if ( !$this->getDB( DB_MASTER )->tableExists( 'bs_rating' ) ) {
+		if ( !$this->getDB( DB_PRIMARY )->tableExists( 'bs_rating' ) ) {
 			// some weird configuration - unlucky
 			return [];
 		}
 
-		$res = $this->getDB( DB_MASTER )->select(
+		$res = $this->getDB( DB_PRIMARY )->select(
 			'bs_rating',
 			'*',
 			[ 'rat_reftype' => 'ratedcomments', 'rat_ref' => $shout->sb_id ],
@@ -241,7 +241,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 		}
 
 		// hacky, hope for the best ;)
-		return $this->getDB( DB_MASTER )->update(
+		return $this->getDB( DB_PRIMARY )->update(
 			'revision',
 			[ 'rev_timestamp' => $ts ],
 			[ 'rev_id' => $title->getLatestRevID() ],
