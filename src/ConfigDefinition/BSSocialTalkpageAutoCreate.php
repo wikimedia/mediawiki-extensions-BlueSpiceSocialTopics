@@ -24,4 +24,12 @@ class BSSocialTalkpageAutoCreate extends \BlueSpice\ConfigDefinition\BooleanSett
 		return 'bs-socialtopics-toc-entalkpageautocreate';
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
+	public function getHelpMessageKey() {
+		return 'bs-socialtopics-toc-entalkpageautocreate-help';
+	}
+
 }

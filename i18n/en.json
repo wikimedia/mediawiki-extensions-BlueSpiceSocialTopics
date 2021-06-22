@@ -30,5 +30,6 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Save",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancel",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Content",
-	"bs-socialtopics-switch-nodiscussion-description": "Hides discussion on this page."
+	"bs-socialtopics-switch-nodiscussion-description": "Hides discussion on this page.",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "If a user creates the first discussion topic from within a page, the associated discussion page is automatically created and skips the intermediate step for creating it manually."
 }
