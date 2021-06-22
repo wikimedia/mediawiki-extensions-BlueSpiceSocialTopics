@@ -32,5 +32,6 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Short label for the save button in the dialog, that creates a new discussion page\n{{Identical|Save}}",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Short label for the cancel button in the dialog, that creates a new discussion page\n{{Identical|Cancel}}",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Label for page content textarea in the dialog, that creates a new discussion page\n{{Identical|Content}}",
-	"bs-socialtopics-switch-nodiscussion-description": "Description for behavior switch \"<nowiki>__NODISCUSSION__</nowiki>\" that hides the discussion after the page."
+	"bs-socialtopics-switch-nodiscussion-description": "Description for behavior switch \"<nowiki>__NODISCUSSION__</nowiki>\" that hides the discussion after the page.",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Description for config variable \"SocialTopicsTalkPageAutoCreate\""
 }
