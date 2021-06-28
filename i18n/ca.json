@@ -1,10 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Vfc"
 		]
 	},
+	"bs-socialdiscussion-discussiontype": "Discussió",
 	"bs-socialtopics-var-topictitle": "Títol",
+	"topics": "Temes",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Desa",
-	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancel·la"
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancel·la",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contingut"
 }
