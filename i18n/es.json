@@ -3,6 +3,7 @@
 		"authors": [
 			"Fitoschido",
 			"Hasley",
+			"Jackiezelaya",
 			"Joanmp17"
 		]
 	},
@@ -17,5 +18,6 @@
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contenido",
 	"bs-socialdiscussion-discussiontype": "Discusión",
 	"bs-socialdiscussion-topictype": "Tema de debate",
-	"bs-socialtopics-aftercontent-heading": "Discusiones"
+	"bs-socialtopics-aftercontent-heading": "Discusiones",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Si un usuario crea el primer tema de discusión desde dentro de una página, la página de discusión asociada se crea automáticamente y omite el paso intermedio para crearla manualmente."
 }

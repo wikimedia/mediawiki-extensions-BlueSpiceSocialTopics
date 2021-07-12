@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Piramidion"
 		]
 	},
@@ -28,5 +29,6 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Зберегти",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Скасувати",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент",
-	"bs-socialtopics-switch-nodiscussion-description": "Приховує обговорення на цій сторінці."
+	"bs-socialtopics-switch-nodiscussion-description": "Приховує обговорення на цій сторінці.",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Якщо користувач створює першу тему обговорення всередині сторінки, пов'язана сторінка обговорення створюється автоматично і пропускає проміжний крок для її створення вручну."
 }
