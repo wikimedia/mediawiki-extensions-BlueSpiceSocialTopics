@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"Hedda"
 		]
 	},
 	"bs-socialtopics-desc": "BlueSpiceSocial için konu ve tartışma varlıkları",
@@ -28,5 +29,6 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Kaydet",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "İptal",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "İçerik",
-	"bs-socialtopics-switch-nodiscussion-description": "Bu sayfadaki tartışmayı gizler."
+	"bs-socialtopics-switch-nodiscussion-description": "Bu sayfadaki tartışmayı gizler.",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Kullanıcı ilk tartışma konusunu bir sayfanın içinden oluşturursa ilişkili tartışma sayfası otomatik olarak oluşturulur ve manuel olarak oluşturmak için ara adımı atlar."
 }
