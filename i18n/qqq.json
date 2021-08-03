@@ -7,7 +7,7 @@
 		]
 	},
 	"bs-socialtopics-desc": "{{desc|name=BlueSpiceSocialTopics}}",
-	"bs-socialtopics-pref-skipcreatedialog": "Label for the the skip dialog checkbox on discussion creation in user preferences.",
+	"bs-socialtopics-pref-skipcreatedialog": "Label for the skip dialog checkbox on discussion creation in user preferences.",
 	"bs-socialtopics-toc-entalkpageautocreate": "Label for the checkbox on [[Special:BlueSpiceConfigManager]] that activates the automatically creation of all discussion pages",
 	"bs-socialtopics-autocreated-discussionpage": "Content of a discussion page that was created automatically",
 	"bs-socialtopics-autocreated-discussionpagefile": "Content of a discussion page of a file that was created automatically",
