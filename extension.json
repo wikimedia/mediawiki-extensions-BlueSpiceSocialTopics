@@ -139,6 +139,11 @@
 	"DefaultUserOptions": {
 		"bs-social-topics-skipcreatedialog": true
 	},
+	"HookHandlers": {
+		"socialtopics": {
+			"class" : "\\BlueSpice\\Social\\Topics\\HookHandler\\SocialTopicsAfterContent"
+		}
+	},
 	"Hooks": {
 		"ArticleViewHeader": "\\BlueSpice\\Social\\Topics\\Extension::onArticleViewHeader",
 		"PageSaveComplete": [
@@ -155,7 +160,8 @@
 		"BSSocialModuleDepths": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialModuleDepths\\AddModules::callback",
 		"GetDoubleUnderscoreIDs": "\\BlueSpice\\Social\\Topics\\Hook\\GetDoubleUnderscoreIDs\\AddNoDiscussion::callback",
 		"BSInsertMagicAjaxGetData": "\\BlueSpice\\Social\\Topics\\Hook\\BSInsertMagicAjaxGetData\\AddNoDiscussionSwitch::callback",
-		"GetPreferences": "\\BlueSpice\\Social\\Topics\\Hook\\GetPreferences\\AddSkipCreateDialoge::callback"
+		"GetPreferences": "\\BlueSpice\\Social\\Topics\\Hook\\GetPreferences\\AddSkipCreateDialoge::callback",
+		"MWStakeCommonUIRegisterSkinSlotComponents": "socialtopics"
 	},
 	"manifest_version": 2
 }
