@@ -2,15 +2,18 @@
 	"@metadata": {
 		"authors": [
 			"Elroy",
-			"Mainframe98"
+			"Mainframe98",
+			"Romaine"
 		]
 	},
 	"bs-socialdiscussion-discussiontype": "Overleg",
+	"bs-socialtopics-entitydiscussion-header-create": "Start een nieuwe discussie",
 	"bs-social-entitytopic-header-create": "Nieuw onderwerp",
 	"bs-socialtopics-var-topictitle": "Titel",
 	"topics": "Onderwerpen",
 	"bs-socialtopics-special-topics-heading": "Alle onderwerpen",
 	"bs-socialtopics-special-topics-heading-entry": "Onderwerp/$1",
+	"bs-socialtopics-nodiscussionpage-create": "Nieuwe overlegpagina aanmaken",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Opslaan",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Annuleren",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Inhoud"
