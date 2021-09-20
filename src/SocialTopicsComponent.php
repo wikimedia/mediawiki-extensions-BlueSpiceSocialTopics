@@ -5,6 +5,7 @@ namespace BlueSpice\Social\Topics;
 use BlueSpice\Context;
 use BlueSpice\IRenderer;
 use BlueSpice\Renderer\Params;
+use BlueSpice\Social\Entity;
 use BlueSpice\Social\Topics\EntityListContext\AfterContent;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\Component\Literal;
@@ -14,9 +15,9 @@ class SocialTopicsComponent extends Literal {
 
 	/**
 	 *
-	 * @var IRenderer|null
+	 * @var Entity
 	 */
-	private $renderer = null;
+	private $entity = null;
 
 	/**
 	 *
@@ -34,10 +35,9 @@ class SocialTopicsComponent extends Literal {
 	 * @return string
 	 */
 	public function getHtml() : string {
-		$html = 'hello';
+		$html = '';
 		$renderer = $this->getTimeLineRenderer();
 		if ( $renderer instanceof IRenderer ) {
-			$renderer = $this->getTimeLineRenderer();
 			$html = $renderer->render();
 		}
 		return $html;
@@ -89,28 +89,35 @@ class SocialTopicsComponent extends Literal {
 	 * @return AfterContent
 	 */
 	private function getContext() {
-		$factory = $this->getServices()->getService(
-			'BSSocialDiscussionEntityFactory'
-		);
-
-		/** @var RequestContext */
 		$context = RequestContext::getMain();
-
-		/** @var Entity */
-		$this->entity = $factory->newFromDiscussionTitle(
-			$context->getTitle()->getTalkPageIfDefined()
-		);
 
 		return new AfterContent(
 			new Context(
-				RequestContext::getMain(),
+				$context,
 				$this->getConfig()
 			),
 			$this->getConfig(),
 			$context->getUser(),
-			$this->entity,
+			$this->getEntity(),
 			$context->getTitle()
 		);
+	}
+
+	/**
+	 *
+	 * @return Entity|null
+	 */
+	private function getEntity() {
+		if ( $this->entity ) {
+			return $this->entity;
+		}
+		$factory = $this->getServices()->getService(
+			'BSSocialDiscussionEntityFactory'
+		);
+		$this->entity = $factory->newFromDiscussionTitle(
+			RequestContext::getMain()->getTitle()->getTalkPageIfDefined()
+		);
+		return $this->entity;
 	}
 
 	/**
@@ -148,7 +155,7 @@ class SocialTopicsComponent extends Literal {
 		// TODO: Add own renderer for bootstrap media objects
 
 		/** @var Entity */
-		if ( !$this->entity || !$this->entity->exists() ) {
+		if ( !$this->getEntity() || !$this->getEntity()->exists() ) {
 			return 'social-topics-entitylist-newdiscussion';
 		}
 		return 'social-topics-entitylist-topicsaftercontent';
