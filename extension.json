@@ -140,8 +140,8 @@
 		"bs-social-topics-skipcreatedialog": true
 	},
 	"HookHandlers": {
-		"socialtopics": {
-			"class" : "\\BlueSpice\\Social\\Topics\\HookHandler\\SocialTopicsAfterContent"
+		"discovery-skin": {
+			"class": "\\BlueSpice\\Social\\Topics\\HookHandler\\DiscoverySkin"
 		}
 	},
 	"Hooks": {
@@ -161,7 +161,7 @@
 		"GetDoubleUnderscoreIDs": "\\BlueSpice\\Social\\Topics\\Hook\\GetDoubleUnderscoreIDs\\AddNoDiscussion::callback",
 		"BSInsertMagicAjaxGetData": "\\BlueSpice\\Social\\Topics\\Hook\\BSInsertMagicAjaxGetData\\AddNoDiscussionSwitch::callback",
 		"GetPreferences": "\\BlueSpice\\Social\\Topics\\Hook\\GetPreferences\\AddSkipCreateDialoge::callback",
-		"MWStakeCommonUIRegisterSkinSlotComponents": "socialtopics"
+		"MWStakeCommonUIRegisterSkinSlotComponents": "discovery-skin"
 	},
 	"manifest_version": 2
 }

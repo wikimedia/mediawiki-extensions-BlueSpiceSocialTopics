@@ -2,10 +2,10 @@
 
 namespace BlueSpice\Social\Topics\HookHandler;
 
-use BlueSpice\Social\Topics\SocialTopicsComponent;
+use BlueSpice\Social\Topics\Component\AfterContent;
 use MWStake\MediaWiki\Component\CommonUserInterface\Hook\MWStakeCommonUIRegisterSkinSlotComponents;
 
-class SocialTopicsAfterContent implements MWStakeCommonUIRegisterSkinSlotComponents {
+class DiscoverySkin implements MWStakeCommonUIRegisterSkinSlotComponents {
 
 	/**
 	 * @inheritDoc
@@ -15,8 +15,8 @@ class SocialTopicsAfterContent implements MWStakeCommonUIRegisterSkinSlotCompone
 			'DataAfterContent',
 			[
 				'social-topics' => [
-					'factory' => function () {
-						return new SocialTopicsComponent();
+					'factory' => static function () {
+						return new AfterContent();
 					}
 				]
 			]
