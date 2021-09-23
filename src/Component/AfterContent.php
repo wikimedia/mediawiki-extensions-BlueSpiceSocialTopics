@@ -1,17 +1,17 @@
 <?php
 
-namespace BlueSpice\Social\Topics;
+namespace BlueSpice\Social\Topics\Component;
 
 use BlueSpice\Context;
 use BlueSpice\IRenderer;
 use BlueSpice\Renderer\Params;
 use BlueSpice\Social\Entity;
-use BlueSpice\Social\Topics\EntityListContext\AfterContent;
+use BlueSpice\Social\Topics\EntityListContext\AfterContent as EntityListContext;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\Component\Literal;
 use RequestContext;
 
-class SocialTopicsComponent extends Literal {
+class AfterContent extends Literal {
 
 	/**
 	 *
@@ -34,7 +34,7 @@ class SocialTopicsComponent extends Literal {
 	 *
 	 * @return string
 	 */
-	public function getHtml(): string {
+	public function getHtml() : string {
 		$html = '';
 		$renderer = $this->getTimeLineRenderer();
 		if ( $renderer instanceof IRenderer ) {
@@ -48,7 +48,7 @@ class SocialTopicsComponent extends Literal {
 	 * @param IContextSource $context
 	 * @return bool
 	 */
-	public function shouldRender( $context ): bool {
+	public function shouldRender( $context ) : bool {
 		if ( !$context->getTitle()->exists() ) {
 			return false;
 		}
@@ -86,12 +86,12 @@ class SocialTopicsComponent extends Literal {
 
 	/**
 	 *
-	 * @return AfterContent
+	 * @return EntityListContext
 	 */
 	private function getContext() {
 		$context = RequestContext::getMain();
 
-		return new AfterContent(
+		return new EntityListContext(
 			new Context(
 				$context,
 				$this->getConfig()
@@ -126,7 +126,7 @@ class SocialTopicsComponent extends Literal {
 	 */
 	private function getTimeLineRenderer() {
 		return $this->getServices()->getService( 'BSRendererFactory' )->get(
-			$this->getRendererName(),
+			$this->getContext()->getRendererName(),
 			new Params( [ 'context' => $this->getContext() ] )
 		);
 	}
@@ -145,19 +145,5 @@ class SocialTopicsComponent extends Literal {
 	 */
 	private function getConfig() {
 		return $this->getServices()->getConfigFactory()->makeConfig( 'bsg' );
-	}
-
-	/**
-	 * Returns the key for the renderer, that initialy is used
-	 * @return string
-	 */
-	public function getRendererName() {
-		// TODO: Add own renderer for bootstrap media objects
-
-		/** @var Entity */
-		if ( !$this->getEntity() || !$this->getEntity()->exists() ) {
-			return 'social-topics-entitylist-newdiscussion';
-		}
-		return 'social-topics-entitylist-topicsaftercontent';
 	}
 }
