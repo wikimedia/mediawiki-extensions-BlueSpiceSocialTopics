@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-socialtopics-desc": "Entitates de topico e discussion pro BlueSpiceSocial",
+	"bs-socialtopics-pref-skipcreatedialog": "Saltar dialogo al creation de discussion",
+	"bs-socialtopics-toc-entalkpageautocreate": "Crear automaticamente tote le paginas de discussion",
+	"bs-socialtopics-autocreated-discussionpage": "Le pagina de discussion ha essite create automaticamente.",
+	"bs-socialtopics-autocreated-discussionpagefile": "Iste pagina de discussion ha essite create automaticamente.",
+	"bs-socialdiscussion-discussiontype": "Discussion",
+	"bs-socialdiscussion-topictype": "Topico de discussion",
+	"bs-socialtopics-entitydiscussion-header-create": "Crear nove discussion",
+	"bs-social-entitytopic-header-create": "Nove topico",
+	"bs-socialtopics-var-topictitle": "Titulo",
+	"bs-socialtopics-var-discussiontitleid": "Pagina de discussion assignate",
+	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Non es un pagina de discussion valide",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 ha comenciate le topico:",
+	"topics": "Topicos",
+	"bs-socialtopics-special-topics-heading": "Tote le topicos",
+	"bs-socialtopics-special-topics-heading-entry": "Topico/$1",
+	"bs-socialtopics-aftercontent-heading": "Discussiones",
+	"bs-socialtopics-nodiscussionpage": "Nulle pagina de discussion ha ancora essite create.",
+	"bs-socialtopics-nodiscussionpage-create": "Crear nove pagina de discussion",
+	"bs-socialtopics-nodiscussion": "Nulle discussion ha ancora essite create.",
+	"bs-socialtopics-notopicsadded": "Nulle topico ha ancora essite create.",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Salveguardar",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancellar",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contento",
+	"bs-socialtopics-switch-nodiscussion-description": "Celar le discussion sur iste pagina.",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Si un usator crea le prime topico de discussion sur un pagina, le pagina de discussion associate se crea automaticamente, saltante le passo intermediari pro crear lo manualmente."
+}
