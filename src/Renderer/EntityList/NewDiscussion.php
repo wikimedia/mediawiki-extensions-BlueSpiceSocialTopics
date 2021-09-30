@@ -31,6 +31,13 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 		}
 	}
 
+	protected function initializeArgs() {
+		$talkPage = $this->getContext()->getTitle()->getTalkPage();
+		$userCanEdit = $talkPage->userCan( 'edit', $this->getContext()->getUser() );
+		$this->args[ "usercanedit" ] = $userCanEdit;
+		parent::initializeArgs();
+	}
+
 	/**
 	 * Returns a rendered template as HTML markup
 	 * @return string - HTML
@@ -46,7 +53,6 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 		if ( $this->args[ static::PARAM_SHOW_ENTITY_LIST_MORE ] ) {
 			$content .= $this->renderEntityListMore();
 		}
-
 		return $content;
 	}
 
