@@ -31,5 +31,10 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancel",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Content",
 	"bs-socialtopics-switch-nodiscussion-description": "Hides discussion on this page.",
-	"bs-socialtopics-toc-entalkpageautocreate-help": "If a user creates the first discussion topic from within a page, the associated discussion page is automatically created and skips the intermediate step for creating it manually."
+	"bs-socialtopics-toc-entalkpageautocreate-help": "If a user creates the first discussion topic from within a page, the associated discussion page is automatically created and skips the intermediate step for creating it manually.",
+	"action-social-topics": "create and edit topics",
+	"action-social-topics-comment": "comment on topics",
+	"right-social-topics": "Create and edit topics",
+	"right-social-topics-comment": "Comment on topics",
+	"apihelp-bs-socialtopics-tasks-summary": "Provides tasks such as auto creating the discussion page"
 }
