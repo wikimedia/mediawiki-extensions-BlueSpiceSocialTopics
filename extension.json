@@ -38,6 +38,26 @@
 			"EntityRegistry": {
 				"discussion": "\\BlueSpice\\Social\\Topics\\EntityConfig\\Discussion",
 				"topic": "\\BlueSpice\\Social\\Topics\\EntityConfig\\Topic"
+			},
+			"PermissionRegistry": {
+				"social-topics": {
+					"type": "namespace",
+					"roles": [
+						"commenter",
+						"editor",
+						"admin",
+						"maintenanceadmin"
+					]
+				},
+				"social-topics-comment": {
+					"type": "namespace",
+					"roles": [
+						"commenter",
+						"editor",
+						"admin",
+						"maintenanceadmin"
+					]
+				}
 			}
 		}
 	},
@@ -50,6 +70,27 @@
 			"i18n"
 		]
 	},
+	"APIModules": {
+		"bs-socialtopics-tasks": "\\BlueSpice\\Social\\Topics\\Api\\Task\\Topics"
+	},
+	"GroupPermissions": {
+		"*": {
+			"social-topics": false,
+			"social-topics-comment": false
+		},
+		"user": {
+			"social-topics": true,
+			"social-topics-comment": true
+		},
+		"sysop": {
+			"social-topics": true,
+			"social-topics-comment": true
+		}
+	},
+	"AvailableRights": [
+		"social-topics",
+		"social-topics-comment"
+	],
 	"AutoloadNamespaces": {
 		"BlueSpice\\Social\\Topics\\": "src/"
 	},

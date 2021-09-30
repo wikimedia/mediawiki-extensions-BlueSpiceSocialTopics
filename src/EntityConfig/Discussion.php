@@ -193,4 +193,28 @@ class Discussion extends Page {
 			]
 		);
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	protected function get_CreatePermission() {
+		return 'social-topics';
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	protected function get_EditPermission() {
+		return 'social-topics';
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	protected function get_DeletePermission() {
+		return 'social-topics';
+	}
 }
