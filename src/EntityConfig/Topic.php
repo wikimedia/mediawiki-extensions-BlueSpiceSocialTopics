@@ -206,4 +206,36 @@ class Topic extends Text {
 	protected function get_EntityListSpecialTimelineTypeSelected() {
 		return true;
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	protected function get_CreatePermission() {
+		return 'social-topics';
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	protected function get_EditPermission() {
+		return 'social-topics';
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	protected function get_DeletePermission() {
+		return 'social-topics';
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	protected function get_CommentPermission() {
+		return 'social-topics-comment';
+	}
 }

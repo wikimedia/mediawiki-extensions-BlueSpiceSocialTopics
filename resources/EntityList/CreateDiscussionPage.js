@@ -14,6 +14,12 @@ bs.social.EntityList.CreateDiscussionPage = function( $el, entityList ) {
 	}
 	var skip = mw.user.options.get( 'bs-social-topics-skipcreatedialog', false );
 	me.$button.on( 'click', function( e ) {
+		if ( me.entityList.getData().usercanedit !== true ) {
+			console.log('no edit');
+			me.createDiscussionPageWithoutEdit();
+			e.stopPropagation();
+			return false;
+		}
 		!skip ? me.showCreateDiscussionPage() : me.createDiscussionPage();
 		e.stopPropagation();
 		return false;
@@ -44,6 +50,18 @@ bs.social.EntityList.CreateDiscussionPage.prototype.createDiscussionPage = funct
 		.done( function( title ) {
 			this.loadDiscussionPage( title );
 		}.bind( this ) );
+};
+
+bs.social.EntityList.CreateDiscussionPage.prototype.createDiscussionPageWithoutEdit = function() {
+	this.entityList.showLoadMask();
+	var me = this;
+	var taskData = {
+		page: this.getTitle()
+	};
+	bs.api.tasks.execSilent( 'socialtopics', 'createPage', taskData )
+		.done( function( response ) {
+		me.loadDiscussionPage( me.getTitle() );
+	} );
 };
 
 bs.social.EntityList.CreateDiscussionPage.prototype.getText = function() {
