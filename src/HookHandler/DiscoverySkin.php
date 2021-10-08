@@ -10,7 +10,7 @@ class DiscoverySkin implements MWStakeCommonUIRegisterSkinSlotComponents {
 	/**
 	 * @inheritDoc
 	 */
-	public function onMWStakeCommonUIRegisterSkinSlotComponents( $registry ) : void {
+	public function onMWStakeCommonUIRegisterSkinSlotComponents( $registry ): void {
 		$registry->register(
 			'DataAfterContent',
 			[

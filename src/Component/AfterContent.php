@@ -34,7 +34,7 @@ class AfterContent extends Literal {
 	 *
 	 * @return string
 	 */
-	public function getHtml() : string {
+	public function getHtml(): string {
 		$html = '';
 		$renderer = $this->getTimeLineRenderer();
 		if ( $renderer instanceof IRenderer ) {
@@ -48,7 +48,7 @@ class AfterContent extends Literal {
 	 * @param IContextSource $context
 	 * @return bool
 	 */
-	public function shouldRender( $context ) : bool {
+	public function shouldRender( $context ): bool {
 		if ( !$context->getTitle()->exists() ) {
 			return false;
 		}
