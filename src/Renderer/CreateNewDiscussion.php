@@ -11,7 +11,7 @@ use OutputPage;
 use RequestContext;
 
 class CreateNewDiscussion extends \BlueSpice\Renderer {
-	const PARAM_CONTEXT = 'context';
+	public const PARAM_CONTEXT = 'context';
 
 	/**
 	 * Constructor

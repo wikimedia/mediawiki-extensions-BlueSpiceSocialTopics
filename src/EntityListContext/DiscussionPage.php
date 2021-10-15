@@ -13,9 +13,9 @@ use MWException;
 use User;
 
 class DiscussionPage extends \BlueSpice\Social\EntityListContext {
-	const CONFIG_NAME_OUTPUT_TYPE = 'EntityListDiscussionPageOutputType';
-	const CONFIG_NAME_TYPE_ALLOWED = 'EntityListDiscussionPageTypeAllowed';
-	const CONFIG_NAME_TYPE_SELECTED = 'EntityListDiscussionPageTypeSelected';
+	public const CONFIG_NAME_OUTPUT_TYPE = 'EntityListDiscussionPageOutputType';
+	public const CONFIG_NAME_TYPE_ALLOWED = 'EntityListDiscussionPageTypeAllowed';
+	public const CONFIG_NAME_TYPE_SELECTED = 'EntityListDiscussionPageTypeSelected';
 
 	/**
 	 * Owner of the user page

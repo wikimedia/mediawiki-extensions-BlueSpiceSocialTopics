@@ -46,10 +46,10 @@ use User;
  * @subpackage BSSocialMicroBlog
  */
 class Topic extends Text {
-	const TYPE = 'topic';
+	public const TYPE = 'topic';
 
-	const ATTR_DISCUSSION_TITLE_ID = 'discussiontitleid';
-	const ATTR_TOPIC_TITLE = 'topictitle';
+	public const ATTR_DISCUSSION_TITLE_ID = 'discussiontitleid';
+	public const ATTR_TOPIC_TITLE = 'topictitle';
 
 	/**
 	 * Gets the attributes formated for the api
