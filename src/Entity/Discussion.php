@@ -47,9 +47,9 @@ use WikiPage;
  * @subpackage BSSocialDiscussion
  */
 class Discussion extends Page {
-	const TYPE = 'discussion';
+	public const TYPE = 'discussion';
 
-	const ATTR_DISCUSSION_TITLE_ID = 'discussiontitleid';
+	public const ATTR_DISCUSSION_TITLE_ID = 'discussiontitleid';
 
 	protected $baseTitleContent = null;
 
