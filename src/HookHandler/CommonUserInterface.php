@@ -5,7 +5,7 @@ namespace BlueSpice\Social\Topics\HookHandler;
 use BlueSpice\Social\Topics\Component\AfterContent;
 use MWStake\MediaWiki\Component\CommonUserInterface\Hook\MWStakeCommonUIRegisterSkinSlotComponents;
 
-class DiscoverySkin implements MWStakeCommonUIRegisterSkinSlotComponents {
+class CommonUserInterface implements MWStakeCommonUIRegisterSkinSlotComponents {
 
 	/**
 	 * @inheritDoc
