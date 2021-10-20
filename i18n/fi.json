@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"MITO",
 			"Silvonen"
 		]
 	},
@@ -12,5 +13,10 @@
 	"bs-socialtopics-aftercontent-heading": "Keskustelut",
 	"bs-socialtopics-nodiscussionpage-create": "Luo uusi keskustelusivu",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Tallenna",
-	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Sisältö"
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Sisältö",
+	"action-social-topics": "luoda tai muokata aiheita",
+	"action-social-topics-comment": "kommentoida aiheita",
+	"right-social-topics": "Luoda ja muokata aiheita",
+	"right-social-topics-comment": "Kommentoida aiheita",
+	"apihelp-bs-socialtopics-tasks-summary": "Tarjoaa tehtäviä, kuten keskustelusivun automaattisia luonteja"
 }
