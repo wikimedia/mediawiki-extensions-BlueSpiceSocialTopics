@@ -30,5 +30,10 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Скасувати",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент",
 	"bs-socialtopics-switch-nodiscussion-description": "Приховує обговорення на цій сторінці.",
-	"bs-socialtopics-toc-entalkpageautocreate-help": "Якщо користувач створює першу тему обговорення всередині сторінки, пов'язана сторінка обговорення створюється автоматично і пропускає проміжний крок для її створення вручну."
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Якщо користувач створює першу тему обговорення всередині сторінки, пов'язана сторінка обговорення створюється автоматично і пропускає проміжний крок для її створення вручну.",
+	"action-social-topics": "створювати та редагувати теми",
+	"action-social-topics-comment": "коментувати теми",
+	"right-social-topics": "Створювати та редагувати теми",
+	"right-social-topics-comment": "Коментувати теми",
+	"apihelp-bs-socialtopics-tasks-summary": "Надає такі завдання, як автоматичне створення сторінки обговорення"
 }
