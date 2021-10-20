@@ -25,5 +25,9 @@
 	"bs-socialtopics-notopicsadded": "주제가 아직 만들어지지 않았습니다.",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "저장",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "취소",
-	"bs-socialtopics-switch-nodiscussion-description": "이 문서의 토론을 숨깁니다."
+	"bs-socialtopics-switch-nodiscussion-description": "이 문서의 토론을 숨깁니다.",
+	"action-social-topics": "주제를 만들고 편집할",
+	"action-social-topics-comment": "주제에 의견을 달",
+	"right-social-topics": "주제 만들기 및 편집",
+	"right-social-topics-comment": "주제에 의견 달기"
 }
