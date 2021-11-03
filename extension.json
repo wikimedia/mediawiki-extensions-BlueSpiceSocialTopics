@@ -157,6 +157,11 @@
 				"bs-socialtopics-autocreated-discussionpage",
 				"bs-socialtopics-autocreated-discussionpagefile"
 			]
+		},
+		"ext.bluespice.socialtopics.discovery.styles": {
+			"styles": [
+				"bluespice.socialtopics.css"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {

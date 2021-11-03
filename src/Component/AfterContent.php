@@ -146,4 +146,11 @@ class AfterContent extends Literal {
 	private function getConfig() {
 		return $this->getServices()->getConfigFactory()->makeConfig( 'bsg' );
 	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getRequiredRLStyles(): array {
+		return [ "ext.bluespice.socialtopics.discovery.styles" ];
+	}
 }
