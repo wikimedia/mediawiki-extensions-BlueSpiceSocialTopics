@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Danieldegroot2",
 			"Elroy",
 			"Mainframe98",
 			"Romaine"
@@ -13,6 +14,7 @@
 	"topics": "Onderwerpen",
 	"bs-socialtopics-special-topics-heading": "Alle onderwerpen",
 	"bs-socialtopics-special-topics-heading-entry": "Onderwerp/$1",
+	"bs-socialtopics-aftercontent-heading": "Overleg",
 	"bs-socialtopics-nodiscussionpage-create": "Nieuwe overlegpagina aanmaken",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Opslaan",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Annuleren",
