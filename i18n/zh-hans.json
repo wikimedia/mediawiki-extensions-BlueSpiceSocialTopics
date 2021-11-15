@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			")8",
-			"A Chinese Wikipedian"
+			"A Chinese Wikipedian",
+			"GuoPC"
 		]
 	},
 	"bs-socialdiscussion-discussiontype": "讨论",
@@ -10,7 +11,7 @@
 	"bs-socialtopics-aftercontent-heading": "讨论",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "保存",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "取消",
-	"bs-social-entitytopic-header-create": "新主题",
+	"bs-social-entitytopic-header-create": "发起新话题…",
 	"bs-socialtopics-var-topictitle": "标题",
 	"bs-socialtopics-special-topics-heading": "所有主题",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "内容"

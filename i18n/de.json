@@ -13,7 +13,7 @@
 	"bs-socialdiscussion-topictype": "Diskussionsthema",
 	"bs-socialtopics-entitydiscussion-header": "[[$9]]",
 	"bs-socialtopics-entitydiscussion-header-create": "Neue Diskussion anlegen",
-	"bs-social-entitytopic-header-create": "Neues Thema",
+	"bs-social-entitytopic-header-create": "Starte ein neues Thema...",
 	"bs-social-entitytopic-header": "[[Special:Topics/$3|$9]]",
 	"bs-socialtopics-var-topictitle": "Titel",
 	"bs-socialtopics-var-discussiontitleid": "Zugeordnete Diskussionsseite",
