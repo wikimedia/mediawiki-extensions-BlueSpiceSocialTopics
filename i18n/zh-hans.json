@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			")8",
-			"A Chinese Wikipedian"
+			"A Chinese Wikipedian",
+			"GuoPC"
 		]
 	},
 	"bs-socialdiscussion-discussiontype": "讨论",
-	"bs-social-entitytopic-header-create": "新主题",
+	"bs-social-entitytopic-header-create": "发起新话题…",
 	"bs-socialtopics-var-topictitle": "标题",
 	"topics": "主题",
 	"bs-socialtopics-special-topics-heading": "所有主题",

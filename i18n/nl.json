@@ -4,12 +4,13 @@
 			"Danieldegroot2",
 			"Elroy",
 			"Mainframe98",
+			"McDutchie",
 			"Romaine"
 		]
 	},
 	"bs-socialdiscussion-discussiontype": "Overleg",
 	"bs-socialtopics-entitydiscussion-header-create": "Start een nieuwe discussie",
-	"bs-social-entitytopic-header-create": "Nieuw onderwerp",
+	"bs-social-entitytopic-header-create": "Nieuw onderwerp beginnen…",
 	"bs-socialtopics-var-topictitle": "Titel",
 	"topics": "Onderwerpen",
 	"bs-socialtopics-special-topics-heading": "Alle onderwerpen",

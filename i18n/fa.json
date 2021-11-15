@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"FarsiNevis"
+			"FarsiNevis",
+			"Jeeputer"
 		]
 	},
+	"bs-social-entitytopic-header-create": "آغاز یک مبحث تازه...",
 	"bs-socialtopics-var-topictitle": "عنوان",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "ذخیره",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "لغو",
