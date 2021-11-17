@@ -15,7 +15,7 @@
 	"bs-socialdiscussion-discussiontype": "Discussion",
 	"bs-socialdiscussion-topictype": "Sujet de discussion",
 	"bs-socialtopics-entitydiscussion-header-create": "Créer une nouvelle discussion",
-	"bs-social-entitytopic-header-create": "Nouveau sujet",
+	"bs-social-entitytopic-header-create": "Commencer un nouveau sujet…",
 	"bs-socialtopics-var-topictitle": "Titre",
 	"bs-socialtopics-var-discussiontitleid": "Page de discussion assignée",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Ce n’est pas une page de discussion valide",
