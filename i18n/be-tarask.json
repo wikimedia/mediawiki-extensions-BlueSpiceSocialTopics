@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Nieszczarda2",
+			"Renessaince",
 			"W"
 		]
 	},
 	"bs-socialdiscussion-discussiontype": "Абмеркаваньне",
 	"bs-socialdiscussion-topictype": "Прадмет абмеркаваньня",
 	"bs-socialtopics-entitydiscussion-header-create": "Стварыць новае абмеркаваньне",
-	"bs-social-entitytopic-header-create": "Новы прадмет",
+	"bs-social-entitytopic-header-create": "Пачаць новую тэму…",
 	"bs-socialtopics-var-topictitle": "Загаловак",
 	"topics": "Прадметы",
 	"bs-socialtopics-special-topics-heading": "Усе прадметы",
