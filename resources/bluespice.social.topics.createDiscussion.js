@@ -6,9 +6,10 @@ $( document ).bind( 'BSSocialEntityListInit', function( event, EntityList, $el )
 	);
 });
 
-$( document ).bind( 'BSSocialInit', function( bssocial ) {
+$( document ).bind( 'BSSocialEntityListInit', function( event, EntityList, $el ) {
 	new bs.social.CreateDiscussion(
-		$( this )
+		$el,
+		EntityList
 	);
 });
 
