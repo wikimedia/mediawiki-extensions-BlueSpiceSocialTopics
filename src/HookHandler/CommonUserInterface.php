@@ -17,7 +17,8 @@ class CommonUserInterface implements MWStakeCommonUIRegisterSkinSlotComponents {
 				'social-topics' => [
 					'factory' => static function () {
 						return new AfterContent();
-					}
+					},
+					'position' => 10
 				]
 			]
 		);
