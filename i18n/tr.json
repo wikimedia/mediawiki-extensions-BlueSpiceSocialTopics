@@ -3,7 +3,8 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"Hedda",
-			"SaldırganSincap"
+			"SaldırganSincap",
+			"Can"
 		]
 	},
 	"bs-socialtopics-desc": "BlueSpiceSocial için konu ve tartışma varlıkları",
@@ -31,5 +32,9 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "İptal",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "İçerik",
 	"bs-socialtopics-switch-nodiscussion-description": "Bu sayfadaki tartışmayı gizler.",
-	"bs-socialtopics-toc-entalkpageautocreate-help": "Kullanıcı ilk tartışma konusunu bir sayfanın içinden oluşturursa ilişkili tartışma sayfası otomatik olarak oluşturulur ve manuel olarak oluşturmak için ara adımı atlar."
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Kullanıcı ilk tartışma konusunu bir sayfanın içinden oluşturursa ilişkili tartışma sayfası otomatik olarak oluşturulur ve manuel olarak oluşturmak için ara adımı atlar.",
+	"action-social-topics": "konu oluştur ve düzenle",
+	"action-social-topics-comment": "konulardaki yorumlar",
+	"right-social-topics": "Konu oluştur ve düzenle",
+	"right-social-topics-comment": "Konularda yorumla"
 }
