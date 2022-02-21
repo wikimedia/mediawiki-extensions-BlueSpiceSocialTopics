@@ -76,7 +76,7 @@ class Topics extends \BlueSpice\SpecialPage {
 			return false;
 		}
 		$factory = MediaWikiServices::getInstance()->getService(
-			'BSSocialWikiPageEntityFactory'
+			'BSEntityFactory'
 		);
 		$entity = $factory->newFromSourceTitle( $title );
 		if ( !$entity instanceof TopicEntity || !$entity->exists() ) {
