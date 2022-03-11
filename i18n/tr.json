@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"Hedda"
+			"Can",
+			"Hedda",
+			"SaldırganSincap"
 		]
 	},
 	"bs-socialtopics-desc": "BlueSpiceSocial için konu ve tartışma varlıkları",
@@ -13,7 +15,7 @@
 	"bs-socialdiscussion-discussiontype": "Tartışma",
 	"bs-socialdiscussion-topictype": "Tartışma konusu",
 	"bs-socialtopics-entitydiscussion-header-create": "Yeni tartışma oluştur",
-	"bs-social-entitytopic-header-create": "Yeni Konu",
+	"bs-social-entitytopic-header-create": "Yeni bir konu başlat...",
 	"bs-socialtopics-var-topictitle": "Başlık",
 	"bs-socialtopics-var-discussiontitleid": "Atanan tartışma sayfası",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Geçerli bir tartışma sayfası değil",
@@ -30,5 +32,9 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "İptal",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "İçerik",
 	"bs-socialtopics-switch-nodiscussion-description": "Bu sayfadaki tartışmayı gizler.",
-	"bs-socialtopics-toc-entalkpageautocreate-help": "Kullanıcı ilk tartışma konusunu bir sayfanın içinden oluşturursa ilişkili tartışma sayfası otomatik olarak oluşturulur ve manuel olarak oluşturmak için ara adımı atlar."
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Kullanıcı ilk tartışma konusunu bir sayfanın içinden oluşturursa ilişkili tartışma sayfası otomatik olarak oluşturulur ve manuel olarak oluşturmak için ara adımı atlar.",
+	"action-social-topics": "konu oluştur ve düzenle",
+	"action-social-topics-comment": "konulardaki yorumlar",
+	"right-social-topics": "Konu oluştur ve düzenle",
+	"right-social-topics-comment": "Konularda yorumla"
 }

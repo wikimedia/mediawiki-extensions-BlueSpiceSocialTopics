@@ -12,7 +12,7 @@
 	"bs-socialdiscussion-discussiontype": "Diskusjon",
 	"bs-socialdiscussion-topictype": "Diskusjonsemne",
 	"bs-socialtopics-entitydiscussion-header-create": "Opprett ny diskusjon",
-	"bs-social-entitytopic-header-create": "Opprett emne",
+	"bs-social-entitytopic-header-create": "Opprett et nytt emne …",
 	"bs-socialtopics-var-topictitle": "Tittel",
 	"bs-socialtopics-var-discussiontitleid": "Tildelt diskusjonsside",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Ikke en gyldig diskusjonsside",
@@ -28,5 +28,9 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Lagre",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Avbryt",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Innhold",
-	"bs-socialtopics-switch-nodiscussion-description": "Skjuler diskusjoner på denne siden."
+	"bs-socialtopics-switch-nodiscussion-description": "Skjuler diskusjoner på denne siden.",
+	"action-social-topics": "opprette og redigere emner",
+	"action-social-topics-comment": "kommentere på emner",
+	"right-social-topics": "Opprette og redigere emner",
+	"right-social-topics-comment": "Kommentere på emner"
 }

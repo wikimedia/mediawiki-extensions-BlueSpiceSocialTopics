@@ -5,7 +5,8 @@
 			"Elroy",
 			"Mainframe98",
 			"McDutchie",
-			"Romaine"
+			"Romaine",
+			"Rots61"
 		]
 	},
 	"bs-socialdiscussion-discussiontype": "Overleg",
@@ -19,5 +20,6 @@
 	"bs-socialtopics-special-topics-heading-entry": "Onderwerp/$1",
 	"bs-socialtopics-entitydiscussion-header-create": "Start een nieuwe discussie",
 	"bs-socialtopics-nodiscussionpage-create": "Nieuwe overlegpagina aanmaken",
-	"bs-socialtopics-aftercontent-heading": "Overleg"
+	"bs-socialtopics-aftercontent-heading": "Overleg",
+	"bs-socialtopics-nodiscussionpage": "Er is nog geen overlegpagina aangemaakt."
 }
