@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DiegoAmbrocio",
 			"Fitoschido",
 			"Hasley",
 			"Jackiezelaya",
@@ -9,9 +10,11 @@
 	},
 	"bs-socialdiscussion-discussiontype": "Discusión",
 	"bs-socialdiscussion-topictype": "Tema de debate",
-	"bs-social-entitytopic-header-create": "Tema nuevo",
+	"bs-socialtopics-entitydiscussion-header-create": "Crear un nuevo debate",
+	"bs-social-entitytopic-header-create": "Iniciar un nuevo tema...",
 	"bs-socialtopics-var-topictitle": "Título",
 	"bs-socialtopics-var-discussiontitleid": "Página de discusión asignada",
+	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "No es una página de discusión válida",
 	"topics": "Temas",
 	"bs-socialtopics-special-topics-heading": "Todos los temas",
 	"bs-socialtopics-special-topics-heading-entry": "Tema/$1",
