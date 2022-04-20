@@ -14,7 +14,7 @@
 	"bs-socialdiscussion-discussiontype": "Discussão",
 	"bs-socialdiscussion-topictype": "Tópico de discussão",
 	"bs-socialtopics-entitydiscussion-header-create": "Criar nova discussão",
-	"bs-social-entitytopic-header-create": "Novo Tópico",
+	"bs-social-entitytopic-header-create": "Iniciar um tópico novo...",
 	"bs-socialtopics-var-topictitle": "Título",
 	"bs-socialtopics-var-discussiontitleid": "Página de discussão atribuída",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Não é uma página de discussão válida",
@@ -31,5 +31,10 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancelar",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Conteúdo",
 	"bs-socialtopics-switch-nodiscussion-description": "Oculta a discussão nesta página.",
-	"bs-socialtopics-toc-entalkpageautocreate-help": "Se um utilizador criar o primeiro tópico de discussão dentro de uma página, a página de discussão associada é criada automaticamente, saltando a etapa intermédia de criá-la manualmente."
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Se um utilizador criar o primeiro tópico de discussão dentro de uma página, a página de discussão associada é criada automaticamente, saltando a etapa intermédia de criá-la manualmente.",
+	"action-social-topics": "criar e editar tópicos",
+	"action-social-topics-comment": "comentar tópicos",
+	"right-social-topics": "Criar e editar tópicos",
+	"right-social-topics-comment": "Comentar tópicos",
+	"apihelp-bs-socialtopics-tasks-summary": "Fornece tarefas como a criação automática da página de discussão"
 }
