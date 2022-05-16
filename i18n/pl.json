@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Rail",
-			"Railfail536"
+			"Railfail536",
+			"Msz2001"
 		]
 	},
 	"bs-socialtopics-pref-skipcreatedialog": "Pomiń okno podczas tworzenia dyskusji",
@@ -12,7 +13,7 @@
 	"bs-socialdiscussion-discussiontype": "Dyskusja",
 	"bs-socialdiscussion-topictype": "Tematy dyskusji",
 	"bs-socialtopics-entitydiscussion-header-create": "Stwórz nową s dyskusję",
-	"bs-social-entitytopic-header-create": "Nowy temat",
+	"bs-social-entitytopic-header-create": "Rozpocznij nowy wątek...",
 	"bs-socialtopics-var-topictitle": "Tytuł",
 	"bs-socialtopics-var-discussiontitleid": "Powiązana strona dyskusji",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Brak takiej strony dyskusji",
