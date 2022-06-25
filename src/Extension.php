@@ -76,7 +76,7 @@ class Extension extends \BlueSpice\Extension {
 		if ( $oTitle->exists() ) {
 			return \Status::newGood( $oTitle );
 		}
-		$oWikiPage = \WikiPage::factory( $oTitle );
+		$oWikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $oTitle );
 		$oRelatedTitle = \Title::makeTitle(
 			$oTitle->getNamespace() - 1,
 			$oTitle->getText()

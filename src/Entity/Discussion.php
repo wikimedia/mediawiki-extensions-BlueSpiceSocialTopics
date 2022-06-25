@@ -33,13 +33,13 @@ namespace BlueSpice\Social\Topics\Entity;
 use BlueSpice\Social\Entity\Page;
 use BsNamespaceHelper;
 use Exception;
+use MediaWiki\MediaWikiServices;
 use Message;
 use ParserOptions;
 use RequestContext;
 use Status;
 use Title;
 use User;
-use WikiPage;
 
 /**
  * BSSociaEntityDiscussion class for BSSocial extension
@@ -67,7 +67,7 @@ class Discussion extends Page {
 		if ( !$this->getRelatedTitle()->exists() ) {
 			return $this->baseTitleContent;
 		}
-		$oWikiPage = WikiPage::factory( $this->getRelatedTitle() );
+		$oWikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $this->getRelatedTitle() );
 		try {
 			$oOutput = $oWikiPage->getContent()->getParserOutput(
 				$this->getRelatedTitle(),
