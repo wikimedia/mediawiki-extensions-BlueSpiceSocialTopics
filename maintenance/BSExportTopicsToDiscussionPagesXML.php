@@ -348,5 +348,5 @@ EOT;
 	}
 }
 
-$maintClass = 'BSExportTopicsToDiscussionPagesXML';
+$maintClass = BSExportTopicsToDiscussionPagesXML::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
