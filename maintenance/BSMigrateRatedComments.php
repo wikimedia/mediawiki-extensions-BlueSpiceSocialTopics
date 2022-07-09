@@ -24,12 +24,13 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	protected $data = [];
 
 	protected function readData() {
-		$res = $this->getDB( DB_REPLICA )->select(
+		$dbr = $this->getDB( DB_REPLICA );
+		$res = $dbr->select(
 			'bs_shoutbox',
 			'*',
 			[
 				// entries with a title a specific to
-				'sb_title != ""',
+				'sb_title != ' . $dbr->addQuotes( '' ),
 				// to rated comments and only should be handled here
 				'sb_archived = 0'
 			]
