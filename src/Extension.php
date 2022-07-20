@@ -29,7 +29,12 @@
 namespace BlueSpice\Social\Topics;
 
 use BlueSpice\Social\Topics\Content\Discussion as DiscussionContent;
+use CommentStoreComment;
+use Exception;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
+use Status;
+use WikitextContent;
 
 class Extension extends \BlueSpice\Extension {
 
@@ -94,23 +99,20 @@ class Extension extends \BlueSpice\Extension {
 			$sRelatedTitleFullText,
 			$oRelatedTitle->getFullText(),
 		] );
-
+		$updater = $oWikiPage->newPageUpdater( $oUser );
+		$content = new WikitextContent( $oMsg->plain() );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$comment = CommentStoreComment::newUnsavedComment( '' );
 		try {
-			$oStatus = $oWikiPage->doEditContent(
-				new \WikitextContent( $oMsg->plain() ),
-				"",
-				0,
-				0,
-				$oUser,
-				null
-			);
-		} catch ( \Exception $e ) {
-			return \Status::newFatal( $e->getMessage() );
+			$updater->saveRevision( $comment );
+		} catch ( Exception $e ) {
+			return Status::newFatal( $e->getMessage() );
 		}
-		if ( !$oStatus->isOK() ) {
-			return $oStatus;
+		$status = $updater->getStatus();
+		if ( !$status->isOK() ) {
+			return $status;
 		}
-		return \Status::newGood( $oWikiPage->getTitle() );
+		return Status::newGood( $oWikiPage->getTitle() );
 	}
 
 	/**
