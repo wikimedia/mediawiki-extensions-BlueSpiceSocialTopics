@@ -67,13 +67,15 @@ class Discussion extends Page {
 		if ( !$this->getRelatedTitle()->exists() ) {
 			return $this->baseTitleContent;
 		}
-		$oWikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $this->getRelatedTitle() );
+		$services = MediaWikiServices::getInstance();
+		$oWikiPage = $services->getWikiPageFactory()->newFromTitle( $this->getRelatedTitle() );
 		try {
-			$oOutput = $oWikiPage->getContent()->getParserOutput(
+			$contentRenderer = $services->getContentRenderer();
+			$oOutput = $contentRenderer->getParserOutput(
+				$oWikiPage->getContent(),
 				$this->getRelatedTitle(),
 				null,
 				ParserOptions::newFromContext( RequestContext::getMain() ),
-				true,
 				true
 			);
 		} catch ( Exception $e ) {
