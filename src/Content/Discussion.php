@@ -1,6 +1,7 @@
 <?php
 namespace BlueSpice\Social\Topics\Content;
 
+use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\MediaWikiServices;
 
 class Discussion extends \WikitextContent {
@@ -55,67 +56,29 @@ class Discussion extends \WikitextContent {
 			$options = \ParserOptions::newFromAnon();
 		}
 
-		$po = new \ParserOutput();
+		$output = new \ParserOutput();
 
 		if ( MediaWikiServices::getInstance()->getHookContainer()->run( 'ContentGetParserOutput',
-			[ $this, $title, $revId, $options, $generateHtml, &$po ] ) ) {
+			[ $this, $title, $revId, $options, $generateHtml, &$output ] ) ) {
 
 			// Save and restore the old value, just in case something is reusing
 			// the ParserOptions object in some weird way.
 			$oldRedir = $options->getRedirectTarget();
 			$options->setRedirectTarget( $this->getRedirectTarget() );
-			$this->fillParserOutput( $title, $revId, $options, $generateHtml, $po, $bForceOrigin );
+			$options->setOption( 'ForceOrigin', $bForceOrigin );
+
+			$discussionHandler = new DiscussionHandler( $this->getModel );
+			$cpoParams = new ContentParseParams( $title, $revId, $options, $generateHtml );
+			$discussionHandler->fillParserOutputInternal( $this, $cpoParams, $output );
 			$options->setRedirectTarget( $oldRedir );
 		}
 
 		MediaWikiServices::getInstance()->getHookContainer()->run( 'ContentAlterParserOutput', [
 			$this,
 			$title,
-			$po
+			$output
 		] );
 
-		return $po;
-	}
-
-	/**
-	 * Set the HTML and add the appropriate styles
-	 *
-	 *
-	 * @param \Title $title
-	 * @param int $revId
-	 * @param \ParserOptions $options
-	 * @param bool $generateHtml
-	 * @param ParserOutput &$output
-	 * @param bool $bForceOrigin
-	 * @return \ParserOutput
-	 */
-	protected function fillParserOutput( \Title $title, $revId, \ParserOptions $options,
-		$generateHtml, \ParserOutput &$output, $bForceOrigin = false ) {
-		parent::fillParserOutput(
-			$title,
-			$revId,
-			$options,
-			$generateHtml,
-			$output
-		);
-		if ( $bForceOrigin ) {
-			return $output;
-		}
-		if ( !$title ) {
-			return $output;
-		}
-		$factory = MediaWikiServices::getInstance()->getService(
-			'BSSocialDiscussionEntityFactory'
-		);
-		$entity = $factory->newFromDiscussionTitle( $title );
-		if ( !$entity ) {
-			return $output;
-		}
-
-		$output->setTitleText(
-			strip_tags( $entity->getHeader()->parse() )
-		);
-		$output->setText( $entity->getRenderer()->render( 'Page' ) );
 		return $output;
 	}
 }
