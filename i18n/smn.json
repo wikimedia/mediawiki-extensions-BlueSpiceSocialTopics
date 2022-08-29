@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Seipinne"
+			"Seipinne",
+			"Yupik"
 		]
 	},
 	"bs-socialdiscussion-discussiontype": "Savâstâllâm",
-	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Vuorkkii"
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Vuorkkii",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Jooskâ"
 }
