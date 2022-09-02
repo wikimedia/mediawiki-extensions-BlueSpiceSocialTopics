@@ -9,6 +9,14 @@ use MediaWiki\MediaWikiServices;
 
 class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 
+	/** @var MediaWikiServices */
+	private $services = null;
+
+	public function __construct() {
+		parent::__construct();
+		$this->services = MediaWikiServices::getInstance();
+	}
+
 	/**
 	 *
 	 * @return bool
@@ -169,7 +177,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	protected function extractUser( $shout ) {
 		$user = null;
 		if ( !empty( $shout->sb_user_id ) ) {
-			$user = \User::newFromId( $shout->sb_user_id );
+			$user = $this->services->getUserFactory()->newFromId( $shout->sb_user_id );
 		}
 		if ( !$user && !empty( $shout->sb_user_name ) ) {
 			$user = \User::newFromName( $shout->sb_user_name );
@@ -181,7 +189,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\EntityFactory
 	 */
 	protected function getFactory() {
-		return MediaWikiServices::getInstance()->getService( 'BSEntityFactory' );
+		return $this->services->getService( 'BSEntityFactory' );
 	}
 
 	/**
@@ -189,7 +197,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\Social\Rating\RatingFactory\Entity
 	 */
 	protected function getRatingFactory() {
-		return MediaWikiServices::getInstance()->getService( 'BSRatingFactoryEntity' );
+		return $this->services->getService( 'BSRatingFactoryEntity' );
 	}
 
 	/**
@@ -259,10 +267,10 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\Social\Rating\RatingItem\Entity|null
 	 */
 	protected function restoreRatings( $ratings, $shout, $entity, $title ) {
-		$extRating = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' )
+		$extRating = $this->services->getService( 'BSExtensionFactory' )
 			->getExtension( 'BlueSpiceRating' );
-		$extSocialRating = MediaWikiServices::getInstance()
-			->getService( 'BSExtensionFactory' )->getExtension( 'BSSocialRating' );
+		$extSocialRating = $this->services->getService( 'BSExtensionFactory' )
+			->getExtension( 'BSSocialRating' );
 
 		if ( !$extSocialRating || !$extRating ) {
 			$this->output( "Required Rating extensions not registered - skip" );
@@ -273,8 +281,9 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 		if ( !$ratingItem ) {
 			$this->output( "Rating item could not be created" );
 		}
+		$userFactory = $this->services->getUserFactory();
 		foreach ( $ratings as $rating ) {
-			$user = \User::newFromId( $rating->rat_userid );
+			$user = $userFactory->newFromId( $rating->rat_userid );
 
 			if ( !$user || $user->isAnon() ) {
 				$this->output(
@@ -302,7 +311,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 	 * @return \User
 	 */
 	protected function getMaintenanceUser() {
-		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+		return $this->services->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 	}
 
