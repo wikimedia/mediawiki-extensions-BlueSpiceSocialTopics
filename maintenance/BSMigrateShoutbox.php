@@ -9,6 +9,14 @@ use MediaWiki\MediaWikiServices;
 
 class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 
+	/** @var MediaWikiServices */
+	protected $services = null;
+
+	public function __construct() {
+		parent::__construct();
+		$this->services = MediaWikiServices::getInstance();
+	}
+
 	/**
 	 *
 	 * @return bool
@@ -134,7 +142,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	protected function extractUser( $shout ) {
 		$user = null;
 		if ( !empty( $shout->sb_user_id ) ) {
-			$user = \User::newFromId( $shout->sb_user_id );
+			$user = $this->services->getUserFactory()->newFromId( $shout->sb_user_id );
 		}
 		if ( !$user && !empty( $shout->sb_user_name ) ) {
 			$user = \User::newFromName( $shout->sb_user_name );
@@ -148,7 +156,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	 * @return string
 	 */
 	protected function makeGenericTopicTitle( $user ) {
-		$userHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+		$userHelper = $this->services->getService( 'BSUtilityFactory' )
 			->getUserHelper( $user );
 
 		$msg = \Message::newFromKey(
@@ -162,7 +170,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	 * @return \BlueSpice\EntityFactory
 	 */
 	protected function getFactory() {
-		return MediaWikiServices::getInstance()->getService( 'BSEntityFactory' );
+		return $this->services->getService( 'BSEntityFactory' );
 	}
 
 	/**
@@ -228,7 +236,7 @@ class BSMigrateShoutbox extends LoggedUpdateMaintenance {
 	 * @return \User
 	 */
 	protected function getMaintenanceUser() {
-		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+		return $this->services->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 	}
 
