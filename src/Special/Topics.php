@@ -7,7 +7,6 @@ use BlueSpice\Renderer\Params;
 use BlueSpice\Social\Renderer\Entity as Renderer;
 use BlueSpice\Social\Topics\Entity\Topic as TopicEntity;
 use BlueSpice\Social\Topics\EntityListContext\SpecialTopics;
-use MediaWiki\MediaWikiServices;
 
 class Topics extends \BlueSpice\SpecialPage {
 
@@ -54,7 +53,7 @@ class Topics extends \BlueSpice\SpecialPage {
 			return;
 		}
 
-		$renderer = MediaWikiServices::getInstance()->getService( 'BSRendererFactory' )->get(
+		$renderer = $this->services->getService( 'BSRendererFactory' )->get(
 			'entitylist',
 			new Params( [ 'context' => $context ] )
 		);
@@ -75,9 +74,7 @@ class Topics extends \BlueSpice\SpecialPage {
 		if ( !$title || !$title->exists() ) {
 			return false;
 		}
-		$factory = MediaWikiServices::getInstance()->getService(
-			'BSEntityFactory'
-		);
+		$factory = $this->services->getService( 'BSEntityFactory' );
 		$entity = $factory->newFromSourceTitle( $title );
 		if ( !$entity instanceof TopicEntity || !$entity->exists() ) {
 			return false;
