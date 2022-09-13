@@ -8,7 +8,6 @@ use BlueSpice\Social\Topics\Entity\Discussion;
 use BlueSpice\Social\Topics\Entity\Topic;
 use Config;
 use IContextSource;
-use MediaWiki\MediaWikiServices;
 use MWException;
 use User;
 
@@ -109,7 +108,7 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 	 */
 	public function getPreloadedEntities() {
 		$preloaded = parent::getPreloadedEntities();
-		$topic = MediaWikiServices::getInstance()->getService( 'BSEntityFactory' )->newFromObject(
+		$topic = $this->services->getService( 'BSEntityFactory' )->newFromObject(
 			$this->getRawTopic()
 		);
 		if ( !$topic instanceof Topic ) {
