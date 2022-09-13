@@ -10,7 +10,6 @@ use BlueSpice\Social\Topics\Entity\Topic;
 use Config;
 use HtmlArmor;
 use IContextSource;
-use MediaWiki\MediaWikiServices;
 use Title;
 use User;
 
@@ -138,7 +137,7 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 	 * @return string
 	 */
 	public function getMoreLink() {
-		return MediaWikiServices::getInstance()->getLinkRenderer()->makeKnownLink(
+		return $this->services->getLinkRenderer()->makeKnownLink(
 			$this->getTitle()->getTalkPage(),
 			new HtmlArmor( $this->getMoreLinkMessage()->text() )
 		);
@@ -150,7 +149,7 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 	 */
 	public function getPreloadedEntities() {
 		$preloaded = parent::getPreloadedEntities();
-		$topic = MediaWikiServices::getInstance()->getService( 'BSEntityFactory' )->newFromObject(
+		$topic = $this->services->getService( 'BSEntityFactory' )->newFromObject(
 			$this->getRawTopic()
 		);
 		if ( !$topic instanceof Topic ) {
