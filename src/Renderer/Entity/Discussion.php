@@ -9,7 +9,6 @@ use BlueSpice\Utility\CacheHelper;
 use Config;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 
 class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 
@@ -65,7 +64,7 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 	}
 
 	protected function renderNewDiscussion() {
-		$renderer = MediaWikiServices::getInstance()->getService( 'BSRendererFactory' )->get(
+		$renderer = $this->services->getService( 'BSRendererFactory' )->get(
 			'social-topics-createnewdiscussion',
 			new Params( [ 'context' => $this->getContext() ] )
 		);
@@ -95,7 +94,7 @@ class Discussion extends \BlueSpice\Social\Renderer\Entity\Page {
 			$this->getContext()->getUser(),
 			$this->getEntity()
 		);
-		$renderer = $this->getServices()->getService( 'BSRendererFactory' )->get(
+		$renderer = $this->services->getService( 'BSRendererFactory' )->get(
 			'entitylist',
 			new Params( [ 'context' => $context ] )
 		);
