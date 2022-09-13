@@ -7,7 +7,6 @@ use Config;
 use Html;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 
 class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 
@@ -33,8 +32,7 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 
 	protected function initializeArgs() {
 		$talkPage = $this->getContext()->getTitle()->getTalkPage();
-		$userCanEdit = \MediaWiki\MediaWikiServices::getInstance()
-			->getPermissionManager()
+		$userCanEdit = $this->services->getPermissionManager()
 			->userCan( 'edit', $this->getContext()->getUser(), $talkPage );
 		$this->args[ "usercanedit" ] = $userCanEdit;
 		parent::initializeArgs();
@@ -73,7 +71,7 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 	}
 
 	protected function renderNewDiscussionPage() {
-		$renderer = MediaWikiServices::getInstance()->getService( 'BSRendererFactory' )->get(
+		$renderer = $this->services->getService( 'BSRendererFactory' )->get(
 			'social-topics-createnewdiscussionpage',
 			new Params( [ 'context' => $this->getContext() ] )
 		);
@@ -81,7 +79,7 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 	}
 
 	protected function renderNewDiscussion() {
-		$renderer = MediaWikiServices::getInstance()->getService( 'BSRendererFactory' )->get(
+		$renderer = $this->services->getService( 'BSRendererFactory' )->get(
 			'social-topics-createnewdiscussion',
 			new Params( [ 'context' => $this->getContext() ] )
 		);

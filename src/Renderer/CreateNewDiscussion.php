@@ -6,7 +6,6 @@ use BlueSpice\Renderer\Params;
 use Config;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 use OutputPage;
 use RequestContext;
 
@@ -59,9 +58,7 @@ class CreateNewDiscussion extends \BlueSpice\Renderer {
 			return $content;
 		}
 		$title = $this->getContext()->getTitle()->getTalkPage();
-		$factory = MediaWikiServices::getInstance()->getService(
-			'BSSocialDiscussionEntityFactory'
-		);
+		$factory = $this->services->getService( 'BSSocialDiscussionEntityFactory' );
 		$entity = $factory->newFromDiscussionTitle( $title );
 		if ( !$entity->userCan( 'create', $this->getContext()->getUser() )->isOK() ) {
 			$msg = $this->msg( 'bs-socialtopics-nodiscussion' );
