@@ -68,9 +68,7 @@ class Topics extends BSApiTasksBase {
 			return $result;
 		}
 
-		$factory = $this->getServices()->getService(
-			'BSSocialDiscussionEntityFactory'
-		);
+		$factory = $this->services->getService( 'BSSocialDiscussionEntityFactory' );
 		$entity = $factory->newFromDiscussionTitle(
 			$title
 		);
