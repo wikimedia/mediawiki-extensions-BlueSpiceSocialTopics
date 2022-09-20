@@ -172,7 +172,7 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 			$user = \User::newFromId( $shout->sb_user_id );
 		}
 		if ( !$user && !empty( $shout->sb_user_name ) ) {
-			$user = \User::newFromName( $shout->sb_user_name );
+			$user = $this->services->getUserFactory()->newFromName( $shout->sb_user_name );
 		}
 		return $user;
 	}
