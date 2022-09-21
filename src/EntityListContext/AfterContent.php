@@ -101,9 +101,11 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 	 * @return \stdClass
 	 */
 	protected function getDiscussionTitleIDFilter() {
+		$talkPageTarget = $this->services->getNamespaceInfo()->getTalkPage( $this->getTitle() );
+		$talkPage = Title::newFromLinkTarget( $talkPageTarget );
 		return (object)[
 			Numeric::KEY_PROPERTY => Topic::ATTR_DISCUSSION_TITLE_ID,
-			Numeric::KEY_VALUE => $this->getTitle()->getTalkPage()->getArticleID(),
+			Numeric::KEY_VALUE => $talkPage->getArticleID(),
 			Numeric::KEY_COMPARISON => Numeric::COMPARISON_EQUALS,
 			Numeric::KEY_TYPE => 'numeric'
 		];
@@ -137,8 +139,9 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 	 * @return string
 	 */
 	public function getMoreLink() {
+		$talkPage = $this->services->getNamespaceInfo()->getTalkPage( $this->getTitle() );
 		return $this->services->getLinkRenderer()->makeKnownLink(
-			$this->getTitle()->getTalkPage(),
+			$talkPage,
 			new HtmlArmor( $this->getMoreLinkMessage()->text() )
 		);
 	}
@@ -170,7 +173,8 @@ class AfterContent extends \BlueSpice\Social\EntityListContext {
 	 * @return \stdClass
 	 */
 	protected function getRawTopic() {
-		$talkPage = $this->getTitle()->getTalkPage();
+		$talkPageTarget = $this->services->getNamespaceInfo()->getTalkPage( $this->getTitle() );
+		$talkPage = Title::newFromLinkTarget( $talkPageTarget );
 		return (object)[
 			Topic::ATTR_TYPE => Topic::TYPE,
 			Topic::ATTR_DISCUSSION_TITLE_ID => $talkPage->getArticleID(),
