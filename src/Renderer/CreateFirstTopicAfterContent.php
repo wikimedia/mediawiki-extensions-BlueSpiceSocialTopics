@@ -10,6 +10,7 @@ use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
+use Title;
 
 class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 
@@ -86,7 +87,9 @@ class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 		$content = '';
 		OutputPage::setupOOUI();
 
-		$title = $this->getContext()->getTitle()->getTalkPage();
+		$titleTarget = $this->services->getNamespaceInfo()
+			->getTalkPage( $this->getContext()->getTitle() );
+		$title = Title::newFromLinkTarget( $titleTarget );
 		$entity = $this->factory->newFromObject( (object)[
 			Topic::ATTR_TYPE => Topic::TYPE,
 			Topic::ATTR_DISCUSSION_TITLE_ID => $title->getArticleID(),

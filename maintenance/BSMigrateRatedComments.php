@@ -214,17 +214,20 @@ class BSMigrateRatedComments extends LoggedUpdateMaintenance {
 			|| $title->getNamespace() === NS_SOCIALENTITY_TALK ) {
 			return false;
 		}
-		if ( $title->getTalkPage()->exists() ) {
-			return $title->getTalkPage();
+		$nameSpaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+		$talkPageTarget = $nameSpaceInfo->getTalkPage( $title );
+		$talkPage = Title::newFromLinkTarget( $talkPageTarget );
+		if ( $talkPage->exists() ) {
+			return $talkPage;
 		}
 		$status = \BlueSpice\Social\Topics\Extension::createDiscussionPage(
-			$title->getTalkPage(),
+			$talkPage,
 			$this->getMaintenanceUser()
 		);
 		if ( $status->isOK() ) {
-			return $title->getTalkPage();
+			return $talkPage;
 		}
-		$this->output( $title->getTalkPage() . " could not be created" );
+		$this->output( $talkPage . " could not be created" );
 		return false;
 	}
 
