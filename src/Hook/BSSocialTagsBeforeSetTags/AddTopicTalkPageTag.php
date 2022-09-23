@@ -3,6 +3,7 @@ namespace BlueSpice\Social\Topics\Hook\BSSocialTagsBeforeSetTags;
 
 use BlueSpice\Social\Tags\Hook\BSSocialTagsBeforeSetTags;
 use BlueSpice\Social\Topics\Entity\Topic;
+use MediaWiki\MediaWikiServices;
 
 class AddTopicTalkPageTag extends BSSocialTagsBeforeSetTags {
 	protected function skipProcessing() {
@@ -17,9 +18,14 @@ class AddTopicTalkPageTag extends BSSocialTagsBeforeSetTags {
 	}
 
 	protected function doProcess() {
-		$this->tags = array_values( array_unique( array_merge( $this->tags, [
-			$this->entity->getRelatedTitle()->getOtherPage()->getFullText()
-		] ) ) );
+		$services = MediaWikiServices::getInstance();
+		$associatedPage = $services->getNamespaceInfo()
+			->getAssociatedPage( $this->entity->getRelatedTitle() );
+		$fullText = $services->getTitleFormatter()->getFullText( $associatedPage );
+		$this->tags = array_values( array_unique( array_merge(
+			$this->tags,
+			[ $fullText ]
+		) ) );
 		return true;
 	}
 
