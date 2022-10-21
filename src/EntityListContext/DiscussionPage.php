@@ -2,14 +2,15 @@
 
 namespace BlueSpice\Social\Topics\EntityListContext;
 
-use BlueSpice\Data\Filter\ListValue;
-use BlueSpice\Data\Filter\Numeric;
 use BlueSpice\Social\Topics\Entity\Discussion;
 use BlueSpice\Social\Topics\Entity\Topic;
 use Config;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use MWException;
+use MWStake\MediaWiki\Component\DataStore\FieldType;
+use MWStake\MediaWiki\Component\DataStore\Filter\ListValue;
+use MWStake\MediaWiki\Component\DataStore\Filter\Numeric;
 use User;
 
 class DiscussionPage extends \BlueSpice\Social\EntityListContext {
@@ -99,7 +100,7 @@ class DiscussionPage extends \BlueSpice\Social\EntityListContext {
 			ListValue::KEY_PROPERTY => Topic::ATTR_TYPE,
 			ListValue::KEY_VALUE => [ Topic::TYPE ],
 			ListValue::KEY_COMPARISON => ListValue::COMPARISON_CONTAINS,
-			ListValue::KEY_TYPE => \BlueSpice\Data\FieldType::LISTVALUE
+			ListValue::KEY_TYPE => FieldType::LISTVALUE
 		];
 	}
 

@@ -31,10 +31,10 @@
  */
 namespace BlueSpice\Social\Topics\EntityConfig;
 
-use BlueSpice\Data\FieldType;
 use BlueSpice\Social\Data\Entity\Schema;
 use BlueSpice\Social\EntityConfig\Page;
 use BlueSpice\Social\Topics\Entity\Discussion as Entity;
+use MWStake\MediaWiki\Component\DataStore\FieldType;
 
 /**
  * Discussion class for BSSocial extension

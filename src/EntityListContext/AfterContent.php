@@ -2,15 +2,15 @@
 
 namespace BlueSpice\Social\Topics\EntityListContext;
 
-use BlueSpice\Data\FieldType;
-use BlueSpice\Data\Filter\ListValue;
-use BlueSpice\Data\Filter\Numeric;
 use BlueSpice\Social\Entity;
 use BlueSpice\Social\Topics\Entity\Topic;
 use Config;
 use HtmlArmor;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MWStake\MediaWiki\Component\DataStore\FieldType;
+use MWStake\MediaWiki\Component\DataStore\Filter\ListValue;
+use MWStake\MediaWiki\Component\DataStore\Filter\Numeric;
 use Title;
 use User;
 
