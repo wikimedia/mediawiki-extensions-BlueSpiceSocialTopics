@@ -3,8 +3,6 @@
 namespace BlueSpice\Social\Topics;
 
 use BlueSpice\Context;
-use BlueSpice\Data\Filter\Numeric;
-use BlueSpice\Data\ReaderParams;
 use BlueSpice\Entity;
 use BlueSpice\EntityFactory;
 use BlueSpice\Social\Data\Entity\Store;
@@ -12,6 +10,8 @@ use BlueSpice\Social\Topics\Entity\Discussion;
 use BlueSpice\Social\Topics\EntityListContext\SpecialDiscussions;
 use MediaWiki\MediaWikiServices;
 use MWException;
+use MWStake\MediaWiki\Component\DataStore\Filter\Numeric;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use Title;
 
 class DiscussionFactory extends EntityFactory {
