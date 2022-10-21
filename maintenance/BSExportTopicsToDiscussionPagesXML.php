@@ -5,15 +5,15 @@ $IP = dirname( dirname( dirname( __DIR__ ) ) );
 require_once "$IP/maintenance/Maintenance.php";
 
 use BlueSpice\Context;
-use BlueSpice\Data\FieldType;
-use BlueSpice\Data\Filter\StringValue;
-use BlueSpice\Data\ReaderParams;
-use BlueSpice\Data\Sort;
 use BlueSpice\Social\Comments\Entity\Comment;
 use BlueSpice\Social\Data\Entity\Store;
 use BlueSpice\Social\Entity;
 use BlueSpice\Social\Topics\Entity\Topic;
 use MediaWiki\MediaWikiServices;
+use MWStake\MediaWiki\Component\DataStore\FieldType;
+use MWStake\MediaWiki\Component\DataStore\Filter\StringValue;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
+use MWStake\MediaWiki\Component\DataStore\Sort;
 
 class BSExportTopicsToDiscussionPagesXML extends Maintenance {
 
