@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Sannita"
+			"Sannita",
+			"GpieroMW"
 		]
 	},
 	"bs-social-entitytopic-header-create": "Inizia un nuovo argomento...",
@@ -10,8 +11,12 @@
 	"topics": "Argomenti",
 	"bs-socialtopics-special-topics-heading": "Tutti gli argomenti",
 	"bs-socialtopics-special-topics-heading-entry": "Argomento/$1",
+	"bs-socialtopics-nodiscussionpage": "Non è stata creata alcuna discussione ancora.",
+	"bs-socialtopics-nodiscussionpage-create": "Crea una nuova pagina di discussione",
 	"bs-socialtopics-nodiscussion": "Non è stata creata alcuna discussione ancora.",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Salva",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Annulla",
-	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contenuto"
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contenuto",
+	"right-social-topics-comment": "Commenta gli argomenti",
+	"apihelp-bs-socialtopics-tasks-summary": "Fornisce attività come la creazione automatica della pagina di discussione"
 }
