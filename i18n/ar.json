@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
 	"bs-socialtopics-desc": "كيانات الموضوع والمناقشة لBlueSpiceSocial",
@@ -12,7 +13,7 @@
 	"bs-socialdiscussion-discussiontype": "نقاش",
 	"bs-socialdiscussion-topictype": "موضوع النقاش",
 	"bs-socialtopics-entitydiscussion-header-create": "إنشاء مناقشة جديدة",
-	"bs-social-entitytopic-header-create": "موضوع جديد",
+	"bs-social-entitytopic-header-create": "ابدأ موضوع جديد ...",
 	"bs-socialtopics-var-topictitle": "العنوان",
 	"bs-socialtopics-var-discussiontitleid": "صفحة النقاش المخصصة",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "ليست صفحة مناقشة صالحة",
@@ -28,5 +29,11 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "احفظ",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "إلغاء",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "المحتوى",
-	"bs-socialtopics-switch-nodiscussion-description": "يخفي المناقشة في هذه الصفحة."
+	"bs-socialtopics-switch-nodiscussion-description": "يخفي المناقشة في هذه الصفحة.",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "إذا أنشأ المستخدم موضوع المناقشة الأول من داخل الصفحة ، فسيتم إنشاء صفحة المناقشة المرتبطة تلقائيًا وتتخطى الخطوة الوسيطة لإنشائها يدويًا.",
+	"action-social-topics": "إنشاء وتحرير المواضيع",
+	"action-social-topics-comment": "التعليق على المواضيع",
+	"right-social-topics": "إنشاء وتحرير المواضيع",
+	"right-social-topics-comment": "التعليق على المواضيع",
+	"apihelp-bs-socialtopics-tasks-summary": "يوفر مهام مثل الإنشاء التلقائي لصفحة المناقشة"
 }
