@@ -18,5 +18,14 @@
 	"bs-socialtopics-nodiscussionpage": "Non è stata creata alcuna discussione ancora.",
 	"bs-socialtopics-nodiscussionpage-create": "Crea una nuova pagina di discussione",
 	"right-social-topics-comment": "Commenta gli argomenti",
-	"apihelp-bs-socialtopics-tasks-summary": "Fornisce attività come la creazione automatica della pagina di discussione"
+	"apihelp-bs-socialtopics-tasks-summary": "Fornisce attività come la creazione automatica della pagina di discussione",
+	"bs-socialtopics-autocreated-discussionpage": "Questa pagina di discussione è stata creata automaticamente.",
+	"bs-socialtopics-autocreated-discussionpagefile": "Questa pagina di discussione è stata creata automaticamente.",
+	"bs-socialdiscussion-discussiontype": "Discussione",
+	"bs-socialdiscussion-topictype": "Argomento di discussione",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 ha iniziato l'argomento:",
+	"bs-socialtopics-aftercontent-heading": "Discussioni",
+	"bs-socialtopics-notopicsadded": "Nessun argomento è stato ancora creato.",
+	"bs-socialtopics-switch-nodiscussion-description": "Nasconde la discussione in questa pagina.",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Se un utente crea il primo argomento di discussione all'interno di una pagina, la pagina di discussione associata viene creata automaticamente, saltando il passaggio intermedio della creazione manuale."
 }
