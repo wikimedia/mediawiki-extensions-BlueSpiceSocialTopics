@@ -2,8 +2,9 @@
 
 namespace BlueSpice\Social\Topics\EntityListContext;
 
-use BlueSpice\Data\Filter\ListValue;
 use BlueSpice\Social\Topics\Entity\Topic;
+use MWStake\MediaWiki\Component\DataStore\FieldType;
+use MWStake\MediaWiki\Component\DataStore\Filter\ListValue;
 
 class SpecialTopics extends \BlueSpice\Social\EntityListContext {
 
@@ -43,7 +44,7 @@ class SpecialTopics extends \BlueSpice\Social\EntityListContext {
 			ListValue::KEY_PROPERTY => Topic::ATTR_TYPE,
 			ListValue::KEY_VALUE => [ Topic::TYPE ],
 			ListValue::KEY_COMPARISON => ListValue::COMPARISON_CONTAINS,
-			ListValue::KEY_TYPE => \BlueSpice\Data\FieldType::LISTVALUE
+			ListValue::KEY_TYPE => FieldType::LISTVALUE
 		];
 	}
 
