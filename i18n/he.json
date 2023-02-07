@@ -12,6 +12,16 @@
 	"bs-socialtopics-var-topictitle": "כותרת",
 	"bs-socialtopics-var-discussiontitleid": "דף דיון משויך",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "דף דיון בלתי־תקין",
+	"topics": "נושאים",
+	"bs-socialtopics-special-topics-heading": "כל הנושאים",
+	"bs-socialtopics-aftercontent-heading": "דיונים",
+	"bs-socialtopics-nodiscussionpage": "עדיין לא נוצר דף שיחה.",
+	"bs-socialtopics-nodiscussionpage-create": "ליצור דף השיחה חדש",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "שמירה",
-	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "ביטול"
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "ביטול",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "תוכן",
+	"action-social-topics": "ליצור ולערוך נושאים",
+	"action-social-topics-comment": "להגיב על נושאים",
+	"right-social-topics": "יצירה ועריכה של נושאים",
+	"right-social-topics-comment": "תגובה על נושאים"
 }
