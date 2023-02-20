@@ -23,5 +23,17 @@
 	"action-social-topics": "ליצור ולערוך נושאים",
 	"action-social-topics-comment": "להגיב על נושאים",
 	"right-social-topics": "יצירה ועריכה של נושאים",
-	"right-social-topics-comment": "תגובה על נושאים"
+	"right-social-topics-comment": "תגובה על נושאים",
+	"bs-socialtopics-desc": "ישויות נושא ודיון עבור BlueSpiceSocial",
+	"bs-socialtopics-pref-skipcreatedialog": "לדלג על תיבת דו־שיח על יצירת דיונים",
+	"bs-socialtopics-toc-entalkpageautocreate": "ליצור באופן אוטומטי את כל דפי הדיון",
+	"bs-socialtopics-autocreated-discussionpage": "דף הדיון הזה נוצר באופן אוטומטי.",
+	"bs-socialtopics-autocreated-discussionpagefile": "דף הדיון זהה נוצר באופן אוטומטי.",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 {{GENDER:$1|התחיל|התחילה}} את הנושא:",
+	"bs-socialtopics-special-topics-heading-entry": "נושא/$1",
+	"bs-socialtopics-nodiscussion": "עדיין לא נוצר דיון.",
+	"bs-socialtopics-notopicsadded": "עדיין לא נוצר נושא.",
+	"bs-socialtopics-switch-nodiscussion-description": "מסתירה דיון בדף הזה.",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "אם משתמש יוצר את נושא הדיון הראשון מתוך דף, דף הדיון המשויך נוצר באופן אוטומטי ומדלג על שלב הביניים ליצירתו באופן ידני.",
+	"apihelp-bs-socialtopics-tasks-summary": "אספקת משימות כגון יצירה אוטומטית של דף הדיון"
 }
