@@ -35,5 +35,6 @@
 	"action-social-topics-comment": "在主題上評論",
 	"right-social-topics": "建立與編輯主題",
 	"right-social-topics-comment": "在主題上評論",
-	"apihelp-bs-socialtopics-tasks-summary": "提供作業如創建討論頁面"
+	"apihelp-bs-socialtopics-tasks-summary": "提供作業如創建討論頁面",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "如果使用者從頁面中建立第一個討論主題，會自動建立關聯的討論頁面，並略過手動建立的中間步驟。"
 }
