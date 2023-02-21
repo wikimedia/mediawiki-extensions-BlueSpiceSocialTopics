@@ -5,6 +5,11 @@
 			"Steeve815"
 		]
 	},
+	"bs-socialtopics-desc": "ישויות נושא ודיון עבור BlueSpiceSocial",
+	"bs-socialtopics-pref-skipcreatedialog": "לדלג על תיבת דו־שיח על יצירת דיונים",
+	"bs-socialtopics-toc-entalkpageautocreate": "ליצור באופן אוטומטי את כל דפי הדיון",
+	"bs-socialtopics-autocreated-discussionpage": "דף הדיון הזה נוצר באופן אוטומטי.",
+	"bs-socialtopics-autocreated-discussionpagefile": "דף הדיון זהה נוצר באופן אוטומטי.",
 	"bs-socialdiscussion-discussiontype": "דיון",
 	"bs-socialdiscussion-topictype": "נושא הדיון",
 	"bs-socialtopics-entitydiscussion-header-create": "יצירת דיון חדש",
@@ -12,16 +17,23 @@
 	"bs-socialtopics-var-topictitle": "כותרת",
 	"bs-socialtopics-var-discussiontitleid": "דף דיון משויך",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "דף דיון בלתי־תקין",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 {{GENDER:$1|התחיל|התחילה}} את הנושא:",
 	"topics": "נושאים",
 	"bs-socialtopics-special-topics-heading": "כל הנושאים",
+	"bs-socialtopics-special-topics-heading-entry": "נושא/$1",
 	"bs-socialtopics-aftercontent-heading": "דיונים",
 	"bs-socialtopics-nodiscussionpage": "עדיין לא נוצר דף שיחה.",
 	"bs-socialtopics-nodiscussionpage-create": "ליצור דף השיחה חדש",
+	"bs-socialtopics-nodiscussion": "עדיין לא נוצר דיון.",
+	"bs-socialtopics-notopicsadded": "עדיין לא נוצר נושא.",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "שמירה",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "ביטול",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "תוכן",
+	"bs-socialtopics-switch-nodiscussion-description": "מסתירה דיון בדף הזה.",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "אם משתמש יוצר את נושא הדיון הראשון מתוך דף, דף הדיון המשויך נוצר באופן אוטומטי ומדלג על שלב הביניים ליצירתו באופן ידני.",
 	"action-social-topics": "ליצור ולערוך נושאים",
 	"action-social-topics-comment": "להגיב על נושאים",
 	"right-social-topics": "יצירה ועריכה של נושאים",
-	"right-social-topics-comment": "תגובה על נושאים"
+	"right-social-topics-comment": "תגובה על נושאים",
+	"apihelp-bs-socialtopics-tasks-summary": "אספקת משימות כגון יצירה אוטומטית של דף הדיון"
 }
