@@ -31,6 +31,7 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "取消",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "內容",
 	"bs-socialtopics-switch-nodiscussion-description": "在此頁面隱藏討論。",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "如果使用者從頁面中建立第一個討論主題，會自動建立關聯的討論頁面，並略過手動建立的中間步驟。",
 	"action-social-topics": "建立與編輯主題",
 	"action-social-topics-comment": "在主題上評論",
 	"right-social-topics": "建立與編輯主題",

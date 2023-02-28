@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yupik"
+			"Yupik",
+			"Kimberli Mäkäräinen (WMNO)"
 		]
 	},
-	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Vurke"
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Vurke",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Šluhtte"
 }
