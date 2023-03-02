@@ -2,7 +2,7 @@
 	"name": "BlueSpiceSocialTopics",
 	"version": "4.2.5",
 	"license-name": "GPL-3.0-only",
-	"url": "https://en.wiki.bluespice.com/wiki/Reference:SocialTopics",
+	"url": "https://en.wiki.bluespice.com/wiki/Reference:BlueSpiceSocialTopics",
 	"author": "Patric Wirth",
 	"descriptionmsg": "bs-socialtopics-desc",
 	"requires": {
