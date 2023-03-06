@@ -57,6 +57,7 @@ class Discussion extends \WikitextContent {
 		}
 
 		$output = new \ParserOutput();
+		$output->setExtensionData( 'ForceOrigin', $bForceOrigin );
 
 		if ( MediaWikiServices::getInstance()->getHookContainer()->run( 'ContentGetParserOutput',
 			[ $this, $title, $revId, $options, $generateHtml, &$output ] ) ) {
@@ -65,9 +66,8 @@ class Discussion extends \WikitextContent {
 			// the ParserOptions object in some weird way.
 			$oldRedir = $options->getRedirectTarget();
 			$options->setRedirectTarget( $this->getRedirectTarget() );
-			$options->setOption( 'ForceOrigin', $bForceOrigin );
 
-			$discussionHandler = new DiscussionHandler( $this->getModel );
+			$discussionHandler = new DiscussionHandler( $this->getModel() );
 			$cpoParams = new ContentParseParams( $title, $revId, $options, $generateHtml );
 			$discussionHandler->fillParserOutputInternal( $this, $cpoParams, $output );
 			$options->setRedirectTarget( $oldRedir );

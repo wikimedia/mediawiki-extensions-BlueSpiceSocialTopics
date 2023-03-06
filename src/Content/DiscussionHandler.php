@@ -38,7 +38,7 @@ class DiscussionHandler extends \WikitextContentHandler {
 	) {
 		$dbKey = $cpoParams->getPage()->getDBkey();
 		$title = Title::newFromDBkey( $dbKey );
-		if ( $cpoParams->getParserOptions()->getOption( 'ForceOrigin' ) ) {
+		if ( $output->getExtensionData( 'ForceOrigin' ) ) {
 			return $output;
 		}
 		if ( !$title ) {
