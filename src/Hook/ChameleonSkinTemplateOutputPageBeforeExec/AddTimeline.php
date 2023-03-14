@@ -31,6 +31,7 @@ use BlueSpice\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 use BlueSpice\IRenderer;
 use BlueSpice\Renderer\Params;
 use BlueSpice\Social\Topics\EntityListContext\AfterContent;
+use Title;
 
 class AddTimeline extends ChameleonSkinTemplateOutputPageBeforeExec {
 
@@ -95,9 +96,10 @@ class AddTimeline extends ChameleonSkinTemplateOutputPageBeforeExec {
 		$factory = $this->getServices()->getService(
 			'BSSocialDiscussionEntityFactory'
 		);
-		$entity = $factory->newFromDiscussionTitle(
-			$this->skin->getTitle()->getTalkPage()
-		);
+		$talkPageTarget = $this->getServices()->getNamespaceInfo()
+			->getTalkPage( $this->skin->getTitle() );
+		$talkPage = Title::newFromLinkTarget( $talkPageTarget );
+		$entity = $factory->newFromDiscussionTitle( $talkPage );
 		return new AfterContent(
 			new Context(
 				parent::getContext(),

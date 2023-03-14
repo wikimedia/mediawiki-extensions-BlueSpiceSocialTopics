@@ -8,6 +8,7 @@ use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 use OutputPage;
 use RequestContext;
+use Title;
 
 class CreateNewDiscussionPage extends \BlueSpice\Renderer {
 	public const PARAM_CONTEXT = 'context';
@@ -51,7 +52,9 @@ class CreateNewDiscussionPage extends \BlueSpice\Renderer {
 		$content = '';
 		OutputPage::setupOOUI();
 
-		$title = $this->getContext()->getTitle()->getTalkPage();
+		$titleTarget = $this->services->getNamespaceInfo()
+			->getTalkPage( $this->getContext()->getTitle() );
+		$title = Title::newFromLinkTarget( $titleTarget );
 		$userCanTopics = $this->services->getPermissionManager()
 			->userCan( 'social-topics', $this->getContext()->getUser(), $title );
 		if ( !$userCanTopics ) {

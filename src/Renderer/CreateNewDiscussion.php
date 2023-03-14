@@ -8,6 +8,7 @@ use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 use OutputPage;
 use RequestContext;
+use Title;
 
 class CreateNewDiscussion extends \BlueSpice\Renderer {
 	public const PARAM_CONTEXT = 'context';
@@ -57,7 +58,9 @@ class CreateNewDiscussion extends \BlueSpice\Renderer {
 		if ( $this->getContext()->getTitle()->getNamespace() < 0 ) {
 			return $content;
 		}
-		$title = $this->getContext()->getTitle()->getTalkPage();
+		$titleTarget = $this->services->getNamespaceInfo()
+			->getTalkPage( $this->getContext()->getTitle() );
+		$title = Title::newFromLinkTarget( $titleTarget );
 		$factory = $this->services->getService( 'BSSocialDiscussionEntityFactory' );
 		$entity = $factory->newFromDiscussionTitle( $title );
 		if ( !$entity->userCan( 'create', $this->getContext()->getUser() )->isOK() ) {
@@ -90,7 +93,7 @@ class CreateNewDiscussion extends \BlueSpice\Renderer {
 			'bs-socialtopics-discussion-create'
 		] );
 		$btn->setValue(
-			$this->getContext()->getTitle()->getTalkPage()->getArticleID()
+			$title->getArticleID()
 		);
 		$content .= $btn;
 		return $content;

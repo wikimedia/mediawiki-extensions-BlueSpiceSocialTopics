@@ -7,6 +7,7 @@ use Config;
 use Html;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
+use Title;
 
 class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 
@@ -23,7 +24,10 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 		$name = '' ) {
 		parent::__construct( $config, $params, $linkRenderer, $context, $name );
 
-		if ( !$this->getContext()->getTitle()->getTalkPage()->exists() ) {
+		$talkPageTarget = $this->services->getNamespaceInfo()
+			->getTalkPage( $this->getContext()->getTitle() );
+		$talkPage = Title::newFromLinkTarget( $talkPageTarget );
+		if ( !$talkPage->exists() ) {
 			$this->args[static::PARAM_CLASS] .= ' nodiscussion';
 		} else {
 			$this->args[static::PARAM_CLASS] .= ' nodiscussionpage';
@@ -31,7 +35,8 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 	}
 
 	protected function initializeArgs() {
-		$talkPage = $this->getContext()->getTitle()->getTalkPage();
+		$talkPage = $this->services->getNamespaceInfo()
+			->getTalkPage( $this->getContext()->getTitle() );
 		$userCanEdit = $this->services->getPermissionManager()
 			->userCan( 'edit', $this->getContext()->getUser(), $talkPage );
 		$this->args[ "usercanedit" ] = $userCanEdit;
@@ -60,7 +65,10 @@ class NewDiscussion extends \BlueSpice\Social\Renderer\EntityList {
 		$content = '';
 		$content .= Html::openElement( 'li' );
 
-		if ( !$this->getContext()->getTitle()->getTalkPage()->exists() ) {
+		$talkPageTarget = $this->services->getNamespaceInfo()
+			->getTalkPage( $this->getContext()->getTitle() );
+		$talkPage = Title::newFromLinkTarget( $talkPageTarget );
+		if ( !$talkPage->exists() ) {
 			$content .= $this->renderNewDiscussionPage();
 		} else {
 			$content .= $this->renderNewDiscussion();
