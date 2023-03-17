@@ -3,6 +3,7 @@
 namespace BlueSpice\Social\Topics\Hook\PageSaveComplete;
 
 use BlueSpice\Hook\PageSaveComplete;
+use Title;
 
 class AutoCreateDiscussionPage extends PageSaveComplete {
 
@@ -22,18 +23,24 @@ class AutoCreateDiscussionPage extends PageSaveComplete {
 		if ( !$this->wikiPage->getTitle()->exists() ) {
 			return true;
 		}
-		if ( !$this->wikiPage->getTitle()->getTalkPage() ) {
+		$talkPageTarget = $this->getServices()->getNamespaceInfo()
+			->getTalkPage( $this->wikiPage->getTitle() );
+		$talkPage = Title::newFromLinkTarget( $talkPageTarget );
+		if ( !$talkPage ) {
 			return true;
 		}
-		if ( $this->wikiPage->getTitle()->getTalkPage()->exists() ) {
+		if ( $talkPage->exists() ) {
 			return true;
 		}
 		return false;
 	}
 
 	protected function doProcess() {
+		$talkPageTarget = $this->getServices()->getNamespaceInfo()
+			->getTalkPage( $this->wikiPage->getTitle() );
+		$talkPage = Title::newFromLinkTarget( $talkPageTarget );
 		$status = \BlueSpice\Social\Topics\Extension::createDiscussionPage(
-			$this->wikiPage->getTitle()->getTalkPage(),
+			$talkPage,
 			$this->user
 		);
 		return true;

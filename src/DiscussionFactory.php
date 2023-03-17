@@ -32,7 +32,9 @@ class DiscussionFactory extends EntityFactory {
 		}
 
 		if ( !$title->isTalkPage() ) {
-			$title = $title->getTalkPage();
+			$titleTarget = MediaWikiServices::getInstance()->getNamespaceInfo()
+				->getTalkPage( $title );
+			$title = Title::newFromLinkTarget( $titleTarget );
 			if ( !$title instanceof Title || !$title->exists() ) {
 				return null;
 			}
