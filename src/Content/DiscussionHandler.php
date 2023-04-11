@@ -36,8 +36,9 @@ class DiscussionHandler extends \WikitextContentHandler {
 		ContentParseParams $cpoParams,
 		ParserOutput &$output
 	) {
+		$namespace = $cpoParams->getPage()->getNamespace();
 		$dbKey = $cpoParams->getPage()->getDBkey();
-		$title = Title::newFromDBkey( $dbKey );
+		$title = Title::makeTitle( $namespace, $dbKey );
 		if ( $output->getExtensionData( 'ForceOrigin' ) ) {
 			return $output;
 		}
@@ -49,6 +50,8 @@ class DiscussionHandler extends \WikitextContentHandler {
 		);
 		$entity = $factory->newFromDiscussionTitle( $title );
 		if ( !$entity ) {
+			// if page not exist set empty text in parserOutput
+			$output->setText( '' );
 			return $output;
 		}
 
