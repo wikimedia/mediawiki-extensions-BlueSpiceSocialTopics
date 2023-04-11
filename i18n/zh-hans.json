@@ -3,12 +3,18 @@
 		"authors": [
 			")8",
 			"A Chinese Wikipedian",
-			"GuoPC"
+			"GuoPC",
+			"Kishinsagi"
 		]
 	},
+	"bs-socialtopics-autocreated-discussionpage": "此讨论页已被自动创建。",
+	"bs-socialtopics-autocreated-discussionpagefile": "此讨论页已被自动创建。",
 	"bs-socialdiscussion-discussiontype": "讨论",
+	"bs-socialdiscussion-topictype": "讨论话题",
+	"bs-socialtopics-entitydiscussion-header-create": "新建讨论",
 	"bs-social-entitytopic-header-create": "发起新话题…",
 	"bs-socialtopics-var-topictitle": "标题",
+	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "不是有效的讨论页",
 	"topics": "主题",
 	"bs-socialtopics-special-topics-heading": "所有主题",
 	"bs-socialtopics-aftercontent-heading": "讨论",
