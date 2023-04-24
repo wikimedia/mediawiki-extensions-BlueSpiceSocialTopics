@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"bs-socialtopics-desc": "BlueSpiceSocial temos ir diskusijų objektai",
+	"bs-socialtopics-pref-skipcreatedialog": "Praleisti dialogą kuriant diskusiją",
+	"bs-socialtopics-toc-entalkpageautocreate": "Automatiškai sukurti visus diskusijų puslapius",
+	"bs-socialtopics-autocreated-discussionpage": "Šis diskusijų puslapis buvo sukurtas automatiškai.",
+	"bs-socialtopics-autocreated-discussionpagefile": "Šis diskusijų puslapis buvo sukurtas automatiškai.",
+	"bs-socialdiscussion-discussiontype": "Diskusija",
+	"bs-socialdiscussion-topictype": "Diskusijos tema",
+	"bs-socialtopics-entitydiscussion-header-create": "Sukurti naują diskusiją",
+	"bs-social-entitytopic-header-create": "Pradėti naują temą...",
+	"bs-socialtopics-var-topictitle": "Pavadinimas",
+	"bs-socialtopics-var-discussiontitleid": "Priskirtas diskusijų puslapis",
+	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Negalimas diskusijų puslapis",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 pradėjo temą:",
+	"topics": "Temos",
+	"bs-socialtopics-special-topics-heading": "Visos temos",
+	"bs-socialtopics-special-topics-heading-entry": "Tema/$1",
+	"bs-socialtopics-aftercontent-heading": "Diskusijos",
+	"bs-socialtopics-nodiscussionpage": "Dar nesukurtas joks diskusijų puslapis.",
+	"bs-socialtopics-nodiscussionpage-create": "Sukurti naują diskusijų puslapį",
+	"bs-socialtopics-nodiscussion": "Jokia diskusija dar nesukurta.",
+	"bs-socialtopics-notopicsadded": "Jokia tema dar nesukurta.",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Išsaugoti",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Atšaukti",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Turinys",
+	"bs-socialtopics-switch-nodiscussion-description": "Paslepia diskusiją šiame puslapyje.",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Jei naudotas sukuria pirmąją diskusijos temą puslapyje, susietas diskusijų puslapis sukuriamas automatiškai ir praleidžia tarpinį rankinį veiksmą dėl sukūrimo rankiniu būdu.",
+	"action-social-topics": "kurti ir redaguoti temas",
+	"action-social-topics-comment": "komentuoti temose",
+	"right-social-topics": "Kurti ir redaguoti temas",
+	"right-social-topics-comment": "Komentuoti temas"
+}
