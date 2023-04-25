@@ -17,7 +17,7 @@
 	"bs-socialtopics-entitydiscussion-header-create": "Créer une nouvelle discussion",
 	"bs-social-entitytopic-header-create": "Commencer un nouveau sujet...",
 	"bs-socialtopics-var-topictitle": "Titre",
-	"bs-socialtopics-var-discussiontitleid": "Page de discussion assignée",
+	"bs-socialtopics-var-discussiontitleid": "Page de discussion affectée",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Ce n’est pas une page de discussion valide",
 	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 a démarré le sujet :",
 	"topics": "Sujets",
