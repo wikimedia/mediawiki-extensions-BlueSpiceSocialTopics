@@ -54,6 +54,9 @@ class Discussion extends Page {
 	/** @var string|null */
 	protected $baseTitleContent = null;
 
+	/** @var bool */
+	private static $alreadyRendering = false;
+
 	/**
 	 *
 	 * @return string
@@ -70,6 +73,11 @@ class Discussion extends Page {
 		$services = MediaWikiServices::getInstance();
 		$oWikiPage = $services->getWikiPageFactory()->newFromTitle( $this->getRelatedTitle() );
 		try {
+			if ( self::$alreadyRendering ) {
+				throw new Exception( 'Parser recursion!' );
+			}
+			self::$alreadyRendering = true;
+
 			$contentRenderer = $services->getContentRenderer();
 			$oOutput = $contentRenderer->getParserOutput(
 				$oWikiPage->getContent(),
