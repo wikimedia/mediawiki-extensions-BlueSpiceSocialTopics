@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"MITO",
+			"Pyscowicz",
 			"Silvonen"
 		]
 	},
@@ -18,5 +19,6 @@
 	"action-social-topics-comment": "kommentoida aiheita",
 	"right-social-topics": "Luoda ja muokata aiheita",
 	"right-social-topics-comment": "Kommentoida aiheita",
-	"apihelp-bs-socialtopics-tasks-summary": "Tarjoaa tehtäviä, kuten keskustelusivun automaattisia luonteja"
+	"apihelp-bs-socialtopics-tasks-summary": "Tarjoaa tehtäviä, kuten keskustelusivun automaattisia luonteja",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Peruuta"
 }
