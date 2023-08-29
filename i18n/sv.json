@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Bengtsson96"
 		]
 	},
 	"bs-socialdiscussion-discussiontype": "Diskussion",
 	"bs-socialtopics-entitydiscussion-header-create": "Skapa ny diskussion",
-	"bs-social-entitytopic-header-create": "Nytt ämne",
+	"bs-social-entitytopic-header-create": "Starta ett nytt ämne …",
 	"bs-socialtopics-var-topictitle": "Titel",
 	"topics": "Ämnen",
 	"bs-socialtopics-special-topics-heading": "Alla ämnen",
