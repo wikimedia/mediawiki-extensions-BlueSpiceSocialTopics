@@ -205,7 +205,6 @@
 		"BSMigrateSettingsFromDeviatingNames": "\\BlueSpice\\Social\\Topics\\Hook\\BSMigrateSettingsFromDeviatingNames\\MigrateSettings::callback",
 		"BSSocialModuleDepths": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialModuleDepths\\AddModules::callback",
 		"GetDoubleUnderscoreIDs": "\\BlueSpice\\Social\\Topics\\Hook\\GetDoubleUnderscoreIDs\\AddNoDiscussion::callback",
-		"BSInsertMagicAjaxGetData": "\\BlueSpice\\Social\\Topics\\Hook\\BSInsertMagicAjaxGetData\\AddNoDiscussionSwitch::callback",
 		"GetPreferences": "\\BlueSpice\\Social\\Topics\\Hook\\GetPreferences\\AddSkipCreateDialoge::callback",
 		"MWStakeCommonUIRegisterSkinSlotComponents": "common-user-interface"
 	},
