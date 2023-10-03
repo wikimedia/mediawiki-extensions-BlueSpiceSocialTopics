@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"bs-socialdiscussion-discussiontype": "Дийцар",
+	"bs-socialdiscussion-topictype": "Дийцарийн тема",
+	"bs-socialtopics-entitydiscussion-header-create": "Кхолла керла дийцар",
+	"bs-social-entitytopic-header-create": "Йолайе керла тема...",
+	"bs-socialtopics-var-topictitle": "Корта",
+	"topics": "Темаш",
+	"bs-socialtopics-special-topics-heading": "Йерриге темаш",
+	"bs-socialtopics-special-topics-heading-entry": "Тема/$1",
+	"bs-socialtopics-aftercontent-heading": "Дийцарш",
+	"bs-socialtopics-nodiscussionpage": "Дийцарийн агӀо хӀинца а кхоьллина йац.",
+	"bs-socialtopics-nodiscussionpage-create": "Кхолла дийцарийн керла агӀо",
+	"bs-socialtopics-nodiscussion": "Дийцарш хӀинца а кхоьллина дац.",
+	"bs-socialtopics-notopicsadded": "Темаш хӀинца а кхоьллина йац.",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Ӏалашйе",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Йухайаккхар",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент",
+	"bs-socialtopics-switch-nodiscussion-description": "Къайладаккха хӀокху агӀонгара дийцар"
+}
