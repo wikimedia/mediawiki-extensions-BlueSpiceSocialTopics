@@ -30,7 +30,6 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Gravar",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancelar",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Conteúdo",
-	"bs-socialtopics-switch-nodiscussion-description": "Oculta a discussão nesta página.",
 	"bs-socialtopics-toc-entalkpageautocreate-help": "Se um utilizador criar o primeiro tópico de discussão dentro de uma página, a página de discussão associada é criada automaticamente, saltando a etapa intermédia de criá-la manualmente.",
 	"action-social-topics": "criar e editar tópicos",
 	"action-social-topics-comment": "comentar tópicos",

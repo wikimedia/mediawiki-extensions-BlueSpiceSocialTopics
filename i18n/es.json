@@ -25,7 +25,6 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Guardar",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Cancelar",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contenido",
-	"bs-socialtopics-switch-nodiscussion-description": "Oculta la discusión en esta página.",
 	"bs-socialtopics-toc-entalkpageautocreate-help": "Si un usuario crea el primer tema de discusión desde dentro de una página, la página de discusión asociada se crea automáticamente y omite el paso intermedio para crearla manualmente.",
 	"action-social-topics": "crear y editar temas",
 	"action-social-topics-comment": "comentar los temas",

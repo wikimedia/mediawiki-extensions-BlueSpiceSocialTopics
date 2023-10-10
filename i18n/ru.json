@@ -28,6 +28,5 @@
 	"bs-socialtopics-notopicsadded": "Темы еще не созданы.",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Сохранить",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Отмена",
-	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент",
-	"bs-socialtopics-switch-nodiscussion-description": "Скрыть обсуждение на этой странице"
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент"
 }
