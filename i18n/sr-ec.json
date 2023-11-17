@@ -1,9 +1,35 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kizule",
 			"Milicevic01"
 		]
 	},
+	"bs-socialtopics-pref-skipcreatedialog": "Прескочи дијалог приликом креирања дискусије",
+	"bs-socialtopics-toc-entalkpageautocreate": "Аутоматски направи све странице за дискусију",
+	"bs-socialtopics-autocreated-discussionpage": "Ова страница за дискусију је направљена аутоматски.",
+	"bs-socialtopics-autocreated-discussionpagefile": "Ова страница за дискусију је направљена аутоматски.",
+	"bs-socialdiscussion-discussiontype": "Дискусија",
+	"bs-socialdiscussion-topictype": "Тема дискусије",
+	"bs-socialtopics-entitydiscussion-header-create": "Направи нову дискусију",
+	"bs-social-entitytopic-header-create": "Започни нову тему...",
+	"bs-socialtopics-var-topictitle": "Наслов",
+	"bs-socialtopics-var-discussiontitleid": "Додељена страница за дискусију",
+	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "Неважећа страница за дискусију",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 је започео/ла тему:",
 	"topics": "Теме",
-	"bs-socialtopics-special-topics-heading": "Све теме"
+	"bs-socialtopics-special-topics-heading": "Све теме",
+	"bs-socialtopics-special-topics-heading-entry": "Тема/$1",
+	"bs-socialtopics-aftercontent-heading": "Дискусије",
+	"bs-socialtopics-nodiscussionpage": "Није направљена страница за дискусију.",
+	"bs-socialtopics-nodiscussionpage-create": "Направи нову страницу за разговор",
+	"bs-socialtopics-nodiscussion": "Нису направљене дискусије.",
+	"bs-socialtopics-notopicsadded": "Није направљена тема.",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Сачувај",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Откажи",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Садржај",
+	"action-social-topics": "правите и уређујете теме",
+	"action-social-topics-comment": "коментаришете у темамма",
+	"right-social-topics": "прављење и уређивање тема",
+	"right-social-topics-comment": "коментарисање у темама"
 }
