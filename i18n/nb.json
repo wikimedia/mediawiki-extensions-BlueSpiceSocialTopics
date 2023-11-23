@@ -32,5 +32,7 @@
 	"action-social-topics": "opprette og redigere emner",
 	"action-social-topics-comment": "kommentere på emner",
 	"right-social-topics": "Opprette og redigere emner",
-	"right-social-topics-comment": "Kommentere på emner"
+	"right-social-topics-comment": "Kommentere på emner",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "Hvis en bruker oppretter første diskusjonsemne fra en side blir den tilhørende diskusjonssiden opprettet automatisk, og hopper over det mellomliggende trinnet for å opprette den manuelt.",
+	"apihelp-bs-socialtopics-tasks-summary": "Gir oppgaver som automatisk opprettelse av diskusjonssiden"
 }
