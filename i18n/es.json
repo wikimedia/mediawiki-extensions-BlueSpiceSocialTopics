@@ -5,7 +5,8 @@
 			"Fitoschido",
 			"Hasley",
 			"Jackiezelaya",
-			"Joanmp17"
+			"Joanmp17",
+			"Rodney Araujo"
 		]
 	},
 	"bs-socialdiscussion-discussiontype": "Discusión",
@@ -30,5 +31,11 @@
 	"action-social-topics": "crear y editar temas",
 	"action-social-topics-comment": "comentar los temas",
 	"right-social-topics": "Crear y editar temas",
-	"right-social-topics-comment": "Comentar los temas"
+	"right-social-topics-comment": "Comentar los temas",
+	"bs-socialtopics-toc-entalkpageautocreate": "Crear automáticamente todas las páginas de discusión",
+	"bs-socialtopics-autocreated-discussionpage": "Esta página de discusión se creó automáticamente.",
+	"bs-socialtopics-autocreated-discussionpagefile": "Esta página de discusión se creó automáticamente.",
+	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 inició el tema:",
+	"bs-socialtopics-nodiscussionpage": "Todavía no se ha creado ninguna página de discusión.",
+	"apihelp-bs-socialtopics-tasks-summary": "Proporciona tareas como la creación automática de páginas de discusión."
 }
