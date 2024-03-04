@@ -205,7 +205,8 @@
 		"BSSocialModuleDepths": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialModuleDepths\\AddModules::callback",
 		"GetDoubleUnderscoreIDs": "\\BlueSpice\\Social\\Topics\\Hook\\GetDoubleUnderscoreIDs\\AddNoDiscussion::callback",
 		"GetPreferences": "\\BlueSpice\\Social\\Topics\\Hook\\GetPreferences\\AddSkipCreateDialoge::callback",
-		"MWStakeCommonUIRegisterSkinSlotComponents": "common-user-interface"
+		"MWStakeCommonUIRegisterSkinSlotComponents": "common-user-interface",
+		"BSUsageTrackerRegisterCollectors": "\\BlueSpice\\Social\\Topics\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfDiscussionPages::callback"
 	},
 	"manifest_version": 2
 }
