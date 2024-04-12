@@ -87,6 +87,9 @@ class CreateFirstTopicAfterContent extends \BlueSpice\Renderer {
 		$content = '';
 		OutputPage::setupOOUI();
 
+		if ( !$this->getContext()->getTitle() ) {
+			return $content;
+		}
 		$titleTarget = $this->services->getNamespaceInfo()
 			->getTalkPage( $this->getContext()->getTitle() );
 		$title = Title::newFromLinkTarget( $titleTarget );

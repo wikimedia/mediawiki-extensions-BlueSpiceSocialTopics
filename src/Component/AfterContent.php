@@ -7,6 +7,7 @@ use BlueSpice\IRenderer;
 use BlueSpice\Renderer\Params;
 use BlueSpice\Social\Entity;
 use BlueSpice\Social\Topics\EntityListContext\AfterContent as EntityListContext;
+use IContextSource;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\Component\Literal;
 use RequestContext;
@@ -49,7 +50,8 @@ class AfterContent extends Literal {
 	 * @return bool
 	 */
 	public function shouldRender( $context ): bool {
-		if ( !$context->getTitle()->exists() ) {
+		$title = $context->getTitle();
+		if ( $title && !$title->exists() ) {
 			return false;
 		}
 
@@ -57,7 +59,7 @@ class AfterContent extends Literal {
 			return false;
 		}
 
-		$namespace = $context->getTitle()->getNamespace();
+		$namespace = $title->getNamespace();
 		$nsBlackList = $this->getConfig()->get(
 			'SocialTopicsTimelineAfterContentNamespaceBlackList'
 		);
@@ -65,7 +67,7 @@ class AfterContent extends Literal {
 			return false;
 		}
 
-		if ( $context->getTitle()->isTalkPage() ) {
+		if ( $title->isTalkPage() ) {
 			return false;
 		}
 
@@ -75,7 +77,7 @@ class AfterContent extends Literal {
 		}
 
 		$prop = $this->getServices()->getService( 'BSUtilityFactory' )
-			->getPagePropHelper( $context->getTitle() )
+			->getPagePropHelper( $title )
 			->getPageProp( 'bs_nodiscussion' );
 		if ( $prop !== null ) {
 			return false;
