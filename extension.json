@@ -200,7 +200,6 @@
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddShoutboxMigrationMaintenanceScript::callback",
 			"\\BlueSpice\\Social\\Topics\\Hook\\LoadExtensionSchemaUpdates\\AddRatedCommentsMigrationMaintenanceScript::callback"
 		],
-		"ChameleonSkinTemplateOutputPageBeforeExec": "\\BlueSpice\\Social\\Topics\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddTimeline::callback",
 		"BSSocialTagsBeforeSetTags": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialTagsBeforeSetTags\\AddTopicTalkPageTag::callback",
 		"BSMigrateSettingsFromDeviatingNames": "\\BlueSpice\\Social\\Topics\\Hook\\BSMigrateSettingsFromDeviatingNames\\MigrateSettings::callback",
 		"BSSocialModuleDepths": "\\BlueSpice\\Social\\Topics\\Hook\\BSSocialModuleDepths\\AddModules::callback",
