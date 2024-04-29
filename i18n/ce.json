@@ -1,24 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"Умар"
+			"\u0423\u043c\u0430\u0440"
 		]
 	},
-	"bs-socialdiscussion-discussiontype": "Дийцар",
-	"bs-socialdiscussion-topictype": "Дийцарийн тема",
-	"bs-socialtopics-entitydiscussion-header-create": "Кхолла керла дийцар",
-	"bs-social-entitytopic-header-create": "Йолайе керла тема...",
-	"bs-socialtopics-var-topictitle": "Корта",
-	"topics": "Темаш",
-	"bs-socialtopics-special-topics-heading": "Йерриге темаш",
-	"bs-socialtopics-special-topics-heading-entry": "Тема/$1",
-	"bs-socialtopics-aftercontent-heading": "Дийцарш",
-	"bs-socialtopics-nodiscussionpage": "Дийцарийн агӀо хӀинца а кхоьллина йац.",
-	"bs-socialtopics-nodiscussionpage-create": "Кхолла дийцарийн керла агӀо",
-	"bs-socialtopics-nodiscussion": "Дийцарш хӀинца а кхоьллина дац.",
-	"bs-socialtopics-notopicsadded": "Темаш хӀинца а кхоьллина йац.",
-	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Ӏалашйе",
-	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Йухайаккхар",
-	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент",
-	"bs-socialtopics-switch-nodiscussion-description": "Къайладаккха хӀокху агӀонгара дийцар"
+	"bs-socialdiscussion-discussiontype": "\u0414\u0438\u0439\u0446\u0430\u0440",
+	"bs-socialdiscussion-topictype": "\u0414\u0438\u0439\u0446\u0430\u0440\u0438\u0439\u043d \u0442\u0435\u043c\u0430",
+	"bs-socialtopics-entitydiscussion-header-create": "\u041a\u0445\u043e\u043b\u043b\u0430 \u043a\u0435\u0440\u043b\u0430 \u0434\u0438\u0439\u0446\u0430\u0440",
+	"bs-social-entitytopic-header-create": "\u0419\u043e\u043b\u0430\u0439\u0435 \u043a\u0435\u0440\u043b\u0430 \u0442\u0435\u043c\u0430...",
+	"bs-socialtopics-var-topictitle": "\u041a\u043e\u0440\u0442\u0430",
+	"topics": "\u0422\u0435\u043c\u0430\u0448",
+	"bs-socialtopics-special-topics-heading": "\u0419\u0435\u0440\u0440\u0438\u0433\u0435 \u0442\u0435\u043c\u0430\u0448",
+	"bs-socialtopics-special-topics-heading-entry": "\u0422\u0435\u043c\u0430\/$1",
+	"bs-socialtopics-aftercontent-heading": "\u0414\u0438\u0439\u0446\u0430\u0440\u0448",
+	"bs-socialtopics-nodiscussionpage": "\u0414\u0438\u0439\u0446\u0430\u0440\u0438\u0439\u043d \u0430\u0433\u04c0\u043e \u0445\u04c0\u0438\u043d\u0446\u0430 \u0430 \u043a\u0445\u043e\u044c\u043b\u043b\u0438\u043d\u0430 \u0439\u0430\u0446.",
+	"bs-socialtopics-nodiscussionpage-create": "\u041a\u0445\u043e\u043b\u043b\u0430 \u0434\u0438\u0439\u0446\u0430\u0440\u0438\u0439\u043d \u043a\u0435\u0440\u043b\u0430 \u0430\u0433\u04c0\u043e",
+	"bs-socialtopics-nodiscussion": "\u0414\u0438\u0439\u0446\u0430\u0440\u0448 \u0445\u04c0\u0438\u043d\u0446\u0430 \u0430 \u043a\u0445\u043e\u044c\u043b\u043b\u0438\u043d\u0430 \u0434\u0430\u0446.",
+	"bs-socialtopics-notopicsadded": "\u0422\u0435\u043c\u0430\u0448 \u0445\u04c0\u0438\u043d\u0446\u0430 \u0430 \u043a\u0445\u043e\u044c\u043b\u043b\u0438\u043d\u0430 \u0439\u0430\u0446.",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "\u04c0\u0430\u043b\u0430\u0448\u0439\u0435",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "\u0419\u0443\u0445\u0430\u0439\u0430\u043a\u043a\u0445\u0430\u0440",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "\u041a\u043e\u043d\u0442\u0435\u043d\u0442",
+	"bs-socialtopics-switch-nodiscussion-description": "\u041a\u044a\u0430\u0439\u043b\u0430\u0434\u0430\u043a\u043a\u0445\u0430 \u0445\u04c0\u043e\u043a\u0445\u0443 \u0430\u0433\u04c0\u043e\u043d\u0433\u0430\u0440\u0430 \u0434\u0438\u0439\u0446\u0430\u0440"
 }
