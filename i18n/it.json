@@ -6,8 +6,8 @@
 			"Sannita"
 		]
 	},
-	"bs-socialtopics-autocreated-discussionpage": "Questa pagina di discussione \u00e8 stata creata automaticamente.",
-	"bs-socialtopics-autocreated-discussionpagefile": "Questa pagina di discussione \u00e8 stata creata automaticamente.",
+	"bs-socialtopics-autocreated-discussionpage": "Questa pagina di discussione è stata creata automaticamente.",
+	"bs-socialtopics-autocreated-discussionpagefile": "Questa pagina di discussione è stata creata automaticamente.",
 	"bs-socialdiscussion-discussiontype": "Discussione",
 	"bs-socialdiscussion-topictype": "Argomento di discussione",
 	"bs-social-entitytopic-header-create": "Inizia un nuovo argomento...",
@@ -15,17 +15,17 @@
 	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1 ha iniziato l'argomento:",
 	"topics": "Argomenti",
 	"bs-socialtopics-special-topics-heading": "Tutti gli argomenti",
-	"bs-socialtopics-special-topics-heading-entry": "Argomento\/$1",
+	"bs-socialtopics-special-topics-heading-entry": "Argomento/$1",
 	"bs-socialtopics-aftercontent-heading": "Discussioni",
-	"bs-socialtopics-nodiscussionpage": "Non \u00e8 stata creata alcuna discussione ancora.",
+	"bs-socialtopics-nodiscussionpage": "Non è stata creata alcuna discussione ancora.",
 	"bs-socialtopics-nodiscussionpage-create": "Crea una nuova pagina di discussione",
-	"bs-socialtopics-nodiscussion": "Non \u00e8 stata creata alcuna discussione ancora.",
-	"bs-socialtopics-notopicsadded": "Nessun argomento \u00e8 stato ancora creato.",
+	"bs-socialtopics-nodiscussion": "Non è stata creata alcuna discussione ancora.",
+	"bs-socialtopics-notopicsadded": "Nessun argomento è stato ancora creato.",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Salva",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Annulla",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Contenuto",
 	"bs-socialtopics-switch-nodiscussion-description": "Nasconde la discussione in questa pagina.",
 	"bs-socialtopics-toc-entalkpageautocreate-help": "Se un utente crea il primo argomento di discussione all'interno di una pagina, la pagina di discussione associata viene creata automaticamente, saltando il passaggio intermedio della creazione manuale.",
 	"right-social-topics-comment": "Commenta gli argomenti",
-	"apihelp-bs-socialtopics-tasks-summary": "Fornisce attivit\u00e0 come la creazione automatica della pagina di discussione"
+	"apihelp-bs-socialtopics-tasks-summary": "Fornisce attività come la creazione automatica della pagina di discussione"
 }
