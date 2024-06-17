@@ -6,7 +6,7 @@
 	},
 	"bs-socialdiscussion-discussiontype": "Дийцар",
 	"bs-socialdiscussion-topictype": "Дийцарийн тема",
-	"bs-socialtopics-entitydiscussion-header-create": "Кхолла керла дийцар",
+	"bs-socialtopics-entitydiscussion-header-create": "Керла дийцар кхолла",
 	"bs-social-entitytopic-header-create": "Йолайе керла тема...",
 	"bs-socialtopics-var-topictitle": "Корта",
 	"topics": "Темаш",
@@ -19,6 +19,5 @@
 	"bs-socialtopics-notopicsadded": "Темаш хӀинца а кхоьллина йац.",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Ӏалашйе",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Йухайаккхар",
-	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент",
-	"bs-socialtopics-switch-nodiscussion-description": "Къайладаккха хӀокху агӀонгара дийцар"
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент"
 }
