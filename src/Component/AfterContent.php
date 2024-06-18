@@ -51,7 +51,7 @@ class AfterContent extends Literal {
 	 */
 	public function shouldRender( $context ): bool {
 		$title = $context->getTitle();
-		if ( $title && !$title->exists() ) {
+		if ( !$title || !$title->exists() ) {
 			return false;
 		}
 
