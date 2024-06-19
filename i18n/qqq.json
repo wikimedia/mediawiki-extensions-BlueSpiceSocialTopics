@@ -37,5 +37,18 @@
 	"action-social-topics-comment": "{{doc-action|social-topics-comment}}",
 	"right-social-topics": "{{doc-right|social-topics}}",
 	"right-social-topics-comment": "{{doc-right|social-topics-comment}}",
-	"apihelp-bs-socialtopics-tasks-summary": "{{doc-apihelp-summary|bs-socialtopics-tasks}}"
+	"apihelp-bs-socialtopics-tasks-summary": "{{doc-apihelp-summary|bs-socialtopics-tasks}}",
+	"bs-social-topic-event-create": "Notification message when somebody creates a new topic on a page\n$1 - agent",
+	"bs-social-topic-event-create-desc": "Event type label",
+	"bs-social-topic-event-delete": "Notification message when somebody deletes a topic on a page\n$1 - agent",
+	"bs-social-topic-event-delete-desc": "Event type label",
+	"bs-social-topic-event-edit": "Notification message when somebody edits a topic on a page\n$1 - agent",
+	"bs-social-topic-event-edit-desc": "Event type label",
+	"bs-social-notification-topic-primary-link-label": "Label for the email primary link buttons",
+	"bs-social-topic-event-for-user-create": "Notification message when somebody creates a topic on user's page\n$1 - agent",
+	"bs-social-topic-event-for-user-create-desc": "Event type label",
+	"bs-social-topic-event-for-user-delete": "Notification message when somebody deletes a topic on user's page\n$1 - agent",
+	"bs-social-topic-event-for-user-delete-desc": "Event type label",
+	"bs-social-topic-event-for-user-edit": "Notification message when somebody edits a topic on user's page\n$1 - agent",
+	"bs-social-topic-event-for-user-edit-desc": "Event type label"
 }

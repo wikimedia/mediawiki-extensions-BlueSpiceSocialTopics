@@ -238,4 +238,32 @@ class Topic extends Text {
 	protected function get_CommentPermission() {
 		return 'social-topics-comment';
 	}
+
+	/**
+	 *
+	 * @return array
+	 */
+	protected function get_NotificationObjectClass() {
+		return [
+			'bs-social-topics-event',
+			'bs-social-topics-for-user-event',
+		];
+	}
+
+	/**
+	 *
+	 * @return bool
+	 */
+	protected function get_HasNotifications() {
+		return true;
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	protected function get_NotificationTypePrefix() {
+		return 'bs-topics-comment';
+	}
+
 }
