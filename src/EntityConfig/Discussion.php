@@ -217,4 +217,31 @@ class Discussion extends Page {
 	protected function get_DeletePermission() {
 		return 'social-topics';
 	}
+
+	/**
+	 *
+	 * @return array
+	 */
+	protected function get_NotificationObjectClass() {
+		return [
+			'bs-social-topics-event',
+			'bs-social-topics-for-user-event'
+		];
+	}
+
+	/**
+	 *
+	 * @return bool
+	 */
+	protected function get_HasNotifications() {
+		return true;
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	protected function get_NotificationTypePrefix() {
+		return 'bs-topics-comment';
+	}
 }
