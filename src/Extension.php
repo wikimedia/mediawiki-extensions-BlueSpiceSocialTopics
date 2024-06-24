@@ -63,7 +63,7 @@ class Extension extends \BlueSpice\Extension {
 	/**
 	 * @param \Title $oTitle
 	 * @param \User|null $oUser
-	 * @return type
+	 * @return \Status
 	 */
 	public static function createDiscussionPage( \Title $oTitle, \User $oUser = null ) {
 		/*if( !$oUser instanceof User ) {
