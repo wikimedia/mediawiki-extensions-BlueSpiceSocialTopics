@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"Neriah",
 			"Steeve815"
 		]
 	},
@@ -34,5 +35,8 @@
 	"action-social-topics-comment": "להגיב על נושאים",
 	"right-social-topics": "יצירה ועריכה של נושאים",
 	"right-social-topics-comment": "תגובה על נושאים",
-	"apihelp-bs-socialtopics-tasks-summary": "אספקת משימות כגון יצירה אוטומטית של דף הדיון"
+	"apihelp-bs-socialtopics-tasks-summary": "אספקת משימות כגון יצירה אוטומטית של דף הדיון",
+	"bs-social-topic-event-create-desc": "תגובה חדשה",
+	"bs-social-topic-event-delete-desc": "התגובה נמחקה",
+	"bs-social-topic-event-edit-desc": "התגובה נערכה"
 }
