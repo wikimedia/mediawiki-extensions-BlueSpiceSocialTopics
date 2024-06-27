@@ -63,7 +63,9 @@ class SocialTopicsEvent extends SocialTextEvent {
 	 * @inheritDoc
 	 */
 	public function getMessage( IChannel $forChannel ): Message {
-		return Message::newFromKey( "bs-social-topic-event-$this->action" )->params( $this->getAgent()->getName() );
+		return Message::newFromKey( "bs-social-topic-event-$this->action" )->params(
+			$this->getAgent()->getName(), $this->getTitleAnchor( $this->doGetRelevantTitle(), $forChannel )
+		);
 	}
 
 	/**
