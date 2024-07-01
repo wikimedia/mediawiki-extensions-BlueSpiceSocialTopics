@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Steeve815"
+			"Steeve815",
+			"Neriah"
 		]
 	},
 	"bs-socialtopics-desc": "ישויות נושא ודיון עבור BlueSpiceSocial",
@@ -29,11 +30,13 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "שמירה",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "ביטול",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "תוכן",
-	"bs-socialtopics-switch-nodiscussion-description": "מסתירה דיון בדף הזה.",
 	"bs-socialtopics-toc-entalkpageautocreate-help": "אם משתמש יוצר את נושא הדיון הראשון מתוך דף, דף הדיון המשויך נוצר באופן אוטומטי ומדלג על שלב הביניים ליצירתו באופן ידני.",
 	"action-social-topics": "ליצור ולערוך נושאים",
 	"action-social-topics-comment": "להגיב על נושאים",
 	"right-social-topics": "יצירה ועריכה של נושאים",
 	"right-social-topics-comment": "תגובה על נושאים",
-	"apihelp-bs-socialtopics-tasks-summary": "אספקת משימות כגון יצירה אוטומטית של דף הדיון"
+	"apihelp-bs-socialtopics-tasks-summary": "אספקת משימות כגון יצירה אוטומטית של דף הדיון",
+	"bs-social-topic-event-create-desc": "תגובה חדשה",
+	"bs-social-topic-event-delete-desc": "התגובה נמחקה",
+	"bs-social-topic-event-edit-desc": "התגובה נערכה"
 }
