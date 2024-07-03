@@ -27,10 +27,14 @@
 	"bs-socialtopics-toc-entalkpageautocreate-help": "Se un utente crea il primo argomento di discussione all'interno di una pagina, la pagina di discussione associata viene creata automaticamente, saltando il passaggio intermedio della creazione manuale.",
 	"right-social-topics-comment": "Commenta gli argomenti",
 	"apihelp-bs-socialtopics-tasks-summary": "Fornisce attività come la creazione automatica della pagina di discussione",
-	"bs-social-topic-event-create": "{{GENDER:$1|ha lasciato un commento}} su una pagina che stai osservando",
+	"bs-social-topic-event-create": "{{GENDER:$1|ha lasciato un commento}} nella pagina $2",
 	"bs-social-topic-event-create-desc": "Nuovo commento",
+	"bs-social-topic-event-delete": "{{GENDER:$1|ha cancellato un commento}} nella pagina $2",
 	"bs-social-topic-event-delete-desc": "Commento cancellato",
+	"bs-social-topic-event-edit": "{{GENDER:$1|ha modificato un commento}} nella pagina $2",
 	"bs-social-topic-event-edit-desc": "Commento modificato",
+	"bs-social-topic-event-for-user-create": "{{GENDER:$1|ha lasciato un commento}} in $2",
 	"bs-social-topic-event-for-user-create-desc": "Nuovo commento nella tua pagina utente",
-	"bs-social-topic-event-for-user-edit": "{{GENDER:$1|ha modificato un commento}} nella tua pagina utente"
+	"bs-social-topic-event-for-user-delete": "{{GENDER:$1|ha cancellato un commento}} in $2",
+	"bs-social-topic-event-for-user-edit": "{{GENDER:$1|ha modificato un commento}} in $2"
 }
