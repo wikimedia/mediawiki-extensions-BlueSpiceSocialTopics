@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"Neriah",
 			"Steeve815"
 		]
 	},
@@ -35,5 +36,18 @@
 	"action-social-topics-comment": "להגיב על נושאים",
 	"right-social-topics": "יצירה ועריכה של נושאים",
 	"right-social-topics-comment": "תגובה על נושאים",
-	"apihelp-bs-socialtopics-tasks-summary": "אספקת משימות כגון יצירה אוטומטית של דף הדיון"
+	"apihelp-bs-socialtopics-tasks-summary": "אספקת משימות כגון יצירה אוטומטית של דף הדיון",
+	"bs-social-topic-event-create": "{{GENDER:$1|השאיר|השאירה}} תגובה בדף $2",
+	"bs-social-topic-event-create-desc": "תגובה חדשה",
+	"bs-social-topic-event-delete": "{{GENDER:$1|מחק|מחקה}} תגובה בדף $2",
+	"bs-social-topic-event-delete-desc": "התגובה נמחקה",
+	"bs-social-topic-event-edit": "{{GENDER:$1|ערך|ערכה}} תגובה בדף $2",
+	"bs-social-topic-event-edit-desc": "התגובה נערכה",
+	"bs-social-notification-topic-primary-link-label": "הצגת הרשומה",
+	"bs-social-topic-event-for-user-create": "{{GENDER:$1|השאיר|השאירה}} תגובה בדף $2",
+	"bs-social-topic-event-for-user-create-desc": "תגובה חדשה בדף המשתמש שלך",
+	"bs-social-topic-event-for-user-delete": "{{GENDER:$1|מחק|מחקה}} תגובה בדף $2",
+	"bs-social-topic-event-for-user-delete-desc": "תגובה בדף המשתמש שלך נמחקה",
+	"bs-social-topic-event-for-user-edit": "{{GENDER:$1|ערך|ערכה}} תגובה בדף $2",
+	"bs-social-topic-event-for-user-edit-desc": "תגובה בדף המשתמש שלך נערכה"
 }
