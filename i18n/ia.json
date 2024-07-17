@@ -34,5 +34,18 @@
 	"action-social-topics-comment": "commentar topicos",
 	"right-social-topics": "Crear e modificar topicos",
 	"right-social-topics-comment": "Commentar topicos",
-	"apihelp-bs-socialtopics-tasks-summary": "Forni processos como le creation automatic del pagina de discussion"
+	"apihelp-bs-socialtopics-tasks-summary": "Forni processos como le creation automatic del pagina de discussion",
+	"bs-social-topic-event-create": "{{GENDER:$1|ha lassate un commento}} sur le pagina $2",
+	"bs-social-topic-event-create-desc": "Nove commento",
+	"bs-social-topic-event-delete": "{{GENDER:$1|ha delite un commento}} sur le pagina $2",
+	"bs-social-topic-event-delete-desc": "Commento delite",
+	"bs-social-topic-event-edit": "{{GENDER:$1|ha modificate un commento}} sur le pagina $2",
+	"bs-social-topic-event-edit-desc": "Commento modificate",
+	"bs-social-notification-topic-primary-link-label": "Vider entrata",
+	"bs-social-topic-event-for-user-create": "{{GENDER:$1|ha lassate un commento}} sur $2",
+	"bs-social-topic-event-for-user-create-desc": "Nove commento sur tu pagina de usator",
+	"bs-social-topic-event-for-user-delete": "{{GENDER:$1|ha delite un commento}} sur $2",
+	"bs-social-topic-event-for-user-delete-desc": "Commento sur tu pagina de usator delite",
+	"bs-social-topic-event-for-user-edit": "{{GENDER:$1|ha modificate un commento}} sur $2",
+	"bs-social-topic-event-for-user-edit-desc": "Commento sur tu pagina de usator modificate"
 }
