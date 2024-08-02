@@ -7,6 +7,7 @@ use BlueSpice\IRenderer;
 use BlueSpice\Renderer\Params;
 use BlueSpice\Social\Entity;
 use BlueSpice\Social\Topics\EntityListContext\AfterContent as EntityListContext;
+use Html;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\Component\Literal;
@@ -36,11 +37,18 @@ class AfterContent extends Literal {
 	 * @return string
 	 */
 	public function getHtml(): string {
-		$html = '';
+		$html = Html::openElement(
+			'div',
+			[
+				'role' => 'section',
+				'aria-labelledby' => $this->getId() . '-headline'
+			]
+			);
 		$renderer = $this->getTimeLineRenderer();
 		if ( $renderer instanceof IRenderer ) {
-			$html = $renderer->render();
+			$html .= $renderer->render();
 		}
+		$html .= Html::closeElement( 'div' );
 		return $html;
 	}
 
@@ -129,7 +137,10 @@ class AfterContent extends Literal {
 	private function getTimeLineRenderer() {
 		return $this->getServices()->getService( 'BSRendererFactory' )->get(
 			$this->getContext()->getRendererName(),
-			new Params( [ 'context' => $this->getContext() ] )
+			new Params( [
+				'context' => $this->getContext(),
+				'id' => $this->getId()
+			] )
 		);
 	}
 
