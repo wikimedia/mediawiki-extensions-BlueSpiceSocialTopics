@@ -5,8 +5,9 @@ namespace BlueSpice\Social\Topics\Event;
 use MediaWiki\User\UserIdentity;
 use Message;
 use MWStake\MediaWiki\Component\Events\Delivery\IChannel;
+use MWStake\MediaWiki\Component\Events\PriorityEvent;
 
-class SocialTopicsForUserEvent extends SocialTopicsEvent {
+class SocialTopicsForUserEvent extends SocialTopicsEvent implements PriorityEvent {
 
 	/**
 	 * @return Message
