@@ -36,5 +36,18 @@
 	"action-social-topics-comment": "在主題上評論",
 	"right-social-topics": "建立與編輯主題",
 	"right-social-topics-comment": "在主題上評論",
-	"apihelp-bs-socialtopics-tasks-summary": "提供作業如創建討論頁面"
+	"apihelp-bs-socialtopics-tasks-summary": "提供作業如創建討論頁面",
+	"bs-social-topic-event-create": "在頁面$2{{GENDER:$1|留下一則評論}}",
+	"bs-social-topic-event-create-desc": "新評論",
+	"bs-social-topic-event-delete": "在頁面$2{{GENDER:$1|刪除一則評論}}",
+	"bs-social-topic-event-delete-desc": "已刪除評論",
+	"bs-social-topic-event-edit": "在頁面$2{{GENDER:$1|編輯一則評論}}",
+	"bs-social-topic-event-edit-desc": "已編輯評論",
+	"bs-social-notification-topic-primary-link-label": "檢視貼文",
+	"bs-social-topic-event-for-user-create": "在$2{{GENDER:$1|留下一則評論}}",
+	"bs-social-topic-event-for-user-create-desc": "在您使用者頁面的新評論",
+	"bs-social-topic-event-for-user-delete": "在$2{{GENDER:$1|刪除一則評論}}",
+	"bs-social-topic-event-for-user-delete-desc": "在您使用者頁面刪除的評論",
+	"bs-social-topic-event-for-user-edit": "在$2{{GENDER:$1|編輯一則評論}}",
+	"bs-social-topic-event-for-user-edit-desc": "在您使用者頁面編輯的評論"
 }

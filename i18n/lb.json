@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"bs-socialdiscussion-discussiontype": "Diskussioun",
-	"bs-social-entitytopic-header-create": "En neit Thema ufänken...",
+	"bs-social-entitytopic-header-create": "En neit Theema ufänken...",
 	"bs-socialtopics-var-topictitle": "Titel",
-	"topics": "Themen",
+	"topics": "Theemen",
 	"bs-socialtopics-aftercontent-heading": "Diskussiounen",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Späicheren",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Ofbriechen",

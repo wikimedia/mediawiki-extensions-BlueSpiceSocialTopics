@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Justman10000",
 			"Mglaser",
 			"Patric Wirth <wirth@hallowelt.com>",
 			"Umherirrender"
@@ -36,5 +37,18 @@
 	"action-social-topics-comment": "Diskussionen zu kommentieren",
 	"right-social-topics": "Diskussionen erstellen und bearbeiten",
 	"right-social-topics-comment": "Diskussionen kommentieren",
-	"apihelp-bs-socialtopics-tasks-summary": "Stellt Funktionen wie die automatische Einrichtung einer Diskussionsseite bereit"
+	"apihelp-bs-socialtopics-tasks-summary": "Stellt Funktionen wie die automatische Einrichtung einer Diskussionsseite bereit",
+	"bs-social-topic-event-create": "{{GENDER:$1|hat}} auf der Seite $2 {{GENDER:$1|einen Kommentar hinterlassen}}",
+	"bs-social-topic-event-create-desc": "Neuer Kommentar",
+	"bs-social-topic-event-delete": "{{GENDER:$1|hat auf der Seite}} $2 {{GENDER:$1|einen Kommentar gelöscht}}",
+	"bs-social-topic-event-delete-desc": "Kommentar gelöscht",
+	"bs-social-topic-event-edit": "{{GENDER:$1|hat auf der Seite}} $2 {{GENDER:$1|einen Kommentar bearbeitet}}",
+	"bs-social-topic-event-edit-desc": "Kommentar bearbeitet",
+	"bs-social-notification-topic-primary-link-label": "Beitrag ansehen",
+	"bs-social-topic-event-for-user-create": "{{GENDER:$1|hat auf}} $2 {{GENDER:$1|einen Kommentar hinterlassen}}",
+	"bs-social-topic-event-for-user-create-desc": "Neuer Kommentar auf deiner Benutzerseite",
+	"bs-social-topic-event-for-user-delete": "{{GENDER:$1|hat auf}} $2 {{GENDER:$1|einen Kommentar gelöscht}}",
+	"bs-social-topic-event-for-user-delete-desc": "Kommentar auf deiner Benutzerseite gelöscht",
+	"bs-social-topic-event-for-user-edit": "{{GENDER:$1|hat auf}} $2 {{GENDER:$1|einen Kommentar bearbeitet}}",
+	"bs-social-topic-event-for-user-edit-desc": "Kommentar auf deiner Benutzerseite bearbeitet"
 }
