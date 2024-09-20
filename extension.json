@@ -67,6 +67,7 @@
 						"class": "\\BlueSpice\\Social\\Topics\\Event\\SocialTopicsEvent",
 						"services": [ "DBLoadBalancer", "UserFactory", "GroupPermissionsLookup", "BSEntityFactory", "SpecialPageFactory" ]
 					},
+					"testable": false,
 					"buckets": [ "content-low-freq" ]
 				},
 				"bs-social-topics-for-user-event": {
@@ -74,6 +75,7 @@
 						"class": "\\BlueSpice\\Social\\Topics\\Event\\SocialTopicsForUserEvent",
 						"services": [ "DBLoadBalancer", "UserFactory", "GroupPermissionsLookup", "BSEntityFactory", "SpecialPageFactory" ]
 					},
+					"testable": false,
 					"buckets": [ "personal" ]
 				}
 			}
