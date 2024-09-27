@@ -40,10 +40,9 @@ class AfterContent extends Literal {
 		$html = Html::openElement(
 			'div',
 			[
-				'role' => 'section',
 				'aria-labelledby' => $this->getId() . '-headline'
 			]
-			);
+		);
 		$renderer = $this->getTimeLineRenderer();
 		if ( $renderer instanceof IRenderer ) {
 			$html .= $renderer->render();
