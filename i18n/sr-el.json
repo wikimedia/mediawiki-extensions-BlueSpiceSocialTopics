@@ -28,5 +28,17 @@
 	"action-social-topics": "pravite i uređujete teme",
 	"action-social-topics-comment": "komentarišete u temamma",
 	"right-social-topics": "pravljenje i uređivanje tema",
-	"right-social-topics-comment": "komentarisanje u temama"
+	"right-social-topics-comment": "komentarisanje u temama",
+	"bs-social-topic-event-create-desc": "Novi komentar",
+	"bs-social-topic-event-delete": "{{GENDER:$1|obrisao je|obrisala je}} komentar na $2",
+	"bs-social-topic-event-delete-desc": "Komentar obrisan",
+	"bs-social-topic-event-edit": "{{GENDER:$1|izmenio je|izmenila je}} komentar na $2",
+	"bs-social-topic-event-edit-desc": "Komentar izmenjen",
+	"bs-social-notification-topic-primary-link-label": "Prikaži objavu",
+	"bs-social-topic-event-for-user-create": "{{GENDER:$1|ostavio je|ostavila je}} komentar na $2",
+	"bs-social-topic-event-for-user-create-desc": "Novi komentar na vašoj korisničkoj stranici",
+	"bs-social-topic-event-for-user-delete": "{{GENDER:$1|obrisao je|obrisala je}} komentar na $2",
+	"bs-social-topic-event-for-user-delete-desc": "Komentar na vašoj korisničkoj stranici je obrisan",
+	"bs-social-topic-event-for-user-edit": "{{GENDER:$1|izmenio je|izmenila je}} komentar na $2",
+	"bs-social-topic-event-for-user-edit-desc": "Komentar na vašoj korisničkoj stranici je izmenjen"
 }
