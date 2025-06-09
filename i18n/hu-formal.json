@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Krisztina"
+		]
+	},
+	"bs-social-topic-event-for-user-create-desc": "Új hozzászólás a felhasználói oldalán",
+	"bs-social-topic-event-for-user-delete-desc": "Hozzászólás törölve a felhasználói oldalán",
+	"bs-social-topic-event-for-user-edit-desc": "Hozzászólás szerkesztve a felhasználói oldalán"
+}
