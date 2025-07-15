@@ -4,6 +4,11 @@
 			"Умар"
 		]
 	},
+	"bs-socialtopics-desc": "Теманийн а, дийцарийн а хаамаш BlueSpiceSocial",
+	"bs-socialtopics-pref-skipcreatedialog": "Дийцар кхоллуш диалоган байракх ма билгалйаккха",
+	"bs-socialtopics-toc-entalkpageautocreate": "Массо а дийцарийн агӀонаш авто кхолла",
+	"bs-socialtopics-autocreated-discussionpage": "Дийцарийн агӀо авто кхоьллина.",
+	"bs-socialtopics-autocreated-discussionpagefile": "Дийцарийн агӀо авто кхоьллина.",
 	"bs-socialdiscussion-discussiontype": "Дийцар",
 	"bs-socialdiscussion-topictype": "Дийцарийн тема",
 	"bs-socialtopics-entitydiscussion-header-create": "Керла дийцар кхолла",
@@ -19,5 +24,9 @@
 	"bs-socialtopics-notopicsadded": "Темаш хӀинца а кхоьллина йац.",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Ӏалашйе",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Йухайаккхар",
-	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент"
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент",
+	"bs-social-topic-event-create-desc": "Керла коммент",
+	"bs-social-topic-event-delete-desc": "Коммент дӀайаьккхина",
+	"bs-social-topic-event-edit-desc": "Коммент хийцина",
+	"bs-social-notification-topic-primary-link-label": "Хьажа хааме"
 }
