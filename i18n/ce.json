@@ -20,5 +20,14 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Ӏалашйе",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Йухайаккхар",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Контент",
-	"bs-socialtopics-switch-nodiscussion-description": "Къайладаккха хӀокху агӀонгара дийцар"
+	"bs-socialtopics-switch-nodiscussion-description": "Къайладаккха хӀокху агӀонгара дийцар",
+	"bs-socialtopics-desc": "Теманийн а, дийцарийн а хаамаш BlueSpiceSocial",
+	"bs-socialtopics-pref-skipcreatedialog": "Дийцар кхоллуш диалоган байракх ма билгалйаккха",
+	"bs-socialtopics-toc-entalkpageautocreate": "Массо а дийцарийн агӀонаш авто кхолла",
+	"bs-socialtopics-autocreated-discussionpage": "Дийцарийн агӀо авто кхоьллина.",
+	"bs-socialtopics-autocreated-discussionpagefile": "Дийцарийн агӀо авто кхоьллина.",
+	"bs-social-topic-event-create-desc": "Керла коммент",
+	"bs-social-topic-event-delete-desc": "Коммент дӀайаьккхина",
+	"bs-social-topic-event-edit-desc": "Коммент хийцина",
+	"bs-social-notification-topic-primary-link-label": "Хьажа хааме"
 }

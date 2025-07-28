@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Krisztina"
+		]
+	},
+	"bs-socialtopics-desc": "Téma- és beszélgetési entitások a BlueSpiceSocialhoz",
+	"bs-socialtopics-var-topictitle": "Cím",
+	"topics": "Témák",
+	"bs-socialtopics-special-topics-heading": "Minden téma",
+	"bs-socialtopics-special-topics-heading-entry": "Téma/$1",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "Mentés",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "Mégse",
+	"bs-socialtopics-dialog-creatediscussionpage-label-text": "Tartalom",
+	"action-social-topics": "témák létrehozása és szerkesztése",
+	"action-social-topics-comment": "hozzászólni a témákhoz",
+	"right-social-topics": "Témák létrehozása és szerkesztése",
+	"right-social-topics-comment": "Hozzászólás témákhoz",
+	"bs-social-topic-event-create-desc": "Új hozzászólás",
+	"bs-social-topic-event-delete-desc": "Hozzászólás törölve",
+	"bs-social-topic-event-edit": "{{GENDER:$1| szerkesztett egy hozzászólást}} a $2 lapon",
+	"bs-social-topic-event-edit-desc": "Hozzászólás szerkesztve",
+	"bs-social-notification-topic-primary-link-label": "Bejegyzés megtekintése",
+	"bs-social-topic-event-for-user-create": "{{GENDER:$1| hozzászólást hagyott}} ehhez: $2",
+	"bs-social-topic-event-for-user-create-desc": "Új hozzászólás a felhasználói oldaladon",
+	"bs-social-topic-event-for-user-delete": "{{GENDER:$1| törölt egy hozzászólást}} erről: $2",
+	"bs-social-topic-event-for-user-delete-desc": "Hozzászólás törölve a felhasználói oldaladon",
+	"bs-social-topic-event-for-user-edit": "{{GENDER:$1| szerkesztett egy hozzászólást}} itt: $2",
+	"bs-social-topic-event-for-user-edit-desc": "Hozzászólás szerkesztve a felhasználói oldaladon"
+}
