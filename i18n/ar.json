@@ -34,5 +34,11 @@
 	"action-social-topics-comment": "التعليق على المواضيع",
 	"right-social-topics": "إنشاء وتحرير المواضيع",
 	"right-social-topics-comment": "التعليق على المواضيع",
-	"apihelp-bs-socialtopics-tasks-summary": "يوفر مهام مثل الإنشاء التلقائي لصفحة المناقشة"
+	"apihelp-bs-socialtopics-tasks-summary": "يوفر مهام مثل الإنشاء التلقائي لصفحة المناقشة",
+	"bs-social-topic-event-create-desc": "تعليق جديد",
+	"bs-social-topic-event-delete-desc": "تم حذف التعليق",
+	"bs-social-topic-event-edit-desc": "تم تعديل التعليق",
+	"bs-social-notification-topic-primary-link-label": "عرض المنشور",
+	"bs-social-topic-event-for-user-create-desc": "تعليق جديد على صفحة المستخدم الخاصة بك",
+	"bs-social-topic-event-for-user-edit-desc": "تم تعديل التعليق على صفحة المستخدم الخاصة بك"
 }
