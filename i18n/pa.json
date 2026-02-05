@@ -4,5 +4,11 @@
 			"Cabal"
 		]
 	},
+	"bs-socialdiscussion-discussiontype": "ਗੱਲਬਾਤ",
+	"bs-socialtopics-var-topictitle": "ਸਿਰਲੇਖ",
+	"topics": "ਵਿਸ਼ੇ",
+	"bs-socialtopics-special-topics-heading": "ਸਾਰੇ ਵਿਸ਼ੇ",
+	"bs-socialtopics-special-topics-heading-entry": "ਵਿਸ਼ਾ/ $1",
+	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "ਸਾਂਭੋ",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "ਰੱਦ ਕਰੋ"
 }
