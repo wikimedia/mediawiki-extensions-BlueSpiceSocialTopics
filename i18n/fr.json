@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
+			"Mahabarata",
 			"Thibaut120094",
 			"Verdy p",
 			"Wladek92"
@@ -37,5 +38,18 @@
 	"action-social-topics-comment": "commenter des sujets",
 	"right-social-topics": "Créer et modifier des sujets",
 	"right-social-topics-comment": "Commenter des sujets",
-	"apihelp-bs-socialtopics-tasks-summary": "Fournit les tâches comme la création automatique de la page de discussion"
+	"apihelp-bs-socialtopics-tasks-summary": "Fournit les tâches comme la création automatique de la page de discussion",
+	"bs-social-topic-event-create": "{{GENDER:$1|}}a laissé un commentaire sur la page $2",
+	"bs-social-topic-event-create-desc": "Nouveau commentaire",
+	"bs-social-topic-event-delete": "{{GENDER:$1|}}a supprimé un commentaire sur la page $2",
+	"bs-social-topic-event-delete-desc": "Commentaire supprimé",
+	"bs-social-topic-event-edit": "{{GENDER:$1|}}a modifié un commentaire sur la page $2",
+	"bs-social-topic-event-edit-desc": "Commentaire modifié",
+	"bs-social-notification-topic-primary-link-label": "Afficher le message",
+	"bs-social-topic-event-for-user-create": "{{GENDER:$1|}}a laissé un commentaire sur $2",
+	"bs-social-topic-event-for-user-create-desc": "Nouveau commentaire sur votre page personnelle",
+	"bs-social-topic-event-for-user-delete": "{{GENDER:$1|}}a supprimé un commentaire sur $2",
+	"bs-social-topic-event-for-user-delete-desc": "Commentaire sur votre page personnelle supprimé",
+	"bs-social-topic-event-for-user-edit": "{{GENDER:$1|}}a modifié un commentaire sur $2",
+	"bs-social-topic-event-for-user-edit-desc": "Commentaire sur votre page personnelle modifié"
 }

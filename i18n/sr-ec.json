@@ -31,5 +31,17 @@
 	"action-social-topics": "правите и уређујете теме",
 	"action-social-topics-comment": "коментаришете у темамма",
 	"right-social-topics": "прављење и уређивање тема",
-	"right-social-topics-comment": "коментарисање у темама"
+	"right-social-topics-comment": "коментарисање у темама",
+	"bs-social-topic-event-create-desc": "Нови коментар",
+	"bs-social-topic-event-delete": "{{GENDER:$1|обрисао је|обрисала је}} коментар на $2",
+	"bs-social-topic-event-delete-desc": "Коментар обрисан",
+	"bs-social-topic-event-edit": "{{GENDER:$1|изменио је|изменила је}} коментар на $2",
+	"bs-social-topic-event-edit-desc": "Коментар измењен",
+	"bs-social-notification-topic-primary-link-label": "Прикажи објаву",
+	"bs-social-topic-event-for-user-create": "{{GENDER:$1|оставио је|оставила је}} коментар на $2",
+	"bs-social-topic-event-for-user-create-desc": "Нови коментар на вашој корисничкој страници",
+	"bs-social-topic-event-for-user-delete": "{{GENDER:$1|обрисао је|обрисала је}} коментар на $2",
+	"bs-social-topic-event-for-user-delete-desc": "Коментар на вашој корисничкој страници је обрисан",
+	"bs-social-topic-event-for-user-edit": "{{GENDER:$1|изменио је|изменила је}} коментар на $2",
+	"bs-social-topic-event-for-user-edit-desc": "Коментар на вашој корисничкој страници је измењен"
 }

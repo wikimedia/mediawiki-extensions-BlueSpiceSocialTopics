@@ -39,5 +39,18 @@
 	"action-social-topics-comment": "te reageren op onderwerpen",
 	"right-social-topics": "Onderwerpen aanmaken en bewerken",
 	"right-social-topics-comment": "Reageren op onderwerpen",
-	"apihelp-bs-socialtopics-tasks-summary": "Biedt taken zoals het automatisch aanmaken van de discussiepagina"
+	"apihelp-bs-socialtopics-tasks-summary": "Biedt taken zoals het automatisch aanmaken van de discussiepagina",
+	"bs-social-topic-event-create": "{{GENDER:$1|heeft een reactie achtergelaten}} op de pagina $2",
+	"bs-social-topic-event-create-desc": "Nieuwe reactie",
+	"bs-social-topic-event-delete": "{{GENDER:$1|heeft een reactie verwijderd}} van de pagina $2",
+	"bs-social-topic-event-delete-desc": "Reactie verwijderd",
+	"bs-social-topic-event-edit": "{{GENDER:$1|heeft een reactie bewerkt}} op de pagina $2",
+	"bs-social-topic-event-edit-desc": "Reactie bewerkt",
+	"bs-social-notification-topic-primary-link-label": "Bericht bekijken",
+	"bs-social-topic-event-for-user-create": "{{GENDER:$1|heeft een reactie achtergelaten}} op $2",
+	"bs-social-topic-event-for-user-create-desc": "Nieuwe reactie op uw gebruikerspagina",
+	"bs-social-topic-event-for-user-delete": "{{GENDER:$1|heeft een reactie verwijderd}} op $2",
+	"bs-social-topic-event-for-user-delete-desc": "Reactie op uw gebruikerspagina verwijderd",
+	"bs-social-topic-event-for-user-edit": "{{GENDER:$1|heeft een reactie bewerkt}} op $2",
+	"bs-social-topic-event-for-user-edit-desc": "Reactie op uw gebruikerspagina bewerkt"
 }
