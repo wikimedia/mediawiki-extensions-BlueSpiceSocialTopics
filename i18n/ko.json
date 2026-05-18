@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Tensama0415",
 			"Ykhwong",
 			"Yunbj"
 		]
@@ -27,8 +28,8 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "저장",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "취소",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "내용",
-	"action-social-topics": "주제를 만들고 편집할",
-	"action-social-topics-comment": "주제에 의견을 달",
-	"right-social-topics": "주제 만들기 및 편집",
+	"action-social-topics": "주제를 만들고 편집하기",
+	"action-social-topics-comment": "주제에 의견 달기",
+	"right-social-topics": "주제를 만들고 편집하기",
 	"right-social-topics-comment": "주제에 의견 달기"
 }
