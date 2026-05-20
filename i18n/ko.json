@@ -6,6 +6,7 @@
 			"Yunbj"
 		]
 	},
+	"bs-socialtopics-desc": "BlueSpiceSocial을 위한 주제 및 토론 항목",
 	"bs-socialtopics-pref-skipcreatedialog": "토론 만들기 대화상자 건너뛰기",
 	"bs-socialtopics-toc-entalkpageautocreate": "모든 토론 문서 자동 생성",
 	"bs-socialtopics-autocreated-discussionpage": "이 토론 문서는 자동 생성되었습니다.",
@@ -15,6 +16,7 @@
 	"bs-socialtopics-entitydiscussion-header-create": "새 토론 만들기",
 	"bs-social-entitytopic-header-create": "새 주제 시작...",
 	"bs-socialtopics-var-topictitle": "제목",
+	"bs-socialtopics-var-discussiontitleid": "할당된 토론 문서",
 	"bs-socialtopics-entity-fatalstatus-save-notalkpage": "유효한 토론 문서가 아닙니다",
 	"bs-socialtopics-entity-topic-topictitle-shoutboxmigration": "$1님이 주제를 시작했습니다:",
 	"topics": "주제",
@@ -28,8 +30,23 @@
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-save": "저장",
 	"bs-socialtopics-dialog-creatediscussionpage-btn-label-cancel": "취소",
 	"bs-socialtopics-dialog-creatediscussionpage-label-text": "내용",
+	"bs-socialtopics-toc-entalkpageautocreate-help": "사용자가 문서 내에서 첫 번째 토론 주제를 생성하면, 관련 토론 문서가 자동으로 생성되므로 수동으로 생성하는 중간 단계가 건너뛰어집니다.",
 	"action-social-topics": "주제를 만들고 편집하기",
 	"action-social-topics-comment": "주제에 의견 달기",
 	"right-social-topics": "주제를 만들고 편집하기",
-	"right-social-topics-comment": "주제에 의견 달기"
+	"right-social-topics-comment": "주제에 의견 달기",
+	"apihelp-bs-socialtopics-tasks-summary": "토론 문서 자동 생성과 같은 작업을 제공합니다.",
+	"bs-social-topic-event-create": "$2 문서에서 {{GENDER:$1|댓글을 남김}}",
+	"bs-social-topic-event-create-desc": "새 댓글",
+	"bs-social-topic-event-delete": "$2 문서에서 {{GENDER:$1|댓글을 삭제함}}",
+	"bs-social-topic-event-delete-desc": "댓글 삭제됨",
+	"bs-social-topic-event-edit": "$2 문서에서 {{GENDER:$1|댓글을 편집함}}",
+	"bs-social-topic-event-edit-desc": "댓글 편집됨",
+	"bs-social-notification-topic-primary-link-label": "게시물 보기",
+	"bs-social-topic-event-for-user-create": "$2에서 {{GENDER:$1|댓글을 남김}}",
+	"bs-social-topic-event-for-user-create-desc": "사용자 문서에 새 댓글",
+	"bs-social-topic-event-for-user-delete": "$2에서의 {{GENDER:$1|댓글을 삭제함}}",
+	"bs-social-topic-event-for-user-delete-desc": "사용자 문서의 댓글 삭제됨",
+	"bs-social-topic-event-for-user-edit": "$2에서의 {{GENDER:$1|댓글을 편집함}}",
+	"bs-social-topic-event-for-user-edit-desc": "사용자 문서의 댓글 편집됨"
 }
